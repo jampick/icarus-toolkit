@@ -123,13 +123,17 @@ def main():
             rec["outputs"].append([oid, o.get("Count", 1)])
         recipes.append(rec)
 
-    # A conversion recipe turns a variant into the base item (Frozen_Wood -> Wood);
-    # flag them so the site can prefer real crafting recipes and default such items to raw.
+    # A conversion recipe turns a decorated variant into the base item
+    # (Frozen_Wood -> Wood, Noxious_Crust_Oxite -> Oxite): the output's name
+    # tokens are a subset of an input's. The reverse direction (Aluminium ->
+    # Aluminium_Screw) is normal crafting and must NOT be flagged.
+    def tokens(iid):
+        return set(iid.lower().split("_"))
+
     for rec in recipes:
-        out_ids = [o for o, _ in rec["outputs"]]
         rec["conv"] = any(
-            o != i and (o in i or i in o)
-            for o in out_ids for i, _ in rec["inputs"]
+            o != i and tokens(o) <= tokens(i)
+            for o, _ in rec["outputs"] for i, _ in rec["inputs"]
         )
 
     # Index recipes by primary output for the site
