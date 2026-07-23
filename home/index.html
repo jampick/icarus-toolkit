@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icarus Toolkit — fan-made tools for ICARUS</title>
+<style>
+:root {
+  --bg: #0b0f14; --panel: #141c26; --line: #223041;
+  --text: #dce6f2; --dim: #7d8fa5; --accent: #f2a33c; --accent2: #4fc3f7;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 70% -10%, #16222e 0%, transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, #131c14 0%, transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font: 15px/1.5 "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 8vh 20px 40px;
+}
+h1 { font-size: 30px; letter-spacing: .18em; font-weight: 700; }
+h1 .a { color: var(--accent); }
+h1 .sep { color: var(--dim); margin: 0 10px; font-weight: 400; }
+.tag { color: var(--dim); margin-top: 8px; letter-spacing: .06em; }
+#tools {
+  margin-top: 6vh; display: grid; gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+  width: 100%; max-width: 1100px; justify-content: center;
+}
+.tool {
+  display: block; text-decoration: none; color: var(--text);
+  background: linear-gradient(180deg, #17202c, #121a24);
+  border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: 14px; padding: 22px 22px 18px;
+  transition: transform .15s, box-shadow .2s, border-color .2s;
+}
+.tool:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 14px 40px rgba(242,163,60,.15);
+}
+.tool h2 { font-size: 18px; letter-spacing: .04em; }
+.tool p { color: var(--dim); font-size: 13px; margin-top: 8px; }
+.tool .go { display: inline-block; margin-top: 14px; color: var(--accent2); font-size: 13px; font-weight: 600; }
+.tool.soon { border-left-color: var(--line); opacity: .55; cursor: default; }
+.tool.soon:hover { transform: none; box-shadow: none; border-color: var(--line); }
+footer { margin-top: auto; padding-top: 8vh; color: var(--dim); font-size: 12px; text-align: center; }
+footer a { color: var(--accent2); }
+</style>
+</head>
+<body>
+<h1><span class="a">ICARUS</span><span class="sep">//</span>TOOLKIT</h1>
+<div class="tag">fan-made tools for prospectors</div>
+
+<div id="tools">
+  <a class="tool" href="breakdown/">
+    <h2>⛏ Breakdown</h2>
+    <p>Exploded crafting calculator. Search any item and see it recursively broken down into every raw material you need to gather — with recipe switching, craft/gather toggles, and live totals.</p>
+    <span class="go">Open →</span>
+  </a>
+  <div class="tool soon">
+    <h2>More coming</h2>
+    <p>Future tools will land here.</p>
+  </div>
+</div>
+
+<footer>
+  Game data extracted directly from ICARUS game files. Not affiliated with RocketWerkz —
+  item names, icons and data are © RocketWerkz, used as fan content.<br>
+  <a href="https://github.com/jampick/icarus-toolkit">Source on GitHub</a>
+</footer>
+</body>
+</html>

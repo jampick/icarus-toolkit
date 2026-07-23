@@ -1,12 +1,20 @@
-# Icarus Breakdown
+# Icarus Toolkit
 
-Exploded crafting calculator for [ICARUS](https://icarusgame.com) — search any
-craftable item and see it recursively broken down into every raw material you
-need to gather, with per-node control over whether a component is crafted or
-gathered, alternate-recipe switching, live raw-material totals, bench list, and
-pan/zoom.
+Fan-made tools for [ICARUS](https://icarusgame.com), hosted at
+**https://jampick.github.io/icarus-toolkit/**. Data comes **directly from the
+game's `Data/data.pak`** — no wiki scraping.
 
-Data comes **directly from the game's `Data/data.pak`** — no wiki scraping.
+## Tools
+
+### ⛏ Breakdown (`/breakdown/`)
+
+Exploded crafting calculator — search any craftable item and see it recursively
+broken down into every raw material you need to gather, with per-node control
+over whether a component is crafted or gathered, alternate-recipe switching,
+live raw-material totals, bench list, and pan/zoom.
+
+Deploys automatically to GitHub Pages on push to `main`
+(`.github/workflows/deploy.yml` runs `scripts/make_dist.py`).
 
 ## Layout
 
