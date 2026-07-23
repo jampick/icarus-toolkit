@@ -398,6 +398,25 @@ qtyEl.addEventListener("change", () => setQty(+qtyEl.value));
 $("#qty-plus").onclick = () => setQty(qty + 1);
 $("#qty-minus").onclick = () => setQty(qty - 1);
 
+/* ---------- expand / collapse all ---------- */
+
+$("#expand-all").onclick = () => {
+  if (!rootId) return;
+  modeOverride.clear();
+  rebuild();
+  centerTree();
+};
+$("#collapse-all").onclick = () => {
+  if (!rootId) return;
+  modeOverride.clear();
+  // fold the tree to its first tier: every craftable child of the root gathers
+  for (const c of treeRoot.children) {
+    if (c.recs.length && !c.cyclic) modeOverride.set(c.path, "gather");
+  }
+  rebuild();
+  centerTree();
+};
+
 window.addEventListener("resize", () => requestAnimationFrame(drawWires));
 
 /* ---------- boot ---------- */
