@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icarus Breakdown — Exploded Crafting Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div id="logo"><span class="logo-icarus">ICARUS</span><span class="logo-sep">//</span><span class="logo-sub">BREAKDOWN</span></div>
+  <div id="searchwrap">
+    <input id="search" type="text" placeholder="Search an item to explode… (e.g. Solar Panel)" autocomplete="off" spellcheck="false">
+    <div id="results" class="hidden"></div>
+  </div>
+  <div id="qtywrap">
+    <button id="qty-minus" class="qbtn">−</button>
+    <input id="qty" type="number" min="1" value="1">
+    <button id="qty-plus" class="qbtn">+</button>
+  </div>
+</header>
+
+<main id="stage">
+  <div id="canvas">
+    <svg id="wires"></svg>
+    <div id="tree"></div>
+  </div>
+  <div id="hint">
+    <div class="hint-title">EXPLODED CRAFTING VIEW</div>
+    <div>Search for any craftable item to see it broken down<br>into every raw material you need to gather.</div>
+    <div class="hint-keys">
+      <span><b>click ▸/▾</b> craft vs gather</span>
+      <span><b>↻</b> switch recipe</span>
+      <span><b>drag / scroll</b> pan &amp; zoom</span>
+    </div>
+  </div>
+</main>
+
+<aside id="sidebar" class="hidden">
+  <section>
+    <h2>Raw Materials</h2>
+    <div id="totals"></div>
+    <div id="grand"><span>Total weight</span><b id="weight">—</b></div>
+  </section>
+  <section>
+    <h2>Benches Required</h2>
+    <div id="benches"></div>
+  </section>
+</aside>
+
+<div id="tip" class="hidden"></div>
+<script src="app.js"></script>
+</body>
+</html>
