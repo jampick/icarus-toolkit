@@ -34,6 +34,13 @@ def pretty(rid):
 
 def main():
     tames = rows(GAME, "D_Tames")
+
+    # Chick/Chick1/Chick2 are identical rows apart from TamedAI (chicken
+    # plumage variants). Collapse them into the single "Chick" row and
+    # record how many plumage variants exist. Deliberately narrow: only
+    # exact-name digit suffixes of Chick are merged.
+    chick_variants = sum(1 for t in tames if re.fullmatch(r"Chick\d*", t["Name"]))
+    tames = [t for t in tames if not re.fullmatch(r"Chick\d+", t["Name"])]
     mounts = {r["Name"]: r for r in rows(GAME, "D_Mounts")}
     saddles = rows(GAME, "D_Saddles")
     items_static = {r["Name"]: r for r in rows(GAME, "D_ItemsStatic")}
@@ -97,6 +104,7 @@ def main():
         tr = t.get("DesiredTemperatureRange") or {}
         stags = sorted(mount_saddles.get(mount_ref, [])) if rideable else []
         sitems = sorted({i for tag in stags for i in saddle_items.get(tag, [])})
+        extra = {"variants": chick_variants} if rid == "Chick" and chick_variants > 1 else {}
         creatures.append({
             "id": rid,
             "name": pretty(rid),
@@ -109,6 +117,7 @@ def main():
             "juvenile": bool(t.get("JuvenileCreatureType")),
             "rideable": rideable,
             "saddles": sitems,
+            **extra,
         })
 
     # ---- saddle item details ----

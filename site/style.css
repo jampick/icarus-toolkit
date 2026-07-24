@@ -460,3 +460,62 @@ body {
 .mount-sec { margin-bottom: 26px; scroll-margin-top: 70px; }
 .mount-h { font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
 .tchip.unit { margin-left: auto; font-weight: 700; }
+
+/* ---------- Stables: unified search + reverse lookup ---------- */
+#ssearchwrap { position: relative; max-width: 440px; margin-bottom: 18px; }
+#ssearch {
+  width: 100%; padding: 10px 14px;
+  background: var(--bg2); color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px;
+  font-size: 14px; outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+#ssearch:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(242,163,60,.15); }
+#sresults {
+  position: absolute; top: 44px; left: 0; right: 0; z-index: 40;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  max-height: 380px; overflow-y: auto;
+  box-shadow: 0 12px 40px rgba(0,0,0,.55);
+}
+#sresults .result img { width: 30px; height: 30px; flex: none; object-fit: contain; }
+#sresults .rgroup {
+  font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--dim); padding: 8px 12px 3px; border-top: 1px solid var(--line);
+}
+#sresults .rgroup:first-child { border-top: none; }
+.result .remoji {
+  width: 30px; height: 30px; flex: none; font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+}
+#sreverse {
+  background: linear-gradient(180deg, #17202c, #121a24);
+  border: 1px solid var(--accent); border-radius: 14px;
+  box-shadow: 0 0 0 1px rgba(242,163,60,.35), 0 10px 40px rgba(242,163,60,.08);
+  padding: 16px; margin-bottom: 22px;
+  animation: pop .3s ease;
+}
+.rev-emoji {
+  width: 56px; height: 56px; flex: none; font-size: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg2); border-radius: 12px;
+}
+#sreverse .temp-strip { margin-top: 10px; max-width: 340px; }
+#sreverse .pstats { margin-top: 8px; }
+#sreverse .pcost { display: inline-block; margin-top: 10px; }
+
+/* mounts tab quick-jump chip bar */
+#mount-jump {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 30;
+  padding: 8px 0 10px; margin-bottom: 8px;
+  background: linear-gradient(180deg, var(--bg) 82%, transparent);
+}
+
+/* feed purpose filter chips + card tags */
+#ffilters { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.ftag { color: var(--organic); border-color: rgba(139,195,74,.45); }
+
+@media (max-width: 700px) {
+  /* 16px stops iOS Safari from auto-zooming when the search focuses */
+  #ssearch { font-size: 16px; }
+}

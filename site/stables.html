@@ -25,6 +25,13 @@
   <p class="prov-intro">Everything a tamer needs: who can be tamed and how long it takes,
   how to house them happily, what saddles fit, and which feed makes them thrive.</p>
 
+  <div id="ssearchwrap">
+    <input id="ssearch" type="text" placeholder="Search a creature, saddle or feed…" autocomplete="off" spellcheck="false">
+    <div id="sresults" class="hidden"></div>
+  </div>
+
+  <div id="sreverse" class="hidden"></div>
+
   <div id="tabs">
     <button class="tab on" data-tab="creatures">🐾 Creatures</button>
     <button class="tab" data-tab="mounts">🏇 Mounts &amp; Saddles</button>
@@ -36,6 +43,8 @@
       <button class="tchip on" data-f="all">All</button>
       <button class="tchip" data-f="rideable">Rideable</button>
       <button class="tchip" data-f="breedable">Breedable</button>
+      <button class="tchip" data-f="cold">🧊 Cold-ready</button>
+      <button class="tchip" data-f="heat">🔥 Heat-ready</button>
       <button class="tchip unit" id="unit-toggle" title="Switch temperature unit">°C</button>
     </div>
     <div id="creature-cards" class="prov-grid"></div>
@@ -43,11 +52,13 @@
 
   <section id="tab-mounts" class="hidden">
     <p class="prov-note">Pick a mount to see every saddle it accepts. Cost links open the crafting breakdown.</p>
+    <div id="mount-jump"></div>
     <div id="mount-list"></div>
   </section>
 
   <section id="tab-feed" class="hidden">
     <p class="prov-note">Animal feed buffs your tamed creature while it lasts. Gruels are cheap staples; specialty feeds boost speed or carry weight.</p>
+    <div id="ffilters"></div>
     <div id="feed-cards" class="prov-grid"></div>
   </section>
 </main>

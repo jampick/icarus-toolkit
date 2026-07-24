@@ -112,6 +112,14 @@ for want in ("Moa", "Buffalo", "Horse"):
     check(want in cnames, f"creature '{want}' present")
 check(any(c["name"] == "SwampBird" and c["rideable"] for c in stab["creatures"]),
       "SwampBird rideable (underscore-normalization regression)")
+cids = {c["id"] for c in stab["creatures"]}
+chick_leftovers = sorted(i for i in cids if re.fullmatch(r"Chick\d+", i))
+check(not chick_leftovers,
+      f"no Chick digit variants remain (found: {chick_leftovers or 'none'})")
+chick = next((c for c in stab["creatures"] if c["id"] == "Chick"), None)
+check(chick is not None, "creature 'Chick' present after variant merge")
+check(chick is not None and chick.get("variants") == 3,
+      f"Chick has variants == 3 (got: {chick.get('variants') if chick else None})")
 bad_saddle = sorted(sid for c in rideable for sid in c["saddles"]
                     if sid not in stab["saddleItems"])
 check(not bad_saddle,
