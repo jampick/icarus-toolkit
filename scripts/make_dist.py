@@ -62,6 +62,29 @@ def main():
               "prov-icon-192.png", "prov-icon-512.png",
               "manifest-provisions.webmanifest"]:
         shutil.copy(SITE / f, prov / f)
+
+    # --- stables ---
+    shtml = (SITE / "stables.html").read_text()
+    sjs = (SITE / "stables.js").read_text()
+    sdata = (SITE / "data" / "stables.json").read_text()
+    shtml = shtml.replace(
+        '<link rel="stylesheet" href="style.css">',
+        f"<style>\n{css}\n</style>")
+    shtml = shtml.replace(
+        '<script src="stables.js"></script>',
+        '<script>window.ICON_BASE="../breakdown/icons/";'
+        'window.BREAKDOWN_BASE="../breakdown/";</script>\n'
+        f'<script type="application/json" id="stables-data">{sdata}</script>\n'
+        f"<script>\n{sjs}\n</script>")
+    shtml = shtml.replace('href="index.html"', 'href="../breakdown/"')
+    shtml = shtml.replace('href="provisions.html"', 'href="../provisions/"')
+    stab = DIST / "stables"
+    stab.mkdir()
+    (stab / "index.html").write_text(shtml)
+    for f in ["stables-favicon-32.png", "stables-apple-touch-icon.png",
+              "stables-icon-192.png", "stables-icon-512.png",
+              "manifest-stables.webmanifest"]:
+        shutil.copy(SITE / f, stab / f)
     size = sum(f.stat().st_size for f in DIST.rglob("*") if f.is_file())
     print(f"dist/ ready: {size/1e6:.1f} MB total, breakdown/index.html "
           f"{(tool/'index.html').stat().st_size/1024:.0f} KB")

@@ -13,6 +13,19 @@ broken down into every raw material you need to gather, with per-node control
 over whether a component is crafted or gathered, alternate-recipe switching,
 live raw-material totals, bench list, and pan/zoom.
 
+### 🥧 Provisions (`/provisions/`)
+
+Food buffs by activity - pick what you're heading out to do (mining, hunting,
+arctic, and more) and get the stomach-slot foods and slot-free tonics whose
+buffs actually help, ranked with duration-damped scores. Includes reverse
+lookup (search a food, see its best scenarios) and trip-length pack planning.
+
+### 🐎 Stables (`/stables/`)
+
+For the resident animal tamer - all tameable creatures with tame times,
+temperature comfort ranges, shelter/nutrition needs and gestation timers;
+saddle options per mount with crafting-cost links; and animal feed buffs.
+
 Deploys automatically to GitHub Pages on push to `main`
 (`.github/workflows/deploy.yml` runs `scripts/make_dist.py`).
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icarus Stables - Taming, Mounts and Feed</title>
+<link rel="icon" type="image/png" sizes="32x32" href="stables-favicon-32.png">
+<link rel="apple-touch-icon" href="stables-apple-touch-icon.png">
+<link rel="manifest" href="manifest-stables.webmanifest">
+<meta name="theme-color" content="#0b0f14">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="prov-body">
+<header id="topbar">
+  <a class="crumb" href="../" title="Icarus Toolkit home">⌂ Toolkit</a>
+  <div id="logo"><span class="logo-icarus">ICARUS</span><span class="logo-sep">//</span><span class="logo-sub">STABLES</span></div>
+  <nav class="prov-nav">
+    <a href="index.html">⛏ Breakdown</a>
+    <a href="provisions.html">🥧 Provisions</a>
+    <a href="https://github.com/jampick/icarus-toolkit/issues/new" target="_blank" rel="noopener" title="Found a bug? Open an issue">🐞</a>
+  </nav>
+</header>
+
+<main class="prov-main">
+  <p class="prov-intro">Everything a tamer needs: who can be tamed and how long it takes,
+  how to house them happily, what saddles fit, and which feed makes them thrive.</p>
+
+  <div id="tabs">
+    <button class="tab on" data-tab="creatures">🐾 Creatures</button>
+    <button class="tab" data-tab="mounts">🏇 Mounts &amp; Saddles</button>
+    <button class="tab" data-tab="feed">🌽 Feed</button>
+  </div>
+
+  <section id="tab-creatures">
+    <div id="cfilters">
+      <button class="tchip on" data-f="all">All</button>
+      <button class="tchip" data-f="rideable">Rideable</button>
+      <button class="tchip" data-f="breedable">Breedable</button>
+    </div>
+    <div id="creature-cards" class="prov-grid"></div>
+  </section>
+
+  <section id="tab-mounts" class="hidden">
+    <p class="prov-note">Pick a mount to see every saddle it accepts. Cost links open the crafting breakdown.</p>
+    <div id="mount-list"></div>
+  </section>
+
+  <section id="tab-feed" class="hidden">
+    <p class="prov-note">Animal feed buffs your tamed creature while it lasts. Gruels are cheap staples; specialty feeds boost speed or carry weight.</p>
+    <div id="feed-cards" class="prov-grid"></div>
+  </section>
+</main>
+
+<script src="stables.js"></script>
+</body>
+</html>

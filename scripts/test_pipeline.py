@@ -97,12 +97,37 @@ bad_meta = sorted(sid for sid, m in stats.items()
 check(not bad_meta,
       f"every stats meta entry has tpl and non-zero max (bad: {bad_meta[:10] or 'none'})")
 
+# ---------- 3b. stables.json ----------
+run_script("build_stables_data.py")
+print("\n== stables.json ==")
+stab = json.loads((ROOT / "site" / "data" / "stables.json").read_text())
+check(set(stab) >= {"creatures", "saddleItems", "feeds", "stats"},
+      "has creatures/saddleItems/feeds/stats keys")
+check(len(stab["creatures"]) >= 25,
+      f"creatures count {len(stab['creatures'])} >= 25")
+rideable = [c for c in stab["creatures"] if c["rideable"]]
+check(len(rideable) >= 10, f"rideable creatures {len(rideable)} >= 10")
+cnames = {c["name"] for c in stab["creatures"]}
+for want in ("Moa", "Buffalo", "Horse"):
+    check(want in cnames, f"creature '{want}' present")
+check(any(c["name"] == "SwampBird" and c["rideable"] for c in stab["creatures"]),
+      "SwampBird rideable (underscore-normalization regression)")
+bad_saddle = sorted(sid for c in rideable for sid in c["saddles"]
+                    if sid not in stab["saddleItems"])
+check(not bad_saddle,
+      f"every creature saddle ref resolves (bad: {bad_saddle[:6] or 'none'})")
+check(len(stab["feeds"]) >= 10, f"feeds count {len(stab['feeds'])} >= 10")
+bad_feed_stats = sorted(sid for f in stab["feeds"] for sid in f["stats"]
+                        if sid not in stab["stats"])
+check(not bad_feed_stats,
+      f"every feed stat in stats meta (bad: {bad_feed_stats[:6] or 'none'})")
+
 # ---------- 4. make_dist.py + dist/ ----------
 run_script("make_dist.py")
 print("\n== dist/ ==")
 dist = ROOT / "dist"
 for rel in ("index.html", "breakdown/index.html", "provisions/index.html",
-            "breakdown/icons"):
+            "stables/index.html", "breakdown/icons"):
     check((dist / rel).exists(), f"dist/{rel} exists")
 
 def inline_json(html, elem_id):
@@ -126,9 +151,15 @@ check('id="provisions-data"' in phtml, 'provisions page has id="provisions-data"
 check(inline_json(phtml, "provisions-data") is not None,
       "provisions inline JSON parses")
 
+shtml = (dist / "stables" / "index.html").read_text()
+check('id="stables-data"' in shtml, 'stables page has id="stables-data"')
+check(inline_json(shtml, "stables-data") is not None,
+      "stables inline JSON parses")
+
 landing = (dist / "index.html").read_text()
 check('href="breakdown/"' in landing, 'landing links to breakdown/')
 check('href="provisions/"' in landing, 'landing links to provisions/')
+check('href="stables/"' in landing, 'landing links to stables/')
 
 # ---------- result ----------
 print(f"\n{checks} checks, {len(failures)} failures")
