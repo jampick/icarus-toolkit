@@ -12,7 +12,7 @@ const LAYER_META = {
   veins:   { label: "Deep veins",  emoji: "⛏",    color: "#9ab0c4" },
   oil:     { label: "Oil",         emoji: "\u{1F6E2}", color: "#b06f3c" },
   enzyme:  { label: "Enzyme",      emoji: "\u{1F9EA}", color: "#6fcf6f" },
-  worms:   { label: "Sandworms",   emoji: "\u{1FAB1}", color: "#e06060" },
+  worms:   { label: "Sandworm boss", emoji: "\u{1FAB1}", color: "#e06060" },
   exotics: { label: "Exotics",     emoji: "\u{1F48E}", color: "#b07fe8" },
 };
 
@@ -132,14 +132,32 @@ function renderMap() {
 
   // markers
   for (const [key, meta] of Object.entries(LAYER_META)) {
-    if (key === "exotics" || !activeLayers.has(key)) continue;
+    if (key === "terrain" || key === "exotics" || !activeLayers.has(key)) continue;
     for (const m of map.layers[key] || []) {
       const c = el("circle", {
         cx: m.gx * CELL, cy: m.gy * CELL,
         r: key === "veins" ? 7 : 11,
         fill: meta.color, class: "atlas-marker atlas-" + key,
       }, svg);
-      c.dataset.tip = `${meta.emoji} ${meta.label.replace(/s$/, "")} - ${m.cell}`;
+      if (key === "caves") {
+        const bits = [];
+        if (m.size) bits.push(`${m.size} ${m.code || ""} cave`.trim());
+        if (m.veins) bits.push(`${m.veins} deep vein${m.veins > 1 ? "s" : ""} inside`);
+        if (m.lakes) bits.push("lake");
+        c.dataset.tip = `${meta.emoji} ${bits.length ? bits.join(" · ") : "Cave"} - ${m.cell} (click)`;
+        // multi-vein caves are the prize; ring them
+        if (m.veins >= 2) {
+          el("circle", {
+            cx: m.gx * CELL, cy: m.gy * CELL, r: 16,
+            fill: "none", stroke: LAYER_META.veins.color,
+            "stroke-width": 3.5, class: "atlas-exoring",
+          }, svg);
+        }
+        c.style.cursor = "pointer";
+        c.addEventListener("click", e => { e.stopPropagation(); showCave(m); });
+      } else {
+        c.dataset.tip = `${meta.emoji} ${meta.label.replace(/s$/, "")} - ${m.cell}`;
+      }
     }
   }
 
@@ -161,6 +179,33 @@ function selectCell(cell) {
   selectedCell = selectedCell === cell ? null : cell;
   updateURL({ cell: selectedCell });
   render();
+}
+
+const SIZE_NAMES = { SML: "Small", MED: "Medium", LRG: "Large", XLG: "Huge" };
+
+function prettySpawn(s) {
+  return s.replace(/^(AISetup_|AI_|BP_|NPC_)/, "").replace(/_/g, " ")
+    .replace(/([a-z])([A-Z])/g, "$1 $2");
+}
+
+function showCave(m) {
+  selectedCell = m.cell;
+  updateURL({ cell: selectedCell });
+  render();
+  const box = document.getElementById("atlas-cellinfo");
+  const rows = [];
+  rows.push(`<b>${SIZE_NAMES[m.size] || m.size || ""} cave</b> in ${m.cell}` +
+    (m.code ? ` <span class="atlas-count">(${m.code})</span>` : ""));
+  const bits = [];
+  if (m.veins) bits.push(`⛏ ${m.veins} deep vein${m.veins > 1 ? "s" : ""} inside`);
+  if (m.exotics) bits.push(`\u{1F48E} ${m.exotics} exotic spawn slot${m.exotics > 1 ? "s" : ""}`);
+  if (m.lakes) bits.push(`\u{1F30A} cave lake`);
+  if (bits.length) rows.push(bits.join(" · "));
+  if (m.spawns && m.spawns.length)
+    rows.push(`Creatures: ${[...new Set(m.spawns.map(prettySpawn))].join(", ")}`);
+  if (rows.length === 1) rows.push("No template details recorded.");
+  box.innerHTML = rows.join("<br>");
+  box.classList.remove("hidden");
 }
 
 function renderCellInfo() {
@@ -200,7 +245,7 @@ function attachTooltips(svg) {
 
 function attachPanZoom(svg, extent) {
   let vb = svg.viewBox.baseVal;
-  const minW = extent / 8, maxW = extent;
+  const minW = extent / 16, maxW = extent;
 
   svg.addEventListener("wheel", e => {
     e.preventDefault();

@@ -37,7 +37,25 @@ ORIENT = {t: (False, False) for t in EXOTIC_PREFIX.values()}
 LAYERS = ["caves", "veins", "oil", "enzyme", "worms"]
 
 
+def pretty_spawn(s):
+    """BlueprintGeneratedClass'.../BP_CRE_CaveWorm.BP_CRE_CaveWorm_C' -> Cave Worm"""
+    m = re.search(r"BP_([A-Za-z0-9_]+?)_C'?$", s)
+    name = m.group(1) if m else s
+    name = re.sub(r"^(CRE_|NPC_)", "", name)
+    return re.sub(r"(?<=[a-z])(?=[A-Z])", " ", name.replace("_", " "))
+
+
+def cave_kind(prefab):
+    """CAVE_CF_MED_002 -> (code, size). Codes are biome hints (CF conifer
+    forest, DC desert canyon, AC arctic, LC lava...)."""
+    m = re.match(r"CAVE_([A-Z]+)_([A-Z]+)_\d+", prefab or "")
+    return (m.group(1), m.group(2)) if m else (None, None)
+
+
 def main():
+    prefabs_path = RAW / "cave_prefabs.json"
+    prefabs = json.load(open(prefabs_path, encoding="utf-8")) if prefabs_path.exists() else {}
+
     maps = {}
     for f in sorted(RAW.glob("Terrain_*.json")):
         raw = json.load(open(f, encoding="utf-8"))
@@ -65,6 +83,7 @@ def main():
             return clamp(cx * GRID), clamp(cy * GRID)
 
         layers = {k: [] for k in LAYERS}
+        joined = missing = 0
         for m in raw["markers"]:
             gx, gy = grid_pos(m["x"], m["y"])
             # floor of the ROUNDED value so the stored gx/gy always agrees
@@ -72,11 +91,27 @@ def main():
             gx, gy = round(gx, 3), round(gy, 3)
             col = min(GRID - 1, int(gx))
             row = min(GRID - 1, int(gy))
-            layers[m["layer"]].append({
+            entry = {
                 "cell": f"{chr(ord('A') + col)}{row + 1}",
                 "gx": round(gx, 3),
                 "gy": round(gy, 3),
-            })
+            }
+            if m["layer"] == "caves":
+                code, size = cave_kind(m.get("prefab"))
+                info = prefabs.get(m.get("prefab") or "")
+                if info:
+                    joined += 1
+                    entry.update({
+                        "code": code, "size": size,
+                        "entrances": info["entrances"], "veins": info["veins"],
+                        "exotics": info["exotics"], "lakes": info["lakes"],
+                        "spawns": sorted({pretty_spawn(s) for s in info["spawns"]}),
+                    })
+                else:
+                    missing += 1
+            layers[m["layer"]].append(entry)
+        if joined or missing:
+            print(f"{raw['display']}: cave contents joined {joined}, missing {missing}")
         for k in layers:
             layers[k].sort(key=lambda v: (v["cell"], v["gx"], v["gy"]))
 

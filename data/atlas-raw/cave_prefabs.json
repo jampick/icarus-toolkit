@@ -1,0 +1,1362 @@
+{
+  "CAVE_AC_MED_004_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_002_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_004_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_001_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_001_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_003_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_005_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_003_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 0,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_002_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_006_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_002_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_008_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_003_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_008_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_011_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_009_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_004_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_011_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_009_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_007_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 2,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_006_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_011_NoFoilage": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_009_NoFoilage": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_006_NoFoilage": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_013_NoFoliage": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_012_NoFoliage": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_011_NoFoilage": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_010_NoFoilage": {
+    "entrances": 1,
+    "veins": 3,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_009_NoFoilage": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_008_NoFoliage": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_007_NoFoliage": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_006_NoFoilage": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_006": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_SW_SML_004": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_005": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_002": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_001": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_005": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 2,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_002": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AlienFossil_MED_001": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 0,
+    "lakes": 0,
+    "spawns": []
+  },
+  "CAVE_GL_SML_003": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027"
+    ]
+  },
+  "CAVE_GL_MED_003": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_GL_MED_002": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_GL_MED_001": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_009": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_SW_SML_003": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027"
+    ]
+  },
+  "CAVE_SW_SML_002": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_SW_SML_001": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027"
+    ]
+  },
+  "CAVE_SW_MED_003": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_SW_MED_002": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_007": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_005": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_005": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 2,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_MED_001_GH": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_CF_MED_004": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_SW_MED_001": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_GL_SML_001": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_005_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_003_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_002_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_MED_002_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_MED_001_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_004": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_003": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 0,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_004_NoObsidian": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_004": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_003": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_001": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_006": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_010": {
+    "entrances": 1,
+    "veins": 3,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_006": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_002": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_009": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_008": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_007": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 2,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_003": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_002": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_004": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_MED_001": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_005": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_CF_SML_004": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_004": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_003": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_002": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_SML_001": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_DC_MED_002": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_003": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_001": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_004": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_CF_SML_002": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_CF_SML_001_A": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_CF_SML_001": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_CF_MED_003": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027"
+    ]
+  },
+  "CAVE_CF_MED_002": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_LandShark.BP_CRE_LandShark_C\u0027"
+    ]
+  },
+  "CAVE_CF_MED_001": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_003_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_004_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_001_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_MED_005_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 2,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_006_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 2,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_004_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_001_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_TU_SML_001": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027"
+    ]
+  },
+  "CAVE_LC_SML_006": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 2,
+    "lakes": 2,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_GL_SML_002": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_CF_MED_005_Spider": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 0,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_SpiderNest.BP_SpiderNest_C\u0027"
+    ]
+  },
+  "CAVE_AlienFossil_MED_002": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 0,
+    "lakes": 0,
+    "spawns": []
+  },
+  "CAVE_AC_SML_010": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_008": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_007_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_006_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_005_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_SML_002_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_010_DLC2": {
+    "entrances": 1,
+    "veins": 3,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_001": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_005_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 2,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_TU_SML_002_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_TU_SML_001_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 0,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_TU_MED_003_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 1,
+    "lakes": 4,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_TU_MED_002_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_TU_MED_001_DLC2": {
+    "entrances": 1,
+    "veins": 0,
+    "exotics": 0,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_004_NoFoliage_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_003_NoFoliage_DLC2": {
+    "entrances": 1,
+    "veins": 1,
+    "exotics": 1,
+    "lakes": 0,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_009_NoFoliage_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  },
+  "CAVE_AC_MED_008_NoFoliage_DLC2": {
+    "entrances": 1,
+    "veins": 2,
+    "exotics": 1,
+    "lakes": 1,
+    "spawns": [
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_CRE_CaveWorm.BP_CRE_CaveWorm_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_BatNest.BP_BatNest_C\u0027",
+      "BlueprintGeneratedClass\u0027Icarus/Content/BP/AI/Basic/Caves/BP_WildBeeHive.BP_WildBeeHive_C\u0027"
+    ]
+  }
+}

@@ -37,11 +37,14 @@ saddle options per mount with crafting-cost links; and animal feed buffs.
 ### 🗺 Atlas ([`/atlas/`](https://jampick.github.io/icarus-toolkit/atlas/))
 
 Where things are - cave systems, possible deep ore vein spawns, oil and enzyme
-geysers, sandworm emerge points and exotic spawn squares for every open-world
-map (Olympus, Styx, Prometheus, Elysium), drawn over the game's own biome
-terrain on the same lettered grid the in-game map uses. Marker positions are
-extracted from the terrain level files; deep vein markers are the game's
-possible spawn points (which ore each rolls is decided per prospect). Grid
+geysers, sandworm boss points and exotic spawn squares for every open-world
+map (Olympus, Styx, Prometheus, Elysium), drawn over hillshaded relief
+rendered from the game's landscape heightmaps, on the same lettered grid the
+in-game map uses. Click a cave for its template contents: size, entrances,
+deep veins inside, guaranteed exotic spawns, cave lakes and creature spawns
+(caves with exotics get a highlight ring). Marker positions are extracted
+from the terrain level files; deep vein markers are the game's possible
+spawn points (which ore each rolls is decided per prospect). Grid
 registration is verified against known landmarks (sandworms in the Desert,
 Southern Glacier in the south).
 
@@ -147,9 +150,15 @@ missing an icon fall back to a styled monogram.
   those squares and counts spawns per square.
 - The terrain background is rendered from the game's landscape heightmaps:
   `atlas-export --terrain` stitches every landscape component (4096 per map,
-  an 8065x8065 vertex grid) into a global height array, hillshades it, and
-  tints the relief with the `T_Terrain0XX_Biome` mask, writing one 2048px
-  JPEG per map. Heights and markers share the same origin-centered bounds,
-  so they register with no extra math; orientation was confirmed by checking
-  that sandworm markers land on the Desert region and the Southern Glacier
-  sits in the south.
+  an 8065x8065 vertex grid) into a global height array, applies a dual-light
+  hillshade with hypsometric altitude tinting, detects water (rivers and
+  lakes are carved perfectly flat into the heightmap) and tints it blue,
+  then colors everything with a natural palette mapped from the
+  `T_Terrain0XX_Biome` mask, writing one 4096px JPEG per map. Heights and
+  markers share the same origin-centered bounds, so they register with no
+  extra math; orientation was confirmed by checking that sandworm markers
+  land on the Desert region and the Southern Glacier sits in the south.
+- Cave contents come from the `Prefabs/Cave/CAVE_*` template assets each
+  placed cave references: entrance count, deep vein and exotic spawn counts,
+  lakes, and the creature spawn map, parsed once per template and joined to
+  markers at build time.

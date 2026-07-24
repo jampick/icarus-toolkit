@@ -146,6 +146,12 @@ check(len(lay.get("veins", [])) >= 400,
       f"Olympus deep vein spawns {len(lay.get('veins', []))} >= 400")
 check(len(oly.get("exotics", {})) >= 40,
       f"Olympus exotic cells {len(oly.get('exotics', {}))} >= 40")
+with_info = [c for c in lay.get("caves", []) if "entrances" in c]
+check(len(with_info) >= len(lay.get("caves", [])) * 0.8,
+      f"Olympus caves with template contents {len(with_info)}/{len(lay.get('caves', []))} (>= 80%)")
+exo_caves = [c for c in with_info if c.get("exotics")]
+check(len(exo_caves) >= 1,
+      f"some Olympus caves carry exotic spawns ({len(exo_caves)})")
 cellpat = re.compile(r"^[A-P](1[0-6]|[1-9])$")
 bad_cells = sorted({m["cell"] for mp in amaps.values()
                     for ms in mp["layers"].values() for m in ms
