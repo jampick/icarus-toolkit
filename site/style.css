@@ -459,3 +459,4 @@ body {
 .bench.ws { color: var(--accent2); }
 .mount-sec { margin-bottom: 26px; scroll-margin-top: 70px; }
 .mount-h { font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.tchip.unit { margin-left: auto; font-weight: 700; }

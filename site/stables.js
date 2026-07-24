@@ -45,6 +45,13 @@ function itemIcon(icon, cls) {
   return img;
 }
 
+/* Temperature unit: C by default (a sensible scale), F available on toggle */
+let tempUnit = localStorage.getItem("stables-unit") === "F" ? "F" : "C";
+
+function fmtTemp(c) {
+  return tempUnit === "F" ? Math.round(c * 9 / 5 + 32) : c;
+}
+
 /* Temperature comfort strip: position the range on a -30..55 C scale */
 function tempStrip(temp) {
   const wrap = document.createElement("div");
@@ -53,9 +60,10 @@ function tempStrip(temp) {
   const lo = temp.min ?? -30, hi = temp.max ?? 55;
   const left = Math.max(0, (lo + 30) / 85 * 100);
   const width = Math.max(3, Math.min(100 - left, (hi - lo) / 85 * 100));
+  const u = "°" + tempUnit;
   wrap.innerHTML = `<i style="left:${left}%;width:${width}%"></i>
-    <span class="temp-label">${lo}° to ${hi}°C</span>`;
-  wrap.title = `Comfortable between ${lo}°C and ${hi}°C`;
+    <span class="temp-label">${fmtTemp(lo)}° to ${fmtTemp(hi)}${u}</span>`;
+  wrap.title = `Comfortable between ${fmtTemp(lo)}${u} and ${fmtTemp(hi)}${u}`;
   return wrap;
 }
 
@@ -201,11 +209,20 @@ function init() {
   renderMounts();
   renderFeed();
   $$(".tab").forEach(t => t.onclick = () => showTab(t.dataset.tab));
-  $$("#cfilters .tchip").forEach(ch => ch.onclick = () => {
+  $$("#cfilters .tchip[data-f]").forEach(ch => ch.onclick = () => {
     creatureFilter = ch.dataset.f;
-    $$("#cfilters .tchip").forEach(x => x.classList.toggle("on", x === ch));
+    $$("#cfilters .tchip[data-f]").forEach(x => x.classList.toggle("on", x === ch));
     renderCreatures();
   });
+  const unitBtn = $("#unit-toggle");
+  const paintUnit = () => unitBtn.textContent = "°" + tempUnit;
+  paintUnit();
+  unitBtn.onclick = () => {
+    tempUnit = tempUnit === "C" ? "F" : "C";
+    localStorage.setItem("stables-unit", tempUnit);
+    paintUnit();
+    renderCreatures();
+  };
   const tab = new URLSearchParams(location.search).get("tab");
   if (tab && ["creatures", "mounts", "feed"].includes(tab)) showTab(tab);
   if (location.hash) {
