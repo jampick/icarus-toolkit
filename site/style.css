@@ -527,3 +527,22 @@ body {
   font-size: 20px; font-weight: 700; cursor: pointer;
   box-shadow: 0 8px 30px rgba(242,163,60,.4);
 }
+
+/* ---------- atlas ---------- */
+#atlas-maps, #atlas-layers { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.atlas-count { opacity: .6; font-size: 11px; }
+#atlas-wrap { position: relative; border: 1px solid var(--line, #26313d); border-radius: 10px; overflow: hidden; background: #0d1319; }
+#atlas-svg { display: block; width: 100%; height: min(78vh, 900px); touch-action: none; cursor: grab; }
+#atlas-svg:active { cursor: grabbing; }
+.atlas-grid { stroke: #223040; stroke-width: 1.5; }
+.atlas-label { fill: #5d7186; font: 600 26px/1 system-ui, sans-serif; text-anchor: middle; }
+.atlas-marker { stroke: #0d1319; stroke-width: 2; }
+.atlas-hit:hover { fill: rgba(255,255,255,.04); }
+.atlas-selected { fill: none; stroke: var(--accent); stroke-width: 5; pointer-events: none; }
+#atlas-tip {
+  position: fixed; z-index: 30; pointer-events: none;
+  background: #101820; border: 1px solid #2a3848; border-radius: 8px;
+  padding: 6px 10px; font-size: 12px; color: #dfe7ef;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5);
+}
+#atlas-cellinfo { margin-top: 10px; font-size: 13px; color: #b9c5d2; }

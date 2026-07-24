@@ -1,0 +1,4774 @@
+{
+  "terrain": "Terrain_019",
+  "display": "Prometheus",
+  "umaps": 328,
+  "failed": 0,
+  "actorBounds": {
+    "minX": -594236.1875,
+    "maxX": 1209600,
+    "minY": -659657.25,
+    "maxY": 1008000
+  },
+  "markers": [
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn",
+      "x": 70211.6,
+      "y": -350561.8,
+      "z": 6415.9263
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn100_62",
+      "x": -14805.529,
+      "y": 7477.7905,
+      "z": -4887.378
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn101_65",
+      "x": 24486.51,
+      "y": 2563.0479,
+      "z": -4560.8765
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn102_68",
+      "x": 54057.598,
+      "y": -6489.963,
+      "z": -4878.216
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn103_71",
+      "x": 52691.184,
+      "y": 29151.418,
+      "z": -5811.8467
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn104_74",
+      "x": 94900.72,
+      "y": 6951.3394,
+      "z": -2443.845
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn105_77",
+      "x": 32118.953,
+      "y": -60536.633,
+      "z": -3990.339
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn106_80",
+      "x": -6640.926,
+      "y": -75299.77,
+      "z": -3489.0923
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn107_83",
+      "x": -13574.305,
+      "y": -138420.92,
+      "z": -3763.925
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn108_86",
+      "x": 15804.888,
+      "y": -131930.55,
+      "z": -4758.3467
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn109_89",
+      "x": 37683.723,
+      "y": -141497.3,
+      "z": -2388.4324
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn10_29",
+      "x": -129594.586,
+      "y": -222690.6,
+      "z": -1686.1356
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn110_92",
+      "x": 43667.816,
+      "y": 45278.95,
+      "z": -5811.8506
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn111_95",
+      "x": -789.4795,
+      "y": 41964.74,
+      "z": -4124.928
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn112_98",
+      "x": -4176.174,
+      "y": 67127.42,
+      "z": -4742.583
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn113_101",
+      "x": -14025.258,
+      "y": 91000.586,
+      "z": -5811.841
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn114_104",
+      "x": -35912.656,
+      "y": 90601.48,
+      "z": -5811.846
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn115_107",
+      "x": -62657.996,
+      "y": 87210,
+      "z": -5761.7173
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn116_110",
+      "x": -48783.01,
+      "y": 70550.25,
+      "z": -4672.9443
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn117_113",
+      "x": -69891.49,
+      "y": 67509.336,
+      "z": -2255.8286
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn118_116",
+      "x": -90089.445,
+      "y": 83465.23,
+      "z": -2246.6672
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn119_119",
+      "x": -138772.86,
+      "y": 50268.23,
+      "z": -1803.3918
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn11_32",
+      "x": -145061.73,
+      "y": -298953.66,
+      "z": -1683.5962
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn120_122",
+      "x": -131043.58,
+      "y": 30799.688,
+      "z": -2641.654
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn121_125",
+      "x": -103784.22,
+      "y": 15124.25,
+      "z": -2735.6577
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn122_128",
+      "x": -74882.15,
+      "y": 38773.863,
+      "z": -4718.413
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn123_131",
+      "x": -65369.363,
+      "y": 21488.004,
+      "z": -2258.567
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn124_134",
+      "x": -58122.902,
+      "y": 50496.613,
+      "z": -2683.9717
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn125_137",
+      "x": -42510.746,
+      "y": 28162.54,
+      "z": -1740.4417
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn126_2",
+      "x": -51677.957,
+      "y": 127126.64,
+      "z": -5143.4297
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn127_5",
+      "x": -72601.46,
+      "y": 123009.914,
+      "z": -5806.0703
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn128_8",
+      "x": -91837.336,
+      "y": 121036.25,
+      "z": -5810.151
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn129_11",
+      "x": -107421.195,
+      "y": 95895.83,
+      "z": -3580.1133
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn12_35",
+      "x": -129874.57,
+      "y": -307633.66,
+      "z": -771.9994
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn130_14",
+      "x": -124085.06,
+      "y": 127026.65,
+      "z": -5840.6904
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn131_17",
+      "x": -78751.664,
+      "y": 93977.48,
+      "z": -3911.2256
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn132_20",
+      "x": 83956.65,
+      "y": -90593.82,
+      "z": -4043.1863
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn133_23",
+      "x": 63237.17,
+      "y": -112712.984,
+      "z": -1141.1086
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn134_26",
+      "x": 42411.13,
+      "y": -143337.25,
+      "z": 1071.2676
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn135_29",
+      "x": 44219.46,
+      "y": -159418.95,
+      "z": 3392.5151
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn136_2",
+      "x": 30693.695,
+      "y": -178847.56,
+      "z": -5321.08
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn137_5",
+      "x": -51491.664,
+      "y": -44450.18,
+      "z": -5961.7124
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn138_2",
+      "x": 260102.1,
+      "y": -352113.44,
+      "z": 8374.277
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn139",
+      "x": 307198.62,
+      "y": -303769.56,
+      "z": 10312.299
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn13_38",
+      "x": -85733.96,
+      "y": -324880.44,
+      "z": -1683.6697
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn140_6",
+      "x": 282944.66,
+      "y": -279419.9,
+      "z": 8009.029
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn141_9",
+      "x": 278204.53,
+      "y": -231677.17,
+      "z": 4237.11
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn142_12",
+      "x": 308993.47,
+      "y": -242057.28,
+      "z": 4082.7668
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn143_15",
+      "x": 279584.72,
+      "y": -195966.72,
+      "z": 1427.7915
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn144_18",
+      "x": 310172,
+      "y": -208479.03,
+      "z": 4088.9136
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn145_21",
+      "x": 337544.06,
+      "y": -201902.6,
+      "z": 1425.394
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn146_24",
+      "x": 345402.06,
+      "y": -157061.94,
+      "z": 197.25977
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn147_27",
+      "x": 321770.44,
+      "y": -211922.67,
+      "z": 4096.6953
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn148_30",
+      "x": 337318.3,
+      "y": -180230.73,
+      "z": 1341.9374
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn149_33",
+      "x": 359839.5,
+      "y": -147635.58,
+      "z": -265.08435
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn14_41",
+      "x": -90645.13,
+      "y": -299027.06,
+      "z": -1738.9104
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn150_36",
+      "x": 327232.25,
+      "y": -133001.44,
+      "z": -350.96198
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn151_2",
+      "x": 46646.305,
+      "y": -155065.12,
+      "z": 635.1201
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn152_2",
+      "x": 338995.1,
+      "y": -133052.16,
+      "z": -359.94592
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn153_5",
+      "x": 348236.88,
+      "y": -145712.8,
+      "z": 209.96655
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn154_8",
+      "x": 376092.47,
+      "y": -165427.17,
+      "z": 425.20068
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn155_11",
+      "x": 368593.25,
+      "y": -176171.47,
+      "z": 608.82446
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn156_14",
+      "x": 338436.28,
+      "y": -170127.73,
+      "z": 390.0205
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn157_17",
+      "x": 304385.88,
+      "y": -164532.6,
+      "z": 442.07056
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn158_20",
+      "x": 298066.97,
+      "y": -153258.84,
+      "z": 1146.2974
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn159_23",
+      "x": 298709.34,
+      "y": -175830.14,
+      "z": 1483.2102
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn15_44",
+      "x": -189364.5,
+      "y": -294878.25,
+      "z": -1373.0537
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn160_26",
+      "x": 278016.1,
+      "y": -218380.48,
+      "z": 2786.7427
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn161_29",
+      "x": 270953.3,
+      "y": -245910.94,
+      "z": 4235.1084
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn162_32",
+      "x": 363379.66,
+      "y": -211278.98,
+      "z": 1519.0066
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn163_35",
+      "x": 349395.8,
+      "y": -236315.77,
+      "z": 4082.7947
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn164_38",
+      "x": 359998.6,
+      "y": -251110.64,
+      "z": 5476.124
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn165_41",
+      "x": 336903,
+      "y": -261694.27,
+      "z": 8030.667
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn166_44",
+      "x": 326251.03,
+      "y": -300266.78,
+      "z": 10000.563
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn167_47",
+      "x": 309329.16,
+      "y": -286697.9,
+      "z": 9670.757
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn168_50",
+      "x": 281654.9,
+      "y": -258132.1,
+      "z": 4765.383
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn169_53",
+      "x": 269036.03,
+      "y": -291003.2,
+      "z": 8782.48
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn16_47",
+      "x": -195013.45,
+      "y": -304951.66,
+      "z": -100.44409
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn170_56",
+      "x": 310063.9,
+      "y": -311047.3,
+      "z": 10288.644
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn171_59",
+      "x": 292179.03,
+      "y": -331350.5,
+      "z": 10832.254
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn172_62",
+      "x": 261994.6,
+      "y": -311044.6,
+      "z": 9224.677
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn173_65",
+      "x": 269592.84,
+      "y": -341042.53,
+      "z": 8277.499
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn174_68",
+      "x": 230163.38,
+      "y": -374341.75,
+      "z": 6758.6885
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn175_71",
+      "x": 210742.33,
+      "y": -384205.53,
+      "z": 7054.8213
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn176_74",
+      "x": 240354.98,
+      "y": -203575.12,
+      "z": -3768.6233
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn177_77",
+      "x": 234627.36,
+      "y": -240200.78,
+      "z": -5297.4805
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn178_80",
+      "x": 211189.66,
+      "y": -271622.53,
+      "z": -3941.2507
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn179_83",
+      "x": 219162.25,
+      "y": -294974.38,
+      "z": -4078.5005
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn17_50",
+      "x": -228163.67,
+      "y": -298505.6,
+      "z": -208.2876
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn180_86",
+      "x": 209231.45,
+      "y": -311107.72,
+      "z": -1203.0774
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn181_89",
+      "x": 188423.88,
+      "y": -359963.06,
+      "z": -552.38635
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn182_92",
+      "x": 176300.98,
+      "y": -319924.97,
+      "z": -899.8562
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn183_95",
+      "x": 118785.32,
+      "y": -341811.78,
+      "z": 2132.0208
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn184_98",
+      "x": 110844.164,
+      "y": -294035.56,
+      "z": 4903.5215
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn185_101",
+      "x": 96694.445,
+      "y": -284307.3,
+      "z": 3220.3477
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn186_104",
+      "x": 76437.234,
+      "y": -291556.5,
+      "z": 5130.054
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn187_107",
+      "x": 63804.938,
+      "y": -347454.62,
+      "z": 5953.6187
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn188_110",
+      "x": 37762.125,
+      "y": -341804.3,
+      "z": 4067.1257
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn189_113",
+      "x": 187040.73,
+      "y": -246243.58,
+      "z": -7259.2153
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn18_53",
+      "x": -218679,
+      "y": -265434.47,
+      "z": -5696.99
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn190_116",
+      "x": 150031.94,
+      "y": -189949.33,
+      "z": -7259.4556
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn191_119",
+      "x": 134443.52,
+      "y": -237261.45,
+      "z": -7178.035
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn192_122",
+      "x": 107084.086,
+      "y": -211832.44,
+      "z": -7219.9297
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn193_125",
+      "x": 119944.38,
+      "y": -226491.44,
+      "z": -7192.2383
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn194_128",
+      "x": 93525.766,
+      "y": -215341.39,
+      "z": -7233.118
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn195_131",
+      "x": 100449.82,
+      "y": -174597.4,
+      "z": -7309.817
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn196_134",
+      "x": 86197.414,
+      "y": -192346.56,
+      "z": -7250.656
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn197_137",
+      "x": 82681.95,
+      "y": -197450.95,
+      "z": -7286.627
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn198_140",
+      "x": 125816.125,
+      "y": -169729.28,
+      "z": -7102.0195
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn199_143",
+      "x": 95509.29,
+      "y": -128818.65,
+      "z": -6726.993
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn19_56",
+      "x": -226590.78,
+      "y": -217839.77,
+      "z": -2135.2454
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn200_146",
+      "x": 128814.33,
+      "y": -132248.56,
+      "z": -7174.787
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn201_149",
+      "x": 135629.25,
+      "y": -141971.56,
+      "z": -7132.943
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn202_152",
+      "x": 148325.78,
+      "y": -141461.39,
+      "z": -7179.171
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn203_155",
+      "x": 148624.66,
+      "y": -117843.6,
+      "z": -7180.5938
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn204_158",
+      "x": 165519.6,
+      "y": -83880.32,
+      "z": -7029.3516
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn205_161",
+      "x": 181827.86,
+      "y": -82954.31,
+      "z": -7259.047
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn206_164",
+      "x": 117703.16,
+      "y": -72931.93,
+      "z": -6967.2305
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn207_167",
+      "x": 126834.805,
+      "y": -94506.44,
+      "z": -7286.9624
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn208_170",
+      "x": 127400.664,
+      "y": -85785.945,
+      "z": -7200.876
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn209_173",
+      "x": -41704.22,
+      "y": -275594.4,
+      "z": -5052.3457
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn20_59",
+      "x": -227934.3,
+      "y": -197806.58,
+      "z": -1791.1794
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn210_176",
+      "x": -4137.2573,
+      "y": -259507.19,
+      "z": -650.2774
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn211_179",
+      "x": -27086.98,
+      "y": -269544.2,
+      "z": -4522.481
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn212_182",
+      "x": 12457.062,
+      "y": -249908.62,
+      "z": 2821.4321
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn213_185",
+      "x": -64271.156,
+      "y": -206007.77,
+      "z": -2002.1594
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn214_188",
+      "x": -73514.164,
+      "y": -214163.47,
+      "z": -1477.7996
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn215_191",
+      "x": -27937.314,
+      "y": -223303,
+      "z": 591.756
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn216_194",
+      "x": 28985.285,
+      "y": -211724.19,
+      "z": 2244.2578
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn217_197",
+      "x": 14411.717,
+      "y": -229510.33,
+      "z": 1446.7667
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn218_200",
+      "x": 38916.383,
+      "y": -181656.1,
+      "z": 2246.672
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn219_203",
+      "x": 14296.127,
+      "y": -215384.03,
+      "z": 116.19043
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn21_62",
+      "x": -281663.72,
+      "y": -221791.1,
+      "z": -357.7771
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn220_206",
+      "x": -71311.16,
+      "y": -181206.39,
+      "z": -1.4477539
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn221_209",
+      "x": -56476.8,
+      "y": -188366.44,
+      "z": -3273.3828
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn222_212",
+      "x": -73804.375,
+      "y": -159082.17,
+      "z": 167.83789
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn223_215",
+      "x": -119122.086,
+      "y": -165669.98,
+      "z": -3153.4749
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn224_218",
+      "x": -110356.24,
+      "y": -137224.06,
+      "z": -5051.45
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn225_221",
+      "x": -61472.137,
+      "y": -118096.54,
+      "z": -1818.7981
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn226_224",
+      "x": -42528.504,
+      "y": -141550.27,
+      "z": -3337.4932
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn227_227",
+      "x": 53964.363,
+      "y": -95116.59,
+      "z": -1152.1661
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn228_230",
+      "x": -31277.762,
+      "y": -68230.41,
+      "z": -2598.872
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn229_233",
+      "x": -85628.71,
+      "y": -69715.19,
+      "z": -5817.347
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn22_65",
+      "x": -316067.3,
+      "y": -227449.53,
+      "z": 2412.5483
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn230_236",
+      "x": -71521.37,
+      "y": -92133.26,
+      "z": -3873.727
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn231_239",
+      "x": -22863.057,
+      "y": -40795.703,
+      "z": -3659.6538
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn232_242",
+      "x": -3767.2004,
+      "y": -42664.703,
+      "z": -5863.906
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn233_245",
+      "x": 11138.448,
+      "y": -25270.498,
+      "z": -2189.951
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn234_248",
+      "x": 43725.47,
+      "y": -8612.983,
+      "z": -5354.677
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn235_251",
+      "x": 7867.694,
+      "y": -53125.492,
+      "z": -5897.252
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn236_254",
+      "x": 26896.791,
+      "y": -60885.035,
+      "z": -4510.738
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn237_257",
+      "x": 84567.484,
+      "y": 22423.408,
+      "z": -6540.572
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn238_260",
+      "x": 79935.01,
+      "y": -14164.483,
+      "z": -2970.992
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn239_263",
+      "x": 81806.22,
+      "y": -40056.918,
+      "z": -2901.3977
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn23_71",
+      "x": -274545.97,
+      "y": -268292.3,
+      "z": 113.96167
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn240_266",
+      "x": 82301.97,
+      "y": -78974.38,
+      "z": -2447.7812
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn241_269",
+      "x": 72984.414,
+      "y": -90745.66,
+      "z": -1141.1111
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn242_272",
+      "x": 25596.803,
+      "y": -94345.914,
+      "z": -3058.2405
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn243_275",
+      "x": 39032.113,
+      "y": -116796.94,
+      "z": -1912.2859
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn244_278",
+      "x": 23194.271,
+      "y": 34756.39,
+      "z": -5798.161
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn245_281",
+      "x": 22872.164,
+      "y": 53409.69,
+      "z": -5811.847
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn246_284",
+      "x": -83521.9,
+      "y": 130391.95,
+      "z": -5821.291
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn247_287",
+      "x": -111167.164,
+      "y": 70942.484,
+      "z": -2959.4473
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn248_290",
+      "x": -128738.3,
+      "y": 68663.66,
+      "z": -3440.8367
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn249_293",
+      "x": -72919.87,
+      "y": -53580.984,
+      "z": -5407.1626
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn24_77",
+      "x": -260722.6,
+      "y": -320682.28,
+      "z": 211.1604
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn250_296",
+      "x": -130041.555,
+      "y": -255732.23,
+      "z": -1683.6138
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn251_299",
+      "x": -147635.56,
+      "y": -209848.38,
+      "z": -909.3484
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn252_302",
+      "x": -197558.95,
+      "y": -217981.28,
+      "z": -4078.6152
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn253_305",
+      "x": -80158.086,
+      "y": -263910.7,
+      "z": -672.4569
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn254_308",
+      "x": -80804.71,
+      "y": -285000.06,
+      "z": -2121.2646
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn255_311",
+      "x": -83992.92,
+      "y": -314106.34,
+      "z": -1683.6449
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn256_314",
+      "x": -108308.78,
+      "y": -326128.56,
+      "z": -1683.6385
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn257_317",
+      "x": -140380.06,
+      "y": -321698.88,
+      "z": -1683.6296
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn258_320",
+      "x": -148193.1,
+      "y": -281893.53,
+      "z": -1653.731
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn259_323",
+      "x": -142275.52,
+      "y": -255560.89,
+      "z": -1307.165
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn25_80",
+      "x": -205041.56,
+      "y": -338876.88,
+      "z": 1182.5139
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn260_326",
+      "x": -170881.95,
+      "y": -211763.52,
+      "z": -4070.538
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn261_329",
+      "x": -196149.17,
+      "y": -210301.64,
+      "z": -4188.358
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn262_332",
+      "x": -211675.52,
+      "y": -208764.64,
+      "z": -4037.0908
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn263_335",
+      "x": -255347.11,
+      "y": -242201.27,
+      "z": -2375.5742
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn264_338",
+      "x": -237974.92,
+      "y": -232482.02,
+      "z": -2910.9216
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn265_341",
+      "x": -297253,
+      "y": -211781.2,
+      "z": 1228.4733
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn266_344",
+      "x": -294189.47,
+      "y": -237174.6,
+      "z": 3810.5256
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn267_347",
+      "x": -313647.25,
+      "y": -247445.89,
+      "z": 4674.7256
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn268_350",
+      "x": -324319.53,
+      "y": -242854.02,
+      "z": 2425.5825
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn269_353",
+      "x": -293995.38,
+      "y": -263710.5,
+      "z": 5751.7397
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn26_83",
+      "x": -197626.88,
+      "y": -113669.37,
+      "z": -6495.12
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn270_356",
+      "x": -294306.1,
+      "y": -246891.94,
+      "z": 4597.8154
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn271_359",
+      "x": -277540.3,
+      "y": -268625.12,
+      "z": 1732.7554
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn272_362",
+      "x": -258765.34,
+      "y": -316719.6,
+      "z": 2562.2485
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn273_365",
+      "x": -231748.36,
+      "y": -313462.8,
+      "z": 1162.1384
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn274_368",
+      "x": -205640.45,
+      "y": -320946.34,
+      "z": 1451.0552
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn275_371",
+      "x": -168946.1,
+      "y": -293340.78,
+      "z": -2648.8772
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn276_374",
+      "x": -343432.94,
+      "y": -146635.56,
+      "z": -8026.628
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn277_377",
+      "x": -352827.22,
+      "y": -152972.98,
+      "z": -8046.42
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn278_380",
+      "x": -330481,
+      "y": -161664.38,
+      "z": -8048.6406
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn279_383",
+      "x": -317451.8,
+      "y": -127776.79,
+      "z": -7946.785
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn27_86",
+      "x": -176246.42,
+      "y": -31446.127,
+      "z": -6433.6733
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn280_386",
+      "x": -292498.78,
+      "y": -125827.055,
+      "z": -8046.785
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn281_389",
+      "x": -285742.38,
+      "y": -141300.9,
+      "z": -7971.258
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn282_392",
+      "x": -315393.72,
+      "y": -156890.44,
+      "z": -8054.4956
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn283_395",
+      "x": -277670.2,
+      "y": -112299.59,
+      "z": -7956.5264
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn284_398",
+      "x": -227882.8,
+      "y": -113671.914,
+      "z": -6424.5303
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn285_401",
+      "x": -214215.03,
+      "y": -132186.75,
+      "z": -6505.75
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn286_404",
+      "x": -236139.58,
+      "y": -127601.484,
+      "z": -6495.114
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn287_407",
+      "x": -188854.44,
+      "y": -120685.51,
+      "z": -6492.1885
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn288_410",
+      "x": -186498.44,
+      "y": -142434.73,
+      "z": -6516.75
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn289_413",
+      "x": -171372.02,
+      "y": -122544.32,
+      "z": -6516.749
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn28_89",
+      "x": -171563.1,
+      "y": -5745.345,
+      "z": -6486.323
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn290_416",
+      "x": -112830.266,
+      "y": -84994.03,
+      "z": -6324.946
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn291_419",
+      "x": -182677.34,
+      "y": -71280.93,
+      "z": -6487.776
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn292_422",
+      "x": -176977.67,
+      "y": -85365.66,
+      "z": -6486.328
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn293_425",
+      "x": -198451.45,
+      "y": -63836.734,
+      "z": -6466.895
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn294_428",
+      "x": -223899.36,
+      "y": -71770.63,
+      "z": -6450.407
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn295_431",
+      "x": -234729.48,
+      "y": -78431.1,
+      "z": -6451.135
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn296_434",
+      "x": -208355.92,
+      "y": -97450.84,
+      "z": -6479.539
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn297_437",
+      "x": -268191.16,
+      "y": -66668.914,
+      "z": -7324.4893
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn298_440",
+      "x": -283170.66,
+      "y": -82156.11,
+      "z": -8134.92
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn299_443",
+      "x": -303715.72,
+      "y": -85913.664,
+      "z": -8112.77
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn29_92",
+      "x": -149105.38,
+      "y": -1963.2932,
+      "z": -6430.626
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn2_5",
+      "x": -137350.1,
+      "y": -86380.22,
+      "z": -6486.3315
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn300_446",
+      "x": -256931.9,
+      "y": -45130.848,
+      "z": -6144.7754
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn301_449",
+      "x": -326038.84,
+      "y": -63309.117,
+      "z": -7133.3066
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn302_452",
+      "x": -285760.5,
+      "y": -25676.568,
+      "z": -7113.878
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn303_455",
+      "x": -279948.9,
+      "y": 7527.95,
+      "z": -7101.0493
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn304_458",
+      "x": -268393.25,
+      "y": 16093.939,
+      "z": -7101.0483
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn305_461",
+      "x": -233011.11,
+      "y": -28383.307,
+      "z": -6499.5186
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn306_464",
+      "x": -242600.58,
+      "y": -30079.996,
+      "z": -6508.616
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn307_467",
+      "x": -260566.44,
+      "y": -9294.825,
+      "z": -7120.9307
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn308_470",
+      "x": -122142.484,
+      "y": -27309.225,
+      "z": -6267.2505
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn309_473",
+      "x": -116641.04,
+      "y": -13365.719,
+      "z": -5387.603
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn30_95",
+      "x": -157540.75,
+      "y": 6389.666,
+      "z": -6516.748
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn310_476",
+      "x": -212380,
+      "y": 566.2683,
+      "z": -6506.1177
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn311_479",
+      "x": -237386.56,
+      "y": 21062.31,
+      "z": -6020.423
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn312_482",
+      "x": -194310.78,
+      "y": 85473.38,
+      "z": -6043.892
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn313_485",
+      "x": -171293.94,
+      "y": 108661.016,
+      "z": -6043.1553
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn314_488",
+      "x": 350411.5,
+      "y": -109956.734,
+      "z": -248.89966
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn315_491",
+      "x": 362724.9,
+      "y": -102459.68,
+      "z": 2791.7402
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn316_42",
+      "x": -132331.92,
+      "y": 172826.14,
+      "z": -5506.732
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn317_45",
+      "x": -173884.47,
+      "y": 219349.81,
+      "z": -1613.2479
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn318_48",
+      "x": -88971.05,
+      "y": 334143.78,
+      "z": 2473.055
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn319_51",
+      "x": 35411.176,
+      "y": 243434.72,
+      "z": -14561.26
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn31_98",
+      "x": -219616.61,
+      "y": -10183.477,
+      "z": -6506.118
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn320_54",
+      "x": -31473.572,
+      "y": 156785.64,
+      "z": -5805.628
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn321_57",
+      "x": 75455.4,
+      "y": 152751.22,
+      "z": -14143.055
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn322_42",
+      "x": -104828.09,
+      "y": -272274.97,
+      "z": -1673.7587
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn323_45",
+      "x": 1281.671,
+      "y": -109553.64,
+      "z": -5354.0073
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn324_48",
+      "x": 21623.963,
+      "y": 34625.09,
+      "z": -5778.9463
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn32_101",
+      "x": -292320.44,
+      "y": -9245.055,
+      "z": -7101.0483
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn334_2",
+      "x": -86991.23,
+      "y": 196183.47,
+      "z": -2030.4164
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn335_5",
+      "x": -113365.56,
+      "y": 197582.77,
+      "z": -3134.4805
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn336_8",
+      "x": -133076.86,
+      "y": 205621.02,
+      "z": -590.83026
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn337_11",
+      "x": -121470.44,
+      "y": 228127.08,
+      "z": -4149.3726
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn338_14",
+      "x": -160695.86,
+      "y": 254455.23,
+      "z": -4565.5854
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn33_104",
+      "x": -270078.6,
+      "y": -30234.154,
+      "z": -6499.2236
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn340_20",
+      "x": -120235.484,
+      "y": 313375.28,
+      "z": 248.01086
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn341_23",
+      "x": -112179.54,
+      "y": 306348,
+      "z": -112.340454
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn342_26",
+      "x": -91005.23,
+      "y": 305631.8,
+      "z": -3093.0735
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn343_29",
+      "x": -25051.238,
+      "y": 293109.56,
+      "z": 984.93384
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn344_32",
+      "x": -1621.8915,
+      "y": 296869.34,
+      "z": -89.90393
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn345_35",
+      "x": 79578.555,
+      "y": 163282.39,
+      "z": -11868.938
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn346_38",
+      "x": 2805.8374,
+      "y": 222459.53,
+      "z": -11882.124
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn347_41",
+      "x": 27833.957,
+      "y": 232162.06,
+      "z": -11882.121
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn348_44",
+      "x": -15503.27,
+      "y": 207209.48,
+      "z": -11882.491
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn349_47",
+      "x": 49915.707,
+      "y": 266735.75,
+      "z": -6999.8936
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn34_107",
+      "x": -323613.47,
+      "y": -44464.414,
+      "z": -7133.305
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn350_50",
+      "x": 14757.089,
+      "y": 306673.97,
+      "z": -171.92798
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn351_53",
+      "x": -76578.03,
+      "y": 313314.12,
+      "z": -3549.4263
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn352_56",
+      "x": -166811,
+      "y": 232560.39,
+      "z": -5602.167
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn353_59",
+      "x": -156669.6,
+      "y": 178976.98,
+      "z": -5403.9146
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn354_62",
+      "x": -46012.23,
+      "y": 233188.64,
+      "z": -3614.4395
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn355_65",
+      "x": -37759.008,
+      "y": 237660.12,
+      "z": -4405.7896
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn356_68",
+      "x": -77423.33,
+      "y": 236944.97,
+      "z": -5490.212
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn357_71",
+      "x": -54044.008,
+      "y": 224664.81,
+      "z": -4039.3086
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn358_74",
+      "x": -26015.086,
+      "y": 230658.98,
+      "z": -2943.4998
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn35_110",
+      "x": -330557.66,
+      "y": -58529.984,
+      "z": -7133.308
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn360_2",
+      "x": 197332.8,
+      "y": 150115.03,
+      "z": 4775.5293
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn361",
+      "x": -85820.97,
+      "y": 242476.8,
+      "z": -4695.737
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn362",
+      "x": -87665.61,
+      "y": 235988.38,
+      "z": -4815.273
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn363_5",
+      "x": 192260.23,
+      "y": 161451.53,
+      "z": 6545.692
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn36_113",
+      "x": -314696.62,
+      "y": -31532.965,
+      "z": -7133.3066
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn37_116",
+      "x": -230482.95,
+      "y": 36821.1,
+      "z": -6158.8584
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn38_119",
+      "x": -217914.86,
+      "y": 61824.367,
+      "z": -6060.0107
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn39_122",
+      "x": -170540.11,
+      "y": 85488,
+      "z": -5915.446
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn3_8",
+      "x": -167583.9,
+      "y": -62606.92,
+      "z": -6442.6997
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn40_125",
+      "x": -178759.61,
+      "y": 114973.38,
+      "z": -6054.3247
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn41_128",
+      "x": -168211.52,
+      "y": 75227.555,
+      "z": -6147.9844
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn42_131",
+      "x": -173698.67,
+      "y": 33577.86,
+      "z": -5953.8945
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn43_134",
+      "x": -202392.48,
+      "y": 39408.32,
+      "z": -6054.727
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn44_137",
+      "x": -190627.16,
+      "y": 57570.117,
+      "z": -6149.086
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn45_140",
+      "x": -251507.64,
+      "y": 47377.734,
+      "z": -6130.3926
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn46_143",
+      "x": -306543.5,
+      "y": -8392.204,
+      "z": -7101.049
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn47_146",
+      "x": -322314.56,
+      "y": -19319.879,
+      "z": -7101.048
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn48_149",
+      "x": -285814.94,
+      "y": -104202.2,
+      "z": -7971.2715
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn49_152",
+      "x": -326457.62,
+      "y": -93007.266,
+      "z": -7971.273
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn4_11",
+      "x": -149142.94,
+      "y": -52622.03,
+      "z": -6439.7705
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn50_155",
+      "x": -254855.6,
+      "y": -133784.6,
+      "z": -6121.5015
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn51_5",
+      "x": 55707.305,
+      "y": -336401.22,
+      "z": 5915.26
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn52_8",
+      "x": 28243.95,
+      "y": -317923.97,
+      "z": 5359.1416
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn53_11",
+      "x": 11114.015,
+      "y": -332239.7,
+      "z": 5737.175
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn54_14",
+      "x": 32835.543,
+      "y": -300387.7,
+      "z": 4715.0723
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn55_17",
+      "x": 59269.93,
+      "y": -279328,
+      "z": 5122.093
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn56_20",
+      "x": 106406.086,
+      "y": -274507.78,
+      "z": 5952.256
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn57_23",
+      "x": 105095.06,
+      "y": -308207.22,
+      "z": 5172.8213
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn58_26",
+      "x": 94818.12,
+      "y": -323384.75,
+      "z": 4009.7344
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn59_29",
+      "x": 124191.305,
+      "y": -355649.5,
+      "z": 604.4448
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn5_14",
+      "x": -152683.08,
+      "y": -7591.677,
+      "z": -6430.6064
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn60_32",
+      "x": 142532.08,
+      "y": -319998.78,
+      "z": 2144.1714
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn61_35",
+      "x": 166253.2,
+      "y": -336749.53,
+      "z": -1498.5504
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn62_38",
+      "x": 189497.4,
+      "y": -337683.34,
+      "z": -2275.928
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn63_41",
+      "x": 231530.31,
+      "y": -259077.45,
+      "z": -5805.4263
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn64_44",
+      "x": 242678.33,
+      "y": -226582.61,
+      "z": -4026.1968
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn65_47",
+      "x": 236565.36,
+      "y": -194191.4,
+      "z": -2781.792
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn66_50",
+      "x": 228300.02,
+      "y": -169838.72,
+      "z": -5557.0327
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn67_53",
+      "x": 209981.98,
+      "y": -149294.22,
+      "z": -6406.785
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn68_56",
+      "x": 196210.84,
+      "y": -197536.8,
+      "z": -6925.3535
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn69_59",
+      "x": 184366.86,
+      "y": -232579.42,
+      "z": -7317.206
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn6_17",
+      "x": -200016.11,
+      "y": -185387.61,
+      "z": -5255.088
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn70_62",
+      "x": 157686.7,
+      "y": -259385.84,
+      "z": -7316.5723
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn71_65",
+      "x": 162413.03,
+      "y": -233689.42,
+      "z": -7318.7666
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn72_68",
+      "x": 178640.67,
+      "y": -222147.28,
+      "z": -7337.922
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn73_71",
+      "x": 187938.5,
+      "y": -182341.23,
+      "z": -7296.963
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn74_74",
+      "x": 106043.19,
+      "y": -125886.56,
+      "z": -7172.8726
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn75_77",
+      "x": 130683.86,
+      "y": -57350.355,
+      "z": -7280.1265
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn76_80",
+      "x": 165924.27,
+      "y": -125935.17,
+      "z": -7226.9795
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn77_83",
+      "x": 143295.77,
+      "y": -162043.7,
+      "z": -7032.516
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn78_86",
+      "x": 115969.46,
+      "y": -198398.92,
+      "z": -7179.129
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn79_89",
+      "x": 80603.28,
+      "y": -207211.53,
+      "z": -7308.519
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn7_20",
+      "x": -182218.73,
+      "y": -219157.81,
+      "z": -4126.4727
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn80_2",
+      "x": -96734.23,
+      "y": -171599.73,
+      "z": -120.020874
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn81_5",
+      "x": -67623.46,
+      "y": -227949.45,
+      "z": -1357.0363
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn82_8",
+      "x": -44364.082,
+      "y": -251429.39,
+      "z": -2509.6182
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn83_11",
+      "x": -10007.79,
+      "y": -248538.17,
+      "z": -650.2798
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn84_14",
+      "x": -12631.252,
+      "y": -208422.12,
+      "z": -1468.4614
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn85_17",
+      "x": -9315.085,
+      "y": -183029.84,
+      "z": -231.776
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn86_20",
+      "x": 21889.979,
+      "y": -169838.44,
+      "z": -4216.936
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn87_23",
+      "x": -30903.113,
+      "y": -154007.84,
+      "z": -4750.693
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn88_26",
+      "x": -50402.168,
+      "y": -135248.16,
+      "z": -2710.9592
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn89_29",
+      "x": -86422.55,
+      "y": -96512.09,
+      "z": -5219.3545
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn8_23",
+      "x": -115463.016,
+      "y": -264839.5,
+      "z": -1468.5803
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn90_32",
+      "x": -107956.484,
+      "y": -107916.98,
+      "z": -3777.8982
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn91_35",
+      "x": -133770.27,
+      "y": -127385.02,
+      "z": -4009.4912
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn92_38",
+      "x": -165505.44,
+      "y": -151357.72,
+      "z": -3308.2378
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn93_41",
+      "x": -139371.39,
+      "y": -182843.39,
+      "z": -2513.337
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn94_44",
+      "x": -62247.668,
+      "y": -139671.47,
+      "z": -1880.678
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn95_47",
+      "x": -38895.156,
+      "y": -93993.766,
+      "z": -1363.903
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn96_50",
+      "x": -50484.03,
+      "y": -40115.184,
+      "z": -3251.8848
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn97_53",
+      "x": -79376.664,
+      "y": -26957.988,
+      "z": -1460.0162
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn98_56",
+      "x": -72155.266,
+      "y": -9939.795,
+      "z": -95.30713
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn99_59",
+      "x": -41782.426,
+      "y": -622.2063,
+      "z": -2426.2793
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn9_26",
+      "x": -108098.19,
+      "y": -224916.58,
+      "z": -1652.9014
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_2",
+      "x": -144510.47,
+      "y": -69524.8,
+      "z": -6445.2646
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_0",
+      "x": -39396.227,
+      "y": 28554.658,
+      "z": -2001.3046
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_1",
+      "x": -217110.84,
+      "y": -318892.6,
+      "z": 1138.9172
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_10",
+      "x": -30345.6,
+      "y": 45017.14,
+      "z": -2005.0691
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_11",
+      "x": -13642.892,
+      "y": 197942.1,
+      "z": -14608.479
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_12",
+      "x": -40064.39,
+      "y": 39589.277,
+      "z": -2001.9552
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_13",
+      "x": -261376.78,
+      "y": -218433.44,
+      "z": -2166.0315
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_14",
+      "x": -29061.295,
+      "y": 37034.082,
+      "z": -1999.7557
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_15",
+      "x": -261472.78,
+      "y": -264541.25,
+      "z": -9.530144
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_16",
+      "x": -232506.52,
+      "y": -317861.62,
+      "z": 1140.617
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_17",
+      "x": 31485.713,
+      "y": 263468.03,
+      "z": -8600.056
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_18",
+      "x": -248510.5,
+      "y": -216332.66,
+      "z": -2138.648
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_19",
+      "x": -261705.95,
+      "y": -298519.5,
+      "z": 2352.0938
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_2",
+      "x": -245007.67,
+      "y": -307029.8,
+      "z": 2070.6453
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_20",
+      "x": 70609.41,
+      "y": 194096.19,
+      "z": -13919.436
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_21",
+      "x": -35016.25,
+      "y": 35600.914,
+      "z": -2004.6508
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_22",
+      "x": -12422.53,
+      "y": 52137.344,
+      "z": -2217.5745
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_23",
+      "x": -267852.3,
+      "y": -246411.8,
+      "z": -487.92847
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_24",
+      "x": 69914.37,
+      "y": 159179.58,
+      "z": -14136.007
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_25",
+      "x": -52558.074,
+      "y": 162912.48,
+      "z": -6493.187
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_26",
+      "x": -252665.23,
+      "y": -213618.39,
+      "z": -2141.2537
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_27",
+      "x": 15606.934,
+      "y": 227596.9,
+      "z": -14621.258
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_28",
+      "x": -18985.209,
+      "y": 50406.76,
+      "z": -2028.404
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_29",
+      "x": -262198.12,
+      "y": -221576.1,
+      "z": -2163.871
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_3",
+      "x": -293026.34,
+      "y": -284231.84,
+      "z": 2392.821
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_30",
+      "x": -32704.785,
+      "y": 43981.3,
+      "z": -2003.7438
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_31",
+      "x": 3292.0513,
+      "y": 250044.95,
+      "z": -12346.884
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_32",
+      "x": 38413.066,
+      "y": 243044.3,
+      "z": -14622.808
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_33",
+      "x": -226789.58,
+      "y": -313941.34,
+      "z": 1144.0966
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_34",
+      "x": -223784.98,
+      "y": -315533.97,
+      "z": 1142.8531
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_35",
+      "x": 57722.4,
+      "y": 145629.08,
+      "z": -12869.834
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_36",
+      "x": -38504.062,
+      "y": 195709.95,
+      "z": -5834.378
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_37",
+      "x": -269253.6,
+      "y": -273278.44,
+      "z": 55.842583
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_38",
+      "x": 7319.3833,
+      "y": 197548.95,
+      "z": -13260.496
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_39",
+      "x": -55264.31,
+      "y": 189121.44,
+      "z": -5755.8955
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_4",
+      "x": 44686.855,
+      "y": 163538.81,
+      "z": -13228.783
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_5",
+      "x": -130445.21,
+      "y": 167767.73,
+      "z": -5709.597
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_6",
+      "x": -30777.154,
+      "y": 48347.527,
+      "z": -2002.9652
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_7",
+      "x": -37482.496,
+      "y": 36378.98,
+      "z": -2007.4169
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_8",
+      "x": -278785.9,
+      "y": -287764.7,
+      "z": 2377.4683
+    },
+    {
+      "layer": "veins",
+      "name": "BP_DeepOreDepositSpawn_C_9",
+      "x": 57120.625,
+      "y": 278762.38,
+      "z": -8975.6
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser10_32",
+      "x": -267696.47,
+      "y": -255635.19,
+      "z": -165.19727
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser11_35",
+      "x": -120650.25,
+      "y": -318848.53,
+      "z": -1664.456
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser12_38",
+      "x": -132631.39,
+      "y": -224158.14,
+      "z": -1676.1892
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser13_2",
+      "x": 167286.38,
+      "y": -190675.39,
+      "z": -7299.0205
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser14_5",
+      "x": 126379.47,
+      "y": -209417.77,
+      "z": -7250.2397
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser15_8",
+      "x": 136604.44,
+      "y": -144556.7,
+      "z": -7132.931
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser16_11",
+      "x": 118900.74,
+      "y": -80664.35,
+      "z": -6966.569
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser17_14",
+      "x": 124629.85,
+      "y": -104264.89,
+      "z": -7053.126
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser18_17",
+      "x": 122433.625,
+      "y": -128780.99,
+      "z": -6799.6475
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser19_20",
+      "x": 101899.086,
+      "y": -173132.17,
+      "z": -7315.5005
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser20_5",
+      "x": -34734.902,
+      "y": -66402.336,
+      "z": -2565
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser21_8",
+      "x": 39551.477,
+      "y": -24472.27,
+      "z": -5410.433
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser22_11",
+      "x": -46232.58,
+      "y": -136092.05,
+      "z": -2860.7644
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser23_14",
+      "x": -97050.76,
+      "y": -179419.33,
+      "z": 54
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser24_17",
+      "x": -8889.006,
+      "y": -252785.5,
+      "z": -630.28467
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser25_20",
+      "x": -4882.975,
+      "y": 58501.72,
+      "z": -2570.871
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser26_23",
+      "x": -38174.99,
+      "y": 79630.87,
+      "z": -5792.616
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser27_26",
+      "x": -80127.14,
+      "y": 31595.969,
+      "z": -4685.8604
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser28_29",
+      "x": -134321.69,
+      "y": 36561.062,
+      "z": -3445.3296
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser29_38",
+      "x": -84714.484,
+      "y": 54581.668,
+      "z": -1990
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser2_5",
+      "x": -180477.7,
+      "y": -70061.13,
+      "z": -6464.905
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser3_8",
+      "x": -239992.78,
+      "y": -107710.41,
+      "z": -6284.3545
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser4_11",
+      "x": -304738.1,
+      "y": -112373.414,
+      "z": -8048.977
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser5_14",
+      "x": -265549.1,
+      "y": -9188.637,
+      "z": -7102.658
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser6_17",
+      "x": -326091.2,
+      "y": -44186.973,
+      "z": -7133.3076
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser7_20",
+      "x": -232102.5,
+      "y": 18496.188,
+      "z": -6020.055
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser8_23",
+      "x": -210064.3,
+      "y": 54134.016,
+      "z": -6112.9907
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser9_26",
+      "x": -313583.94,
+      "y": -231066.3,
+      "z": 2420.9656
+    },
+    {
+      "layer": "enzyme",
+      "name": "BP_EnzymeGeyser_2",
+      "x": -145270.3,
+      "y": -65134.4,
+      "z": -6419.8857
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser",
+      "x": 18949.36,
+      "y": -340061.75,
+      "z": 3832.039
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser10",
+      "x": 240529.81,
+      "y": -205110.02,
+      "z": -3768.6514
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser11",
+      "x": 283692.56,
+      "y": -329700.97,
+      "z": 10832.276
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser12",
+      "x": 283984.25,
+      "y": -330795.94,
+      "z": 10832.299
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser13",
+      "x": 285097.84,
+      "y": -330157.03,
+      "z": 10832.297
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser14",
+      "x": 285774.94,
+      "y": -330746.2,
+      "z": 10832.275
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser15",
+      "x": 309322.2,
+      "y": -162158.34,
+      "z": 1445.4524
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser16",
+      "x": 309593.9,
+      "y": -163351.11,
+      "z": 1450.8441
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser17",
+      "x": 310706.38,
+      "y": -162612.58,
+      "z": 1441.8306
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser18",
+      "x": 362576.22,
+      "y": -152586.86,
+      "z": -272.00787
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser19",
+      "x": 361298.62,
+      "y": -151987.8,
+      "z": -272.00586
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser2",
+      "x": 20567.967,
+      "y": -339808.84,
+      "z": 3820.0652
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser20",
+      "x": 361320.9,
+      "y": -153372.7,
+      "z": -272.00098
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser21",
+      "x": 360895.9,
+      "y": -154344.19,
+      "z": -272.0088
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser3",
+      "x": 18646.727,
+      "y": -338943.88,
+      "z": 3803.4834
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser4",
+      "x": 203616.88,
+      "y": -320331.94,
+      "z": -1558.6306
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser5",
+      "x": 202114.19,
+      "y": -319614,
+      "z": -1558.6335
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser6",
+      "x": 201377.33,
+      "y": -320954.75,
+      "z": -1558.6521
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser7",
+      "x": 203309.69,
+      "y": -319323.22,
+      "z": -1558.6562
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser8",
+      "x": 242032.86,
+      "y": -205671.48,
+      "z": -3767.228
+    },
+    {
+      "layer": "oil",
+      "name": "BP_OilGeyser9",
+      "x": 242165.31,
+      "y": -204411.52,
+      "z": -3768.6362
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab100_2",
+      "x": 129267.305,
+      "y": 219699.38,
+      "z": -6277.226
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab101_2",
+      "x": 351155.56,
+      "y": 229153.94,
+      "z": -5674.722
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab102_7",
+      "x": 346197.84,
+      "y": 226362.39,
+      "z": -7181.7236
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab103",
+      "x": 286052.47,
+      "y": 63665.285,
+      "z": -7445.079
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab104",
+      "x": 120361.43,
+      "y": 144648.77,
+      "z": -7870.2676
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab75_15",
+      "x": 330315.34,
+      "y": -108654.46,
+      "z": -1340.7869
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab77_79",
+      "x": 324228.53,
+      "y": -92564.84,
+      "z": -3751.843
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab78_2",
+      "x": 354356.25,
+      "y": -67438.78,
+      "z": -3468.4011
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab79",
+      "x": 227397.66,
+      "y": -123675.15,
+      "z": -3674.1086
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab80",
+      "x": 175870.17,
+      "y": -13309.951,
+      "z": -851.151
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab81",
+      "x": 197943.36,
+      "y": -14030.78,
+      "z": -7923.2373
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab82",
+      "x": 151305.84,
+      "y": 3176.9612,
+      "z": -4448.7183
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab83",
+      "x": 265960.44,
+      "y": -33345.516,
+      "z": -8665.669
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab84",
+      "x": 297296.47,
+      "y": -39302.82,
+      "z": -7888.354
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab85",
+      "x": 198879.22,
+      "y": 60168.73,
+      "z": -2640.0178
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab86",
+      "x": 341977.47,
+      "y": 85446.695,
+      "z": -7575.2646
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab87",
+      "x": 384502.7,
+      "y": 63539.484,
+      "z": -7135.65
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab89",
+      "x": 359716.5,
+      "y": 202476.28,
+      "z": -7920.3677
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab90",
+      "x": 312725.62,
+      "y": 160865.81,
+      "z": -9919.69
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab91",
+      "x": 286546.66,
+      "y": 180607.69,
+      "z": -9760.882
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab92_2",
+      "x": 199384.84,
+      "y": 149162.47,
+      "z": 4783.6455
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab93_20",
+      "x": 150144.34,
+      "y": 153267.92,
+      "z": -8568.183
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab94_26",
+      "x": 152389.72,
+      "y": 243309.94,
+      "z": -9542.738
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab95",
+      "x": 272367.53,
+      "y": 219721.95,
+      "z": -5608.0845
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab96",
+      "x": 369183.4,
+      "y": 91742.234,
+      "z": -8819.566
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab97",
+      "x": 342872,
+      "y": 193499.58,
+      "z": -8931.584
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab98",
+      "x": 119385.47,
+      "y": 149972.27,
+      "z": -7952.3354
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab99_2",
+      "x": 202145.64,
+      "y": -28938.744,
+      "z": -5286.314
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab45",
+      "x": -248600.17,
+      "y": -320611.7,
+      "z": 756.85364
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_0",
+      "x": -251121.77,
+      "y": -168556.47,
+      "z": -5927.067
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_1",
+      "x": -154371.72,
+      "y": 8474.299,
+      "z": -6461.901
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_10",
+      "x": -242809.72,
+      "y": -255181.98,
+      "z": -3156.801
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_11",
+      "x": -306158.56,
+      "y": -162272.11,
+      "z": -7923.4746
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_12",
+      "x": -68053.8,
+      "y": -269553.44,
+      "z": -1705.6458
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_13",
+      "x": -357981.8,
+      "y": -149077.62,
+      "z": -8014.887
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_14",
+      "x": -341500.28,
+      "y": -69079.98,
+      "z": -6734.594
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_15",
+      "x": -321734.97,
+      "y": -309328.84,
+      "z": -3920.9617
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_16",
+      "x": -327381.12,
+      "y": -301578.38,
+      "z": -2488.5657
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_17",
+      "x": -282185.4,
+      "y": -142522.39,
+      "z": -7894.1333
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_18",
+      "x": -315535.2,
+      "y": -91562.09,
+      "z": -7927.8457
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_19",
+      "x": -302088.28,
+      "y": -76465.95,
+      "z": -8065.774
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_2",
+      "x": -325010.56,
+      "y": -306902.97,
+      "z": -523.57544
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_20",
+      "x": -341099.78,
+      "y": -39343.15,
+      "z": -6878.0503
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_21",
+      "x": -266716.22,
+      "y": -203018.78,
+      "z": -4743.594
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_22",
+      "x": -301971.53,
+      "y": -50079.06,
+      "z": -6937.701
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_23",
+      "x": -279357.22,
+      "y": -35038.402,
+      "z": -7039.749
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_24",
+      "x": -268058.16,
+      "y": 23895.826,
+      "z": -6892.7144
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_25",
+      "x": -250331.16,
+      "y": 32410.67,
+      "z": -5991.0293
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_26",
+      "x": -244822.69,
+      "y": 53160.797,
+      "z": -5892.8237
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_27",
+      "x": -204734.39,
+      "y": -514.64355,
+      "z": -6367.51
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_28",
+      "x": -175546.62,
+      "y": 28761.566,
+      "z": -5680.663
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_29",
+      "x": -205239.02,
+      "y": 98672.82,
+      "z": -5990.2974
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_3",
+      "x": -223629.61,
+      "y": -45113.19,
+      "z": -6366.6055
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_30",
+      "x": -197968.5,
+      "y": -13118.2705,
+      "z": -6257.7207
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_31",
+      "x": -273633,
+      "y": -108178.84,
+      "z": -7263.1353
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_32",
+      "x": -325403.62,
+      "y": -211934.34,
+      "z": 766.4102
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_33",
+      "x": -258165.61,
+      "y": -62329.492,
+      "z": -6418.888
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_34",
+      "x": -241159.61,
+      "y": -168159.45,
+      "z": -5291.3413
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_35",
+      "x": -160456.25,
+      "y": -54315.746,
+      "z": -6464.6846
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_36",
+      "x": -320912.84,
+      "y": -246235.23,
+      "z": 2419.2666
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_37",
+      "x": -125525.63,
+      "y": -312483.38,
+      "z": -1255.6217
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_38",
+      "x": -316581.34,
+      "y": -317516.8,
+      "z": -4169.6387
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_39",
+      "x": -268350.1,
+      "y": -319789.72,
+      "z": -488.6594
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_4",
+      "x": -115456.09,
+      "y": -59440.23,
+      "z": -6257.0737
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_40",
+      "x": -217640.8,
+      "y": -344142,
+      "z": 1191.5007
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_41",
+      "x": -189295.84,
+      "y": -257802.23,
+      "z": -3641.842
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_42",
+      "x": -149369.12,
+      "y": -325871.44,
+      "z": -1668.9973
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_43",
+      "x": -209482.62,
+      "y": -247604.52,
+      "z": -5569.164
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_44",
+      "x": -119756.07,
+      "y": -31493.887,
+      "z": -5736.1934
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_5",
+      "x": -181468.75,
+      "y": -187744.47,
+      "z": -5017.6963
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_6",
+      "x": -256484.56,
+      "y": -84558.86,
+      "z": -6094.9756
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_7",
+      "x": -175105.48,
+      "y": -133335.92,
+      "z": -6384.3076
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_8",
+      "x": -72995.016,
+      "y": -313764.38,
+      "z": -1655.1024
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_9",
+      "x": -96935.72,
+      "y": -330624.1,
+      "z": -1671.5919
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab45",
+      "x": 42474.664,
+      "y": -157703.16,
+      "z": 381.28235
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab68",
+      "x": -111758.05,
+      "y": 14092.083,
+      "z": -2728.7783
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab69",
+      "x": 21143.049,
+      "y": 62356.78,
+      "z": -5827.1616
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_10",
+      "x": -83570,
+      "y": -12477.405,
+      "z": -1093.9382
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_11",
+      "x": -102355.71,
+      "y": 40721.754,
+      "z": -4510.812
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_12",
+      "x": -37450.715,
+      "y": 28057.293,
+      "z": -1950.9109
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_13",
+      "x": 43348.145,
+      "y": 47639.38,
+      "z": -5795.909
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_14",
+      "x": -29647.574,
+      "y": 70987.46,
+      "z": -5129.591
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_15",
+      "x": -137407.27,
+      "y": 34459.758,
+      "z": -3458.5178
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_16",
+      "x": 7099.2725,
+      "y": -258622.53,
+      "z": 2831.2356
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_17",
+      "x": 86619.09,
+      "y": -93725.89,
+      "z": -4069.5474
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_18",
+      "x": 67500.5,
+      "y": -79952.336,
+      "z": -4088.6162
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_19",
+      "x": -7377.651,
+      "y": -247396.19,
+      "z": -3690.174
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_2",
+      "x": -140020.3,
+      "y": 59414.71,
+      "z": -2538.2795
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_20",
+      "x": 8842.471,
+      "y": -236502.42,
+      "z": -2438.2344
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_21",
+      "x": -117889.375,
+      "y": -109892.06,
+      "z": -3911.4053
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_22",
+      "x": -6467.2485,
+      "y": 26154.035,
+      "z": -5414.554
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_23",
+      "x": -105853.234,
+      "y": 31168.951,
+      "z": -3579.454
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_24",
+      "x": -22704.459,
+      "y": -279524.5,
+      "z": -5001.5757
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_25",
+      "x": -40961.13,
+      "y": -281286.78,
+      "z": -4794.979
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_26",
+      "x": -78345.195,
+      "y": -37879.566,
+      "z": -5880.794
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_27",
+      "x": -83696.98,
+      "y": -36114.375,
+      "z": -4932.7456
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_28",
+      "x": -12726.25,
+      "y": -186166.77,
+      "z": -4010.664
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_29",
+      "x": 2147.257,
+      "y": -162356.83,
+      "z": -3626.0356
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_3",
+      "x": -50380.656,
+      "y": -48414.37,
+      "z": -5168.9385
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_30",
+      "x": 32435.164,
+      "y": -192887.83,
+      "z": -2133.0144
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_31",
+      "x": 31577.164,
+      "y": -149110.83,
+      "z": -2594.0144
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_32",
+      "x": 16391.45,
+      "y": -124745.586,
+      "z": -5361.575
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_33",
+      "x": -37108.465,
+      "y": 7271.034,
+      "z": -3618.9385
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_34",
+      "x": 56159.883,
+      "y": -137068,
+      "z": 1019.50085
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_35",
+      "x": 1789.7118,
+      "y": 10099.118,
+      "z": -4489.9385
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_36",
+      "x": 38381.867,
+      "y": -185026.48,
+      "z": -5386.443
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_4",
+      "x": -16090.408,
+      "y": -206857.25,
+      "z": -2571.3894
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_5",
+      "x": 81744.72,
+      "y": -68668.33,
+      "z": -2324.2688
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_6",
+      "x": -76188.28,
+      "y": 71553.914,
+      "z": -2248.441
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_7",
+      "x": -95964.84,
+      "y": -233029.22,
+      "z": -2324.2754
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_8",
+      "x": -148163.58,
+      "y": -156130.88,
+      "z": -5059.778
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_9",
+      "x": 98290.984,
+      "y": -4536.9297,
+      "z": -2304.9878
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab49_77",
+      "x": 337786.12,
+      "y": -220811.73,
+      "z": 1434.198
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab75",
+      "x": 103282.445,
+      "y": -117706.82,
+      "z": -7242.046
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab76_76",
+      "x": 367698.62,
+      "y": -119948.914,
+      "z": -242.94543
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab88_76",
+      "x": 318153.22,
+      "y": -109813.42,
+      "z": -3686.5396
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_0",
+      "x": 154718.55,
+      "y": -288191.28,
+      "z": 736.51306
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_1",
+      "x": 142229.27,
+      "y": -271321.75,
+      "z": -6047.094
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_10",
+      "x": 211342.64,
+      "y": -363887.06,
+      "z": 2308.8286
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_11",
+      "x": 34843.426,
+      "y": -350171.34,
+      "z": 4101.948
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_12",
+      "x": 111701.02,
+      "y": -367169.3,
+      "z": 1193.4121
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_13",
+      "x": 177843.2,
+      "y": -331267.6,
+      "z": -2825.3293
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_14",
+      "x": 148425.81,
+      "y": -312195.25,
+      "z": 1423.2434
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_15",
+      "x": 228722.97,
+      "y": -229223.36,
+      "z": -4890.9033
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_16",
+      "x": 168716.64,
+      "y": -355996.34,
+      "z": -656.8345
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_17",
+      "x": 170353.17,
+      "y": -317018.7,
+      "z": -857.97095
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_18",
+      "x": 162124.53,
+      "y": -322213,
+      "z": -841.98267
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_19",
+      "x": 57776.977,
+      "y": -338109.1,
+      "z": 3940.668
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_2",
+      "x": 238011.64,
+      "y": -179826.89,
+      "z": -4117.135
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_20",
+      "x": 74833.27,
+      "y": -349682.38,
+      "z": 3711.5566
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_21",
+      "x": 92821.31,
+      "y": -319796.1,
+      "z": 4083.6167
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_22",
+      "x": 138863.39,
+      "y": -321550,
+      "z": 2172.3682
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_23",
+      "x": 43760.145,
+      "y": -287516.62,
+      "z": 3728.9001
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_24",
+      "x": 6480.5015,
+      "y": -320533.66,
+      "z": 7098.918
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_25",
+      "x": 107414.984,
+      "y": -350747.6,
+      "z": 2968.2632
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_26",
+      "x": 118172.14,
+      "y": -334503.72,
+      "z": 2345.0103
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_27",
+      "x": 168335.02,
+      "y": -114495.34,
+      "z": -14169.828
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_28",
+      "x": 77582.39,
+      "y": -203885.73,
+      "z": -6963.9854
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_29",
+      "x": 113543.68,
+      "y": -232663.1,
+      "z": -6952.5264
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_3",
+      "x": 242077.73,
+      "y": -233350.02,
+      "z": -5023.713
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_30",
+      "x": 200612.47,
+      "y": -222535.06,
+      "z": -6719.67
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_31",
+      "x": 380555.53,
+      "y": -160969.33,
+      "z": -33.864258
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_32",
+      "x": 165139.66,
+      "y": -225629.38,
+      "z": -6968.7676
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_33",
+      "x": 152601.92,
+      "y": -58807.812,
+      "z": -7068.631
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_34",
+      "x": 186747.53,
+      "y": -87465.484,
+      "z": -6039.9014
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_35",
+      "x": 188346.55,
+      "y": -140370.86,
+      "z": -7230.0796
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_36",
+      "x": 116374.24,
+      "y": -54317.31,
+      "z": -6850.957
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_37",
+      "x": 22515.717,
+      "y": -312975.7,
+      "z": 3976.9912
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_38",
+      "x": 50334.25,
+      "y": -304342.53,
+      "z": 4300.187
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_39",
+      "x": 149219.81,
+      "y": -229852.92,
+      "z": -7250.5127
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_4",
+      "x": 208639.6,
+      "y": -297707.1,
+      "z": -5758.6597
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_40",
+      "x": 200767.8,
+      "y": -199620.61,
+      "z": -6763.863
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_41",
+      "x": 173099.36,
+      "y": -163163.38,
+      "z": -6745.8423
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_42",
+      "x": 337295.97,
+      "y": -300632.88,
+      "z": 10002.646
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_43",
+      "x": 191743.62,
+      "y": -167652.08,
+      "z": -7172.919
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_44",
+      "x": 91675.71,
+      "y": -125999.73,
+      "z": -5027.383
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_45",
+      "x": 91312.24,
+      "y": -154949.25,
+      "z": -7130.194
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_46",
+      "x": 104110.125,
+      "y": -225084.89,
+      "z": -6668.8135
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_47",
+      "x": 156387.47,
+      "y": -102807.02,
+      "z": -7203.7974
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_48",
+      "x": 271171.72,
+      "y": -350540,
+      "z": 8602.732
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_5",
+      "x": 214261,
+      "y": -292960.2,
+      "z": -6161.0527
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_50",
+      "x": 281849.53,
+      "y": -292617.34,
+      "z": 8713.791
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_51",
+      "x": 305259.2,
+      "y": -290461.22,
+      "z": 7734.7544
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_52",
+      "x": 215218.25,
+      "y": -351828.9,
+      "z": 288.99344
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_53",
+      "x": 262417.25,
+      "y": -300763.22,
+      "z": 8150.046
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_54",
+      "x": 223956.17,
+      "y": -372459.03,
+      "z": 2464.0203
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_55",
+      "x": 221901.25,
+      "y": -374958.06,
+      "z": 2440.3682
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_56",
+      "x": 363507.34,
+      "y": -246432.08,
+      "z": 2937.0059
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_57",
+      "x": 299154.16,
+      "y": -255672.53,
+      "z": 5216.494
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_58",
+      "x": 312765.66,
+      "y": -313933.94,
+      "z": 10182.002
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_59",
+      "x": 373087.72,
+      "y": -196993.28,
+      "z": 481.52216
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_6",
+      "x": 210514.72,
+      "y": -286918.5,
+      "z": -5518.3076
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_60",
+      "x": 239478.03,
+      "y": -277865.94,
+      "z": -5021.1387
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_61",
+      "x": 253936.78,
+      "y": -332801.7,
+      "z": 6695.1865
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_62",
+      "x": 273531.78,
+      "y": -231422.08,
+      "z": 4056.1294
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_63",
+      "x": 369585.2,
+      "y": -146992.3,
+      "z": -347.59137
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_64",
+      "x": 283880.84,
+      "y": -167886.58,
+      "z": 917.40015
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_65",
+      "x": 38668.53,
+      "y": -249645.66,
+      "z": 1989.9536
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_66",
+      "x": 27209.504,
+      "y": -255995.2,
+      "z": 2962.2764
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_67",
+      "x": 32586.72,
+      "y": -255360.8,
+      "z": 1793.3192
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_68",
+      "x": 209288.12,
+      "y": -337862.1,
+      "z": 587.37836
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_69",
+      "x": 309792.28,
+      "y": -188668.66,
+      "z": 1480.869
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_7",
+      "x": 194426.86,
+      "y": -287656.9,
+      "z": -3205.4287
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_70",
+      "x": 342646.2,
+      "y": -154041.61,
+      "z": 769.48364
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_71",
+      "x": 273977.5,
+      "y": -212339.47,
+      "z": 2226.3464
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_72",
+      "x": 225367.16,
+      "y": -197550.14,
+      "z": -3986.372
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_73",
+      "x": 87401.83,
+      "y": -259266.64,
+      "z": 3653.5396
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_74",
+      "x": 213490.9,
+      "y": -394575.2,
+      "z": 4886.6064
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_8",
+      "x": 219262.17,
+      "y": -155593.92,
+      "z": -6837.99
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_9",
+      "x": 194272.2,
+      "y": -343547.12,
+      "z": -2735.3232
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab2_4",
+      "x": -215515,
+      "y": 129838.445,
+      "z": -5979.9375
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab3",
+      "x": -226188.42,
+      "y": 133305.31,
+      "z": -6045.6504
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab37",
+      "x": 2944.1882,
+      "y": 90854.45,
+      "z": -4542.2334
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab38_5",
+      "x": 81435.34,
+      "y": 160495,
+      "z": -11826.359
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab39",
+      "x": 78956.11,
+      "y": 197430.8,
+      "z": -11846.518
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab4",
+      "x": -219832.34,
+      "y": 129067.375,
+      "z": -7352.5684
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab40",
+      "x": 78974.336,
+      "y": 219603.7,
+      "z": -11848.672
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab41",
+      "x": -41893.59,
+      "y": 228049.5,
+      "z": -3616.3179
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab42",
+      "x": -18776.34,
+      "y": 149796.14,
+      "z": -4603.1045
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab43",
+      "x": 2568.53,
+      "y": 128966.07,
+      "z": -11853.377
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab44",
+      "x": -98639.695,
+      "y": 170832.05,
+      "z": -3971.9856
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab45",
+      "x": -112151.05,
+      "y": 272606.7,
+      "z": -6095.7085
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab46",
+      "x": -171402.92,
+      "y": 177993.66,
+      "z": -5751.456
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab47",
+      "x": -132494.6,
+      "y": 248428,
+      "z": -4350.3105
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab48",
+      "x": -63530.688,
+      "y": 234908.2,
+      "z": -4187.7476
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab49",
+      "x": -23457.904,
+      "y": 232092.89,
+      "z": -2921.0295
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab50",
+      "x": -68537.36,
+      "y": 243520.08,
+      "z": -6193.0347
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab51",
+      "x": -33342.363,
+      "y": 380051,
+      "z": -3895.0479
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab52",
+      "x": 16831.805,
+      "y": 364840.25,
+      "z": -514.8266
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab53",
+      "x": 59889.555,
+      "y": 312331.8,
+      "z": -4861.8843
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab54",
+      "x": 75595.63,
+      "y": 273263.03,
+      "z": -6969.701
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab55",
+      "x": -99407.56,
+      "y": 366802.97,
+      "z": -6223.9375
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab56",
+      "x": -150187.47,
+      "y": 346913.34,
+      "z": -5356.5234
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab57",
+      "x": -170648.2,
+      "y": 322372.28,
+      "z": -7603.841
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab58",
+      "x": -77097.49,
+      "y": 200286.55,
+      "z": -4556.7427
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab59",
+      "x": -131122.6,
+      "y": 195304.31,
+      "z": -4904.8047
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab60",
+      "x": -177780.98,
+      "y": 239124.6,
+      "z": -5586.8867
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab61",
+      "x": -142604.17,
+      "y": 160711.38,
+      "z": -5671.977
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab62",
+      "x": 34612.582,
+      "y": 114444.96,
+      "z": -11828.078
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab63",
+      "x": -74293.11,
+      "y": 164001.16,
+      "z": -4617.2256
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab64",
+      "x": 68362.586,
+      "y": 195891.38,
+      "z": -13977.52
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab65",
+      "x": -166854.98,
+      "y": 222620.38,
+      "z": -5586.8867
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab66",
+      "x": 12654.125,
+      "y": 251403.02,
+      "z": -11827.08
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab67",
+      "x": -10896.683,
+      "y": 335323.22,
+      "z": -2366.8208
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab68",
+      "x": -22324.924,
+      "y": 295558.72,
+      "z": 2460.5422
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab69",
+      "x": -21195.791,
+      "y": 317008.62,
+      "z": 3258.4915
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab70",
+      "x": -41880.668,
+      "y": 161068.92,
+      "z": -5828.434
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab71",
+      "x": 56983.184,
+      "y": 262107.88,
+      "z": -8849.203
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab72",
+      "x": -10821.932,
+      "y": 190640.25,
+      "z": -13614.532
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab73",
+      "x": 96860.52,
+      "y": 116717.61,
+      "z": -7155.118
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab74_2",
+      "x": 4290.394,
+      "y": 253165.12,
+      "z": -12276.305
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab75",
+      "x": 6381.4272,
+      "y": 86946.375,
+      "z": -5677.228
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab76",
+      "x": -35653.215,
+      "y": 238885.92,
+      "z": -4698.308
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab77",
+      "x": -91956.31,
+      "y": 251744.84,
+      "z": -5705.0864
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab78",
+      "x": -83437.61,
+      "y": 236265.28,
+      "z": -4963.1064
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_0",
+      "x": -29157.23,
+      "y": 110719.79,
+      "z": -5797.118
+    },
+    {
+      "layer": "caves",
+      "name": "BP_CavePrefab_C_1",
+      "x": -120933.53,
+      "y": 116667.24,
+      "z": -5805.178
+    }
+  ]
+}

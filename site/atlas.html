@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icarus Atlas - Caves, Deep Veins and Exotics</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<meta name="theme-color" content="#0b0f14">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="prov-body">
+<header id="topbar">
+  <a class="crumb" href="../" title="Icarus Toolkit home">⌂ Toolkit</a>
+  <div id="logo"><span class="logo-icarus">ICARUS</span><span class="logo-sep">//</span><span class="logo-sub">ATLAS</span></div>
+  <nav class="prov-nav">
+    <a href="index.html">⛏ Breakdown</a>
+    <a href="provisions.html">🥧 Provisions</a>
+    <a href="stables.html">🐾 Stables</a>
+    <a href="https://github.com/jampick/icarus-toolkit/issues/new" target="_blank" rel="noopener" title="Found a bug? Open an issue">🐞</a>
+  </nav>
+</header>
+
+<main class="prov-main">
+  <p class="prov-intro">Where things are: cave systems, possible deep ore veins, geysers and
+  exotic spawn squares for every open-world map, pulled straight from the game files.</p>
+
+  <div id="atlas-maps"></div>
+  <div id="atlas-layers"></div>
+  <p class="prov-note" id="atlas-note">Deep vein markers are the game's possible spawn points;
+  which ore each one rolls is decided per prospect. Grid calibration is in beta: if a marker
+  looks one square off, tell us which one.</p>
+
+  <div id="atlas-wrap">
+    <svg id="atlas-svg" role="img" aria-label="Map grid"></svg>
+    <div id="atlas-tip" class="hidden"></div>
+  </div>
+  <div id="atlas-cellinfo" class="hidden"></div>
+</main>
+
+<script src="atlas.js"></script>
+</body>
+</html>

@@ -21,7 +21,7 @@ function check(cond, msg) {
 
 /* ---------- 1. syntax check both JS files ---------- */
 console.log("== node --check ==");
-for (const f of ["site/app.js", "site/provisions.js", "site/stables.js"]) {
+for (const f of ["site/app.js", "site/provisions.js", "site/stables.js", "site/atlas.js"]) {
   try {
     execFileSync(process.execPath, ["--check", join(ROOT, f)], { stdio: "pipe" });
     check(true, `${f} parses`);
@@ -187,6 +187,28 @@ check(statLabel("BaseHealthRegen_+%", 25) === "+25% Health Regeneration",
 const hotTea = PROV.consumables.find(c => c.name === "Hot Tea");
 check(hotTea?.buff.stats[TEMP] === 1000,
   "raw data stays game-native (Hot Tea buff value is 1000)");
+
+/* ---------- 6. atlas data sanity (issue #14) ---------- */
+console.log("== atlas ==");
+const ATLAS = JSON.parse(readFileSync(join(ROOT, "site/data/atlas.json"), "utf8"));
+// Mirror of cellName in site/atlas.js
+function cellName(col, row) { return String.fromCharCode(65 + col) + (row + 1); }
+check(cellName(0, 0) === "A1" && cellName(15, 15) === "P16",
+  "cellName maps corners to A1 / P16");
+const mapCount = Object.keys(ATLAS.maps).length;
+check(mapCount === 4, `atlas has 4 maps (got ${mapCount})`);
+// every marker's cell string agrees with its fractional grid position
+let disagree = 0;
+for (const map of Object.values(ATLAS.maps)) {
+  for (const layer of Object.values(map.layers)) {
+    for (const m of layer) {
+      const col = Math.min(map.grid - 1, Math.max(0, Math.floor(m.gx)));
+      const row = Math.min(map.grid - 1, Math.max(0, Math.floor(m.gy)));
+      if (cellName(col, row) !== m.cell) disagree++;
+    }
+  }
+}
+check(disagree === 0, `marker cell strings agree with gx/gy (${disagree} disagree)`);
 
 /* ---------- result ---------- */
 console.log(`\n${checks} checks, ${failures.length} failures`);

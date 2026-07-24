@@ -130,12 +130,40 @@ bad_feed_stats = sorted(sid for f in stab["feeds"] for sid in f["stats"]
 check(not bad_feed_stats,
       f"every feed stat in stats meta (bad: {bad_feed_stats[:6] or 'none'})")
 
+# ---------- 3c. atlas.json ----------
+run_script("build_atlas_data.py")
+print("\n== atlas.json ==")
+atlas = json.loads((ROOT / "site" / "data" / "atlas.json").read_text(encoding="utf-8"))
+amaps = atlas["maps"]
+for want in ("Terrain_016", "Terrain_017", "Terrain_019", "Terrain_021"):
+    check(want in amaps, f"atlas has {want}")
+oly = amaps.get("Terrain_016", {})
+check(oly.get("name") == "Olympus", "Terrain_016 is Olympus")
+lay = oly.get("layers", {})
+check(len(lay.get("caves", [])) >= 100,
+      f"Olympus caves {len(lay.get('caves', []))} >= 100")
+check(len(lay.get("veins", [])) >= 400,
+      f"Olympus deep vein spawns {len(lay.get('veins', []))} >= 400")
+check(len(oly.get("exotics", {})) >= 40,
+      f"Olympus exotic cells {len(oly.get('exotics', {}))} >= 40")
+cellpat = re.compile(r"^[A-P](1[0-6]|[1-9])$")
+bad_cells = sorted({m["cell"] for mp in amaps.values()
+                    for ms in mp["layers"].values() for m in ms
+                    if not cellpat.fullmatch(m["cell"])} |
+                   {c for mp in amaps.values() for c in mp["exotics"]
+                    if not cellpat.fullmatch(c)})
+check(not bad_cells,
+      f"every marker/exotic cell is a valid grid ref (bad: {bad_cells[:6] or 'none'})")
+bad_gxy = [m for mp in amaps.values() for ms in mp["layers"].values() for m in ms
+           if not (0 <= m["gx"] <= mp["grid"] and 0 <= m["gy"] <= mp["grid"])]
+check(not bad_gxy, f"every marker gx/gy inside grid (bad: {len(bad_gxy)})")
+
 # ---------- 4. make_dist.py + dist/ ----------
 run_script("make_dist.py")
 print("\n== dist/ ==")
 dist = ROOT / "dist"
 for rel in ("index.html", "breakdown/index.html", "provisions/index.html",
-            "stables/index.html", "breakdown/icons"):
+            "stables/index.html", "atlas/index.html", "breakdown/icons"):
     check((dist / rel).exists(), f"dist/{rel} exists")
 
 def inline_json(html, elem_id):
@@ -164,10 +192,16 @@ check('id="stables-data"' in shtml, 'stables page has id="stables-data"')
 check(inline_json(shtml, "stables-data") is not None,
       "stables inline JSON parses")
 
+ahtml = (dist / "atlas" / "index.html").read_text(encoding="utf-8")
+check('id="atlas-data"' in ahtml, 'atlas page has id="atlas-data"')
+check(inline_json(ahtml, "atlas-data") is not None,
+      "atlas inline JSON parses")
+
 landing = (dist / "index.html").read_text(encoding="utf-8")
 check('href="breakdown/"' in landing, 'landing links to breakdown/')
 check('href="provisions/"' in landing, 'landing links to provisions/')
 check('href="stables/"' in landing, 'landing links to stables/')
+check('href="atlas/"' in landing, 'landing links to atlas/')
 
 # ---------- result ----------
 print(f"\n{checks} checks, {len(failures)} failures")
