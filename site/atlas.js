@@ -87,7 +87,7 @@ function renderMap() {
   // texture and the marker transform share the same origin-centered bounds)
   if (activeLayers.has("terrain")) {
     el("image", {
-      href: `maps/${mapId}.png`,
+      href: `maps/${mapId}.jpg`,
       x: 0, y: 0, width: G * CELL, height: G * CELL,
       preserveAspectRatio: "none", class: "atlas-terrain",
     }, svg);

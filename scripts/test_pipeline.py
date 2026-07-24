@@ -165,9 +165,9 @@ dist = ROOT / "dist"
 for rel in ("index.html", "breakdown/index.html", "provisions/index.html",
             "stables/index.html", "atlas/index.html", "breakdown/icons"):
     check((dist / rel).exists(), f"dist/{rel} exists")
-atlas_pngs = sorted(p.name for p in (dist / "atlas" / "maps").glob("*.png"))
-check(len(atlas_pngs) == 4,
-      f"dist/atlas/maps has 4 terrain PNGs (got {atlas_pngs})")
+atlas_imgs = sorted(p.name for p in (dist / "atlas" / "maps").glob("*.jpg"))
+check(len(atlas_imgs) == 4,
+      f"dist/atlas/maps has 4 terrain renders (got {atlas_imgs})")
 
 def inline_json(html, elem_id):
     m = re.search(

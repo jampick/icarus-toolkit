@@ -80,6 +80,143 @@ if (args.Length > 1 && args[1] == "--textures")
     return;
 }
 
+if (args.Length > 1 && args[1] == "--terrain")
+{
+    // Detailed terrain renders: stitch landscape heightmaps, hillshade, tint
+    // with the biome mask, write site/maps/<terrain>.png for every map.
+    var texOut2 = args.Length > 2 ? args[2] : Path.Combine(AppContext.BaseDirectory, "maps");
+    Directory.CreateDirectory(texOut2);
+    foreach (var (row, display, dir) in terrains)
+        RenderTerrain(row, display, dir, texOut2);
+    return;
+}
+
+void RenderTerrain(string row, string display, string terrainDir, string outDir)
+{
+    var num = row.Split('_')[1];
+    // JPEG: relief detail costs ~4 MB as PNG, ~400 KB as JPEG
+    var outPng = Path.Combine(outDir, $"{row}.jpg");
+    var tiles = provider.Files.Keys
+        .Where(k => k.Contains(terrainDir + "/HeightMap/", StringComparison.OrdinalIgnoreCase)
+                 && !k.Contains("LOD", StringComparison.OrdinalIgnoreCase)
+                 && k.EndsWith(".umap", StringComparison.OrdinalIgnoreCase))
+        .ToList();
+    Console.WriteLine($"{display}: height tiles: {tiles.Count}");
+
+    var comps = new List<(int BaseX, int BaseY, int SubQuads, int NumSubs, int U, int V, string TexPath)>();
+    var texCache = new Dictionary<string, CUE4Parse_Conversion.Textures.CTexture?>();
+    int texFail = 0;
+    foreach (var path in tiles)
+    {
+        var pkg = provider.LoadPackage(path);
+        foreach (var exp in pkg.GetExports())
+        {
+            if (exp.ExportType != "LandscapeComponent") continue;
+            var bx = exp.GetOrDefault<int>("SectionBaseX");
+            var by = exp.GetOrDefault<int>("SectionBaseY");
+            var subQuads = exp.GetOrDefault<int>("SubsectionSizeQuads", 63);
+            var numSubs = exp.GetOrDefault<int>("NumSubsections", 1);
+            var sb = exp.GetOrDefault<CUE4Parse.UE4.Objects.Core.Math.FVector4>("HeightmapScaleBias");
+            var tex = exp.GetOrDefault<CUE4Parse.UE4.Assets.Exports.Texture.UTexture2D?>("HeightmapTexture");
+            if (tex == null) { texFail++; continue; }
+            var key = tex.Owner?.Name + "/" + tex.Name;
+            if (!texCache.ContainsKey(key))
+                texCache[key] = CUE4Parse_Conversion.Textures.TextureDecoder.Decode(tex);
+            var dec = texCache[key];
+            if (dec == null) { texFail++; continue; }
+            comps.Add((bx, by, subQuads, numSubs,
+                (int)Math.Round(sb.Z * dec.Width), (int)Math.Round(sb.W * dec.Height), key));
+        }
+    }
+    Console.WriteLine($"  components: {comps.Count}  unique heightmap textures: {texCache.Count}  failures: {texFail}");
+    if (comps.Count == 0) return;
+
+    int compQuads(int subQuads, int numSubs) => subQuads * numSubs;
+    var minBX = comps.Min(c => c.BaseX); var minBY = comps.Min(c => c.BaseY);
+    var maxBX = comps.Max(c => c.BaseX + compQuads(c.SubQuads, c.NumSubs));
+    var maxBY = comps.Max(c => c.BaseY + compQuads(c.SubQuads, c.NumSubs));
+    int W = maxBX - minBX + 1, H = maxBY - minBY + 1;
+    Console.WriteLine($"vertex grid: {W} x {H} (base {minBX},{minBY})");
+    var heights = new ushort[W * H];
+
+    foreach (var c in comps)
+    {
+        var dec = texCache[c.TexPath]!;
+        for (int sy = 0; sy < c.NumSubs; sy++)
+        for (int sx = 0; sx < c.NumSubs; sx++)
+        for (int j = 0; j <= c.SubQuads; j++)
+        for (int i = 0; i <= c.SubQuads; i++)
+        {
+            int tx = c.U + sx * (c.SubQuads + 1) + i;
+            int ty = c.V + sy * (c.SubQuads + 1) + j;
+            if (tx >= dec.Width || ty >= dec.Height) continue;
+            int o = (ty * dec.Width + tx) * 4;
+            // BGRA byte order: height = (R << 8) | G
+            ushort h = (ushort)((dec.Data[o + 2] << 8) | dec.Data[o + 1]);
+            int gx = c.BaseX - minBX + sx * c.SubQuads + i;
+            int gy = c.BaseY - minBY + sy * c.SubQuads + j;
+            heights[gy * W + gx] = h;
+        }
+    }
+
+    // hillshade at full vertex res
+    var shadeInfo = new SkiaSharp.SKImageInfo(W, H, SkiaSharp.SKColorType.Gray8, SkiaSharp.SKAlphaType.Opaque);
+    var shade = new SkiaSharp.SKBitmap(shadeInfo);
+    unsafe
+    {
+        var px = (byte*)shade.GetPixels();
+        double az = Math.PI * 1.25, alt = Math.PI / 4; // light from NW, 45 deg
+        double zf = 0.02; // vertical exaggeration for 16-bit heights
+        for (int y = 0; y < H; y++)
+        for (int x = 0; x < W; x++)
+        {
+            int xm = Math.Max(x - 1, 0), xp = Math.Min(x + 1, W - 1);
+            int ym = Math.Max(y - 1, 0), yp = Math.Min(y + 1, H - 1);
+            double dzdx = (heights[y * W + xp] - heights[y * W + xm]) * zf / 2;
+            double dzdy = (heights[yp * W + x] - heights[ym * W + x]) * zf / 2;
+            double slope = Math.Atan(Math.Sqrt(dzdx * dzdx + dzdy * dzdy));
+            double aspect = Math.Atan2(dzdy, -dzdx);
+            double s = Math.Sin(alt) * Math.Cos(slope) +
+                       Math.Cos(alt) * Math.Sin(slope) * Math.Cos(az - aspect);
+            px[y * W + x] = (byte)Math.Clamp(128 + s * 127, 0, 255);
+        }
+    }
+
+    // tint with the biome mask: softened biome color multiplied by the shade
+    const int SIZE = 2048;
+    var shade2k = shade.Resize(new SkiaSharp.SKImageInfo(SIZE, SIZE, SkiaSharp.SKColorType.Gray8,
+        SkiaSharp.SKAlphaType.Opaque), SkiaSharp.SKFilterQuality.High);
+    var bpkg = provider.LoadPackage($"Icarus/Content/Heatmaps/{terrainDir.Split('/')[1]}/T_Terrain{num}_Biome.uasset");
+    var btex = bpkg.GetExports().OfType<CUE4Parse.UE4.Assets.Exports.Texture.UTexture2D>().First();
+    var bdec = CUE4Parse_Conversion.Textures.TextureDecoder.Decode(btex)!;
+    var outInfo = new SkiaSharp.SKImageInfo(SIZE, SIZE, SkiaSharp.SKColorType.Bgra8888, SkiaSharp.SKAlphaType.Opaque);
+    var composite = new SkiaSharp.SKBitmap(outInfo);
+    unsafe
+    {
+        var op = (byte*)composite.GetPixels();
+        var sp = (byte*)shade2k.GetPixels();
+        for (int y = 0; y < SIZE; y++)
+        for (int x = 0; x < SIZE; x++)
+        {
+            int bx2 = x * bdec.Width / SIZE, by2 = y * bdec.Height / SIZE;
+            int bo = (by2 * bdec.Width + bx2) * 4;
+            double b = bdec.Data[bo], g = bdec.Data[bo + 1], r = bdec.Data[bo + 2];
+            // pull the garish mask colors toward a muted natural tone
+            double gray = (r + g + b) / 3;
+            r = r * 0.45 + gray * 0.3 + 60; g = g * 0.45 + gray * 0.3 + 60; b = b * 0.45 + gray * 0.3 + 60;
+            double light = 0.35 + 0.75 * (sp[y * SIZE + x] / 255.0);
+            int o = (y * SIZE + x) * 4;
+            op[o] = (byte)Math.Clamp(b * light, 0, 255);
+            op[o + 1] = (byte)Math.Clamp(g * light, 0, 255);
+            op[o + 2] = (byte)Math.Clamp(r * light, 0, 255);
+            op[o + 3] = 255;
+        }
+    }
+    using (var fs2 = File.OpenWrite(outPng)) { fs2.SetLength(0);
+        composite.Encode(SkiaSharp.SKEncodedImageFormat.Jpeg, 85).SaveTo(fs2); }
+    Console.WriteLine($"  wrote {outPng}");
+}
+
 if (args.Length > 2 && args[1] == "--probe")
 {
     var pkg = provider.LoadPackage(args[2]);

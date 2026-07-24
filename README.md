@@ -145,9 +145,11 @@ missing an icon fall back to a styled monogram.
 - Exotic spawns are not placed actors; the game spawns them at runtime from
   `D_ExoticSpawn`, whose row names encode grid squares - the atlas shades
   those squares and counts spawns per square.
-- The terrain background is each map's `T_Terrain0XX_Biome` heatmap texture,
-  decoded to PNG by `atlas-export --textures` and rendered under the grid
-  (dimmed with CSS so markers stay readable). The texture and the markers
-  share the same origin-centered bounds, so they register with no extra
-  math; orientation was confirmed by checking that sandworm markers land on
-  the Desert region and the Southern Glacier sits in the south.
+- The terrain background is rendered from the game's landscape heightmaps:
+  `atlas-export --terrain` stitches every landscape component (4096 per map,
+  an 8065x8065 vertex grid) into a global height array, hillshades it, and
+  tints the relief with the `T_Terrain0XX_Biome` mask, writing one 2048px
+  JPEG per map. Heights and markers share the same origin-centered bounds,
+  so they register with no extra math; orientation was confirmed by checking
+  that sandworm markers land on the Desert region and the Southern Glacier
+  sits in the south.
