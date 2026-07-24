@@ -21,7 +21,15 @@
 
 <main class="prov-main">
   <p class="prov-intro">What are you heading out to do? Pick an activity — get the food and
-  tonics whose buffs actually help, ranked by how much they matter.</p>
+  tonics whose buffs actually help, ranked by how much they matter. Or search a
+  food to see what it's best for.</p>
+
+  <div id="psearchwrap">
+    <input id="psearch" type="text" placeholder="Reverse lookup: search a food or tonic…" autocomplete="off" spellcheck="false">
+    <div id="presults" class="hidden"></div>
+  </div>
+
+  <div id="reverse" class="hidden"></div>
 
   <div id="activities"></div>
 

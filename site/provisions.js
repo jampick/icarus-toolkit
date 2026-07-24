@@ -109,6 +109,7 @@ function fmtDur(sec) {
 function card(item, weights, maxScore, sc) {
   const el = document.createElement("div");
   el.className = "pcard";
+  el.dataset.id = item.id;
 
   const head = document.createElement("div");
   head.className = "pcard-head";
@@ -187,6 +188,140 @@ function renderActivity(act) {
   history.replaceState({}, "", "?activity=" + act.id);
 }
 
+/* ---------- reverse lookup: item -> best activities ---------- */
+
+function bestActivities(item) {
+  // rank the item within each activity against its own peer group
+  // (slot foods compete with slot foods, slot-free with slot-free)
+  const peers = DATA.consumables.filter(c =>
+    item.slots > 0 ? c.slots > 0 : c.slots === 0);
+  return ACTIVITIES.map(a => {
+    const ranked = peers
+      .map(c => ({ id: c.id, s: score(c, a.w) }))
+      .filter(x => x.s > 0.05)
+      .sort((x, y) => y.s - x.s);
+    const idx = ranked.findIndex(x => x.id === item.id);
+    if (idx < 0) return null;
+    return { a, rank: idx + 1, of: ranked.length, pct: ranked[idx].s / ranked[0].s };
+  }).filter(Boolean)
+    .filter(x => x.pct >= 0.2)
+    .sort((x, y) => y.pct - x.pct || x.rank - y.rank)
+    .slice(0, 4);
+}
+
+function renderReverse(item) {
+  const host = $("#reverse");
+  host.innerHTML = "";
+  host.classList.remove("hidden");
+
+  const head = document.createElement("div");
+  head.className = "rev-head";
+  const img = document.createElement("img");
+  img.src = ICON_BASE + item.icon + ".png";
+  img.onerror = () => img.remove();
+  head.appendChild(img);
+  const meta = document.createElement("div");
+  meta.innerHTML = `<div class="pname">${item.name}</div>
+    <div class="psub">${item.buff.dur ? "⏱ " + fmtDur(item.buff.dur) : ""}
+      ${item.slots > 0 ? '<span class="bench">stomach slot</span>' : '<span class="bench">no slot</span>'}
+      ${item.craft ? `<span class="bench">${item.craft[0]}</span>` : '<span class="gathertag">GATHER</span>'}
+    </div>
+    <div class="rev-stats">${Object.entries(item.buff.stats).map(([s, v]) => statLabel(s, v)).join(" · ")}</div>`;
+  head.appendChild(meta);
+  const close = document.createElement("button");
+  close.className = "rev-close";
+  close.textContent = "✕";
+  close.onclick = () => { host.classList.add("hidden"); $("#psearch").value = ""; };
+  head.appendChild(close);
+  host.appendChild(head);
+
+  const best = bestActivities(item);
+  if (!best.length) {
+    const d = document.createElement("div");
+    d.className = "pnone";
+    d.textContent = "No activity particularly favors this item's buffs.";
+    host.appendChild(d);
+    return;
+  }
+  const title = document.createElement("div");
+  title.className = "rev-title";
+  title.textContent = "Best for";
+  host.appendChild(title);
+  for (const b of best) {
+    const row = document.createElement("button");
+    row.className = "rev-row";
+    row.innerHTML = `<span class="act-emoji">${b.a.emoji}</span>
+      <span class="rev-name">${b.a.name}</span>
+      <span class="rev-rank">#${b.rank} pick · ${Math.round(b.pct * 100)}% of top</span>
+      <span class="rev-bar"><i style="width:${Math.round(b.pct * 100)}%"></i></span>`;
+    row.onclick = () => {
+      renderActivity(b.a);
+      requestAnimationFrame(() => {
+        const card = document.querySelector(`.pcard[data-id="${item.id}"]`);
+        if (card) { card.classList.add("hl"); card.scrollIntoView({ behavior: "smooth", block: "center" }); }
+      });
+    };
+    host.appendChild(row);
+  }
+}
+
+/* ---------- reverse search box ---------- */
+
+function initReverseSearch() {
+  const input = $("#psearch"), results = $("#presults");
+  let matches = [], sel = -1;
+  const pick = (i) => {
+    const m = matches[i];
+    if (!m) return;
+    input.value = m.name;
+    results.classList.add("hidden");
+    renderReverse(m);
+    history.replaceState({}, "", "?food=" + encodeURIComponent(m.id));
+  };
+  input.addEventListener("input", () => {
+    const q = input.value.trim().toLowerCase();
+    if (!q) { results.classList.add("hidden"); return; }
+    matches = DATA.consumables
+      .filter(c => c.name.toLowerCase().includes(q))
+      .sort((a, b) => {
+        const as = a.name.toLowerCase().startsWith(q), bs = b.name.toLowerCase().startsWith(q);
+        if (as !== bs) return as ? -1 : 1;
+        return a.name.length - b.name.length;
+      })
+      .slice(0, 10);
+    sel = -1;
+    results.innerHTML = "";
+    matches.forEach((m, i) => {
+      const el = document.createElement("div");
+      el.className = "result";
+      const img = document.createElement("img");
+      img.src = ICON_BASE + m.icon + ".png";
+      img.onerror = () => img.remove();
+      el.appendChild(img);
+      const nm = document.createElement("span");
+      nm.className = "rname"; nm.textContent = m.name;
+      const cat = document.createElement("span");
+      cat.className = "rcat"; cat.textContent = m.slots > 0 ? "food" : "no slot";
+      el.append(nm, cat);
+      el.onclick = () => pick(i);
+      results.appendChild(el);
+    });
+    results.classList.toggle("hidden", !matches.length);
+  });
+  input.addEventListener("keydown", (e) => {
+    if (results.classList.contains("hidden")) return;
+    if (e.key === "ArrowDown") { sel = Math.min(sel + 1, matches.length - 1); paint(); e.preventDefault(); }
+    else if (e.key === "ArrowUp") { sel = Math.max(sel - 1, 0); paint(); e.preventDefault(); }
+    else if (e.key === "Enter") pick(sel >= 0 ? sel : 0);
+    else if (e.key === "Escape") results.classList.add("hidden");
+  });
+  const paint = () => results.querySelectorAll(".result").forEach((el, i) =>
+    el.classList.toggle("sel", i === sel));
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#psearchwrap")) results.classList.add("hidden");
+  });
+}
+
 function init() {
   const host = $("#activities");
   for (const a of ACTIVITIES) {
@@ -198,9 +333,12 @@ function init() {
     el.onclick = () => renderActivity(a);
     host.appendChild(el);
   }
-  const param = new URLSearchParams(location.search).get("activity");
-  const start = ACTIVITIES.find(a => a.id === param);
+  initReverseSearch();
+  const params = new URLSearchParams(location.search);
+  const start = ACTIVITIES.find(a => a.id === params.get("activity"));
   if (start) renderActivity(start);
+  const food = DATA.consumables.find(c => c.id === params.get("food"));
+  if (food) { $("#psearch").value = food.name; renderReverse(food); }
 }
 
 loadData().then(init);
