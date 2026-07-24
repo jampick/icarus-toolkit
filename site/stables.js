@@ -146,9 +146,19 @@ function mountable() {
   return DATA.creatures.filter(c => c.rideable && c.saddles.length);
 }
 
+function scrollTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function renderMountJump() {
   const host = $("#mount-jump");
   host.innerHTML = "";
+  const top = document.createElement("button");
+  top.className = "tchip top";
+  top.textContent = "↑ Top";
+  top.title = "Back to search";
+  top.onclick = scrollTop;
+  host.appendChild(top);
   for (const c of mountable()) {
     const b = document.createElement("button");
     b.className = "tchip";
@@ -570,5 +580,11 @@ function init() {
     if (el) el.scrollIntoView();
   }
 }
+
+const topBtn = $("#totop");
+topBtn.onclick = scrollTop;
+window.addEventListener("scroll", () => {
+  topBtn.classList.toggle("hidden", window.scrollY < 400);
+}, { passive: true });
 
 loadData().then(init);
