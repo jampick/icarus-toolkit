@@ -20,7 +20,7 @@ def loc(text):
     if not text:
         return ""
     m = NSLOC.match(text)
-    return (m.group(1) if m else text).replace("—", "-").strip()
+    return (m.group(1) if m else text).replace("\u2014", "-").strip()
 
 
 def rows(path, name):
