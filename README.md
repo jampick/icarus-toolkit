@@ -2,13 +2,13 @@
 
 Fan-made tools for [ICARUS](https://icarusgame.com), hosted at
 **https://jampick.github.io/icarus-toolkit/**. Data comes **directly from the
-game's `Data/data.pak`** — no wiki scraping.
+game's `Data/data.pak`** - no wiki scraping.
 
 ## Tools
 
 ### ⛏ Breakdown (`/breakdown/`)
 
-Exploded crafting calculator — search any craftable item and see it recursively
+Exploded crafting calculator - search any craftable item and see it recursively
 broken down into every raw material you need to gather, with per-node control
 over whether a component is crafted or gathered, alternate-recipe switching,
 live raw-material totals, bench list, and pan/zoom.
@@ -18,18 +18,18 @@ Deploys automatically to GitHub Pages on push to `main`
 
 ## Layout
 
-- `scripts/extract_pak.py` — pure-Python UE4 pak (v11/Zlib) extractor. Pulls the
+- `scripts/extract_pak.py` - pure-Python UE4 pak (v11/Zlib) extractor. Pulls the
   `D_*.json` data tables out of the game's `Data/data.pak` (~2 MB file, found in
   the game or dedicated-server install under `Icarus/Content/Data/`).
-- `scripts/build_data.py` — compiles the extracted tables into
+- `scripts/build_data.py` - compiles the extracted tables into
   `site/data/recipes.json` (items + recipes + output index, raw/gatherable
   flags, conversion-recipe detection, bench display names).
-- `scripts/make_dist.py` — bundles everything into `dist/`: a single
+- `scripts/make_dist.py` - bundles everything into `dist/`: a single
   `index.html` (CSS + JS + data inlined) plus the `icons/` folder. Host `dist/`
   anywhere static (GitHub Pages, nginx, S3…).
-- `site/` — the dev version (separate files; serve with
+- `site/` - the dev version (separate files; serve with
   `python3 -m http.server` from this folder).
-- `data/game/` — extracted game JSON tables (checked in for reproducibility).
+- `data/game/` - extracted game JSON tables (checked in for reproducibility).
 
 ## Refreshing after a game update
 
@@ -48,12 +48,12 @@ python3 scripts/make_dist.py
 
 `bash scripts/run_tests.sh` runs the full pass:
 
-- `scripts/test_pipeline.py` (Python, stdlib only) — runs `build_data.py`,
+- `scripts/test_pipeline.py` (Python, stdlib only) - runs `build_data.py`,
   `build_provisions_data.py` and `make_dist.py`, then validates the generated
   `recipes.json` / `provisions.json` (counts, key items, raw/craft flags,
   referential integrity, known regressions) and the `dist/` output (pages
   exist, inline JSON parses, landing links intact).
-- `scripts/test_app.mjs` (Node, no deps) — syntax-checks `site/app.js` and
+- `scripts/test_app.mjs` (Node, no deps) - syntax-checks `site/app.js` and
   `site/provisions.js`, smoke-tests the recursive recipe tree (Solar Panel,
   cycle guard, positive integer totals) and the provisions activity scoring
   (no NaN scores, every activity yields results, weight keys are real stat

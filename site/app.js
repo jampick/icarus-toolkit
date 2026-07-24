@@ -1,4 +1,4 @@
-/* Icarus Breakdown — exploded crafting calculator */
+/* Icarus Breakdown - exploded crafting calculator */
 "use strict";
 
 let DATA = null;            // {items, recipes, byOutput}
@@ -178,7 +178,7 @@ function nodeCard(node, isRoot) {
     const t = document.createElement("button");
     t.className = "tbtn" + (node.mode === "craft" ? " on" : "");
     t.textContent = node.mode === "craft" ? "▾" : "▸";
-    t.title = node.mode === "craft" ? "Collapse — gather this instead" : "Expand — craft this";
+    t.title = node.mode === "craft" ? "Collapse - gather this instead" : "Expand - craft this";
     t.onclick = (e) => {
       e.stopPropagation();
       modeOverride.set(node.path, node.mode === "craft" ? "gather" : "craft");
@@ -189,7 +189,7 @@ function nodeCard(node, isRoot) {
       const r = document.createElement("button");
       r.className = "tbtn";
       r.textContent = "↻";
-      r.title = `Recipe ${node.recipeIdx + 1}/${node.recs.length} — click to switch`;
+      r.title = `Recipe ${node.recipeIdx + 1}/${node.recs.length} - click to switch`;
       r.onclick = (e) => {
         e.stopPropagation();
         recipeChoice.set(node.path, (node.recipeIdx + 1) % node.recs.length);

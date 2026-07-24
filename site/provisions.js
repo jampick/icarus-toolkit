@@ -1,4 +1,4 @@
-/* Icarus Provisions — activity-based food buff picker */
+/* Icarus Provisions - activity-based food buff picker */
 "use strict";
 
 // Overridden at dist-build time; dev serves everything from site/

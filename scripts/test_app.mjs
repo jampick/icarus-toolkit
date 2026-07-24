@@ -91,7 +91,7 @@ if (tree) {
 /* ---------- 3. provisions scoring smoke test ---------- */
 console.log("== provisions scoring ==");
 const PROV = JSON.parse(readFileSync(join(ROOT, "site/data/provisions.json"), "utf8"));
-// Full stat vocabulary from the game data — the provisions stats meta only
+// Full stat vocabulary from the game data - the provisions stats meta only
 // contains stats that appear on some consumable, but activity weights may
 // legitimately reference stats no consumable currently grants. A weight key
 // in NEITHER set is a typo.

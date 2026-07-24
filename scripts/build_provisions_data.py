@@ -22,7 +22,8 @@ def loc(text):
     if not text:
         return ""
     m = NSLOC.match(text)
-    return (m.group(1) if m else text).strip()
+    # Normalize em dashes (U+2014) out of game-derived display text.
+    return (m.group(1) if m else text).replace("\u2014", "-").strip()
 
 
 def rows(name):

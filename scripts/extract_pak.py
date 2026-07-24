@@ -60,7 +60,7 @@ def read_footer(f, size):
     encrypted = r.u8()
     magic, ver = r.u32(), r.u32()
     if magic != MAGIC:
-        sys.exit("pak magic not found — not a v11 footer?")
+        sys.exit("pak magic not found - not a v11 footer?")
     if encrypted:
         sys.exit("encrypted index not supported")
     idx_off, idx_size = r.i64(), r.i64()

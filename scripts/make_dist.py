@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Bundle the toolkit into dist/ for hosting:
-  dist/index.html       — landing page (from home/)
-  dist/breakdown/       — crafting calculator (inlined) + icons/ folder
-  dist/provisions/      — food buff picker (inlined), icons shared from
+  dist/index.html       - landing page (from home/)
+  dist/breakdown/       - crafting calculator (inlined) + icons/ folder
+  dist/provisions/      - food buff picker (inlined), icons shared from
                           ../breakdown/icons/
 Host dist/ anywhere static."""
 import shutil
@@ -63,7 +63,7 @@ def main():
               "manifest-provisions.webmanifest"]:
         shutil.copy(SITE / f, prov / f)
     size = sum(f.stat().st_size for f in DIST.rglob("*") if f.is_file())
-    print(f"dist/ ready — {size/1e6:.1f} MB total, breakdown/index.html "
+    print(f"dist/ ready: {size/1e6:.1f} MB total, breakdown/index.html "
           f"{(tool/'index.html').stat().st_size/1024:.0f} KB")
 
 
