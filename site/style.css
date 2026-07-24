@@ -307,6 +307,7 @@ body {
 .pcost { margin-top: auto; color: var(--accent2); font-size: 12px; font-weight: 600; text-decoration: none; }
 .pcost:hover { text-decoration: underline; }
 .pnone { color: var(--dim); font-size: 13px; padding: 8px 2px; }
+.prov-note { color: var(--dim); font-size: 12px; margin: -6px 0 12px; }
 
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-thumb { background: #24344a; border-radius: 6px; }

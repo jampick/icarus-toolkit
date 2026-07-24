@@ -156,12 +156,16 @@ function renderActivity(act) {
     el.classList.toggle("on", el.dataset.id === act.id));
   $("#prov-results").classList.remove("hidden");
 
-  for (const [cat, sel, n] of [["food", "#food-cards", 9], ["tonic", "#tonic-cards", 4]]) {
+  const SECTIONS = [
+    // stomach-slot foods are the main loadout; slot-free buffs stack on top
+    { sel: "#food-cards", n: 9, match: c => c.slots > 0 },
+    { sel: "#noslot-cards", n: 6, match: c => c.slots === 0 },
+  ];
+  for (const { sel, n, match } of SECTIONS) {
     const host = $(sel);
     host.innerHTML = "";
     const ranked = DATA.consumables
-      .filter(c => c.slots > 0)  // scope: only items that occupy a stomach slot
-      .filter(c => c.cat === cat)
+      .filter(match)
       .map(c => ({ c, s: score(c, act.w) }))
       .filter(x => x.s > 0.05)
       .sort((a, b) => b.s - a.s)
