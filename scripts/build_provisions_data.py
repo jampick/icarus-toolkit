@@ -64,12 +64,16 @@ def main():
                 out[m.group(1)] = v
         return out
 
+    consumable_rows = {r["Name"]: r for r in rows("D_Consumable")}
+
     used_stats = set()
     consumables = []
-    for c in rows("D_Consumable"):
-        iid = c["Name"]
-        s = items_static.get(iid)
-        if not s:
+    # Walk items -> their Consumable ref (names don't always match, e.g.
+    # Food_Pickled_Carrot -> "Picked_Carrot"), so joining by name drops items.
+    for iid, s in items_static.items():
+        cref = (s.get("Consumable") or {}).get("RowName")
+        c = consumable_rows.get(cref)
+        if not c:
             continue
         it = itemable.get((s.get("Itemable") or {}).get("RowName", ""), {})
         name = loc(it.get("DisplayName"))
