@@ -162,6 +162,11 @@ def main():
     for sid in sorted(used_stats):
         row = stats_tbl.get(sid, {})
         stat_meta[sid] = {"tpl": loc(row.get("PositiveDescription")) or sid}
+        # Display-only value transforms the game UI applies (see provisions
+        # builder). No current feed stat has any, but future data might.
+        ops = row.get("DisplayOperations")
+        if ops:
+            stat_meta[sid]["ops"] = [[o["Operation"], o["Value"]] for o in ops]
 
     out = {
         "creatures": sorted(creatures, key=lambda c: c["name"]),

@@ -14,10 +14,10 @@ DIST = ROOT / "dist"
 
 
 def main():
-    html = (SITE / "index.html").read_text()
-    css = (SITE / "style.css").read_text()
-    js = (SITE / "app.js").read_text()
-    data = (SITE / "data" / "recipes.json").read_text()
+    html = (SITE / "index.html").read_text(encoding="utf-8")
+    css = (SITE / "style.css").read_text(encoding="utf-8")
+    js = (SITE / "app.js").read_text(encoding="utf-8")
+    data = (SITE / "data" / "recipes.json").read_text(encoding="utf-8")
 
     html = html.replace(
         '<link rel="stylesheet" href="style.css">',
@@ -31,7 +31,7 @@ def main():
         shutil.rmtree(DIST)
     tool = DIST / "breakdown"
     tool.mkdir(parents=True)
-    (tool / "index.html").write_text(html)
+    (tool / "index.html").write_text(html, encoding="utf-8")
     shutil.copytree(SITE / "icons", tool / "icons")
     shutil.copy(ROOT / "home" / "index.html", DIST / "index.html")
     # app icons + manifest: tool page gets everything, landing shares the icons
@@ -42,9 +42,9 @@ def main():
             shutil.copy(SITE / f, DIST / f)
 
     # --- provisions ---
-    phtml = (SITE / "provisions.html").read_text()
-    pjs = (SITE / "provisions.js").read_text()
-    pdata = (SITE / "data" / "provisions.json").read_text()
+    phtml = (SITE / "provisions.html").read_text(encoding="utf-8")
+    pjs = (SITE / "provisions.js").read_text(encoding="utf-8")
+    pdata = (SITE / "data" / "provisions.json").read_text(encoding="utf-8")
     phtml = phtml.replace(
         '<link rel="stylesheet" href="style.css">',
         f"<style>\n{css}\n</style>")
@@ -57,16 +57,16 @@ def main():
     phtml = phtml.replace('href="index.html"', 'href="../breakdown/"')
     prov = DIST / "provisions"
     prov.mkdir()
-    (prov / "index.html").write_text(phtml)
+    (prov / "index.html").write_text(phtml, encoding="utf-8")
     for f in ["prov-favicon-32.png", "prov-apple-touch-icon.png",
               "prov-icon-192.png", "prov-icon-512.png",
               "manifest-provisions.webmanifest"]:
         shutil.copy(SITE / f, prov / f)
 
     # --- stables ---
-    shtml = (SITE / "stables.html").read_text()
-    sjs = (SITE / "stables.js").read_text()
-    sdata = (SITE / "data" / "stables.json").read_text()
+    shtml = (SITE / "stables.html").read_text(encoding="utf-8")
+    sjs = (SITE / "stables.js").read_text(encoding="utf-8")
+    sdata = (SITE / "data" / "stables.json").read_text(encoding="utf-8")
     shtml = shtml.replace(
         '<link rel="stylesheet" href="style.css">',
         f"<style>\n{css}\n</style>")
@@ -80,7 +80,7 @@ def main():
     shtml = shtml.replace('href="provisions.html"', 'href="../provisions/"')
     stab = DIST / "stables"
     stab.mkdir()
-    (stab / "index.html").write_text(shtml)
+    (stab / "index.html").write_text(shtml, encoding="utf-8")
     for f in ["stables-favicon-32.png", "stables-apple-touch-icon.png",
               "stables-icon-192.png", "stables-icon-512.png",
               "manifest-stables.webmanifest"]:

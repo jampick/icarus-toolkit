@@ -120,6 +120,12 @@ def main():
         tpl = loc(row.get("PositiveDescription")) or sid
         mx = max((abs(c["buff"]["stats"].get(sid, 0)) for c in consumables), default=1) or 1
         stat_meta[sid] = {"tpl": tpl, "max": mx}
+        # The game UI transforms raw stat values before display (e.g. internal
+        # temperature is stored in centi-degrees, Division 100). Pass the ops
+        # through so the site can do the same.
+        ops = row.get("DisplayOperations")
+        if ops:
+            stat_meta[sid]["ops"] = [[o["Operation"], o["Value"]] for o in ops]
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT, "w") as f:

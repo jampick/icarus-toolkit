@@ -102,11 +102,24 @@ async function loadData() {
   DATA = inline ? JSON.parse(inline.textContent) : await (await fetch("data/provisions.json")).json();
 }
 
+// Raw stat values stay game-native (scoring depends on them); ops are the
+// game's display-only transforms, e.g. temperature is stored in centi-degrees.
+function displayValue(v, ops) {
+  for (const [op, x] of ops || []) {
+    if (op === "Division") v /= x;
+    else if (op === "Multiply") v *= x;
+    else if (op === "Addition") v += x;
+    else if (op === "Subtraction") v -= x;
+  }
+  return Math.round(v * 100) / 100;
+}
+
 function statLabel(sid, v) {
   const meta = DATA.stats[sid] || { tpl: sid };
   const pct = meta.tpl.includes("{0}%") || sid.includes("%");
   const text = meta.tpl.replace(/[+\-]?\{0\}%?/, "").trim() || sid;
-  return `${v > 0 ? "+" : ""}${v}${pct ? "%" : ""} ${text}`;
+  const d = displayValue(v, meta.ops);
+  return `${d > 0 ? "+" : ""}${d}${pct ? "%" : ""} ${text}`;
 }
 
 // Longer buffs are worth more: scale gently with duration, capped at 30 min.

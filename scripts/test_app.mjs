@@ -21,7 +21,7 @@ function check(cond, msg) {
 
 /* ---------- 1. syntax check both JS files ---------- */
 console.log("== node --check ==");
-for (const f of ["site/app.js", "site/provisions.js"]) {
+for (const f of ["site/app.js", "site/provisions.js", "site/stables.js"]) {
   try {
     execFileSync(process.execPath, ["--check", join(ROOT, f)], { stdio: "pipe" });
     check(true, `${f} parses`);
@@ -156,6 +156,37 @@ if (m) {
   check(packPenalty(1) === 1, "packPenalty(1) = 1 (no penalty for a single serving)");
   check(packPenalty(4) < 1 && packPenalty(4) > 0, "packPenalty(4) is a mild positive discount");
 }
+
+/* ---------- 5. display-value transforms (issue #10) ---------- */
+console.log("== display ops ==");
+// Mirrors of displayValue/statLabel in site/provisions.js and site/stables.js.
+function displayValue(v, ops) {
+  for (const [op, x] of ops || []) {
+    if (op === "Division") v /= x;
+    else if (op === "Multiply") v *= x;
+    else if (op === "Addition") v += x;
+    else if (op === "Subtraction") v -= x;
+  }
+  return Math.round(v * 100) / 100;
+}
+function statLabel(sid, v) {
+  const meta = PROV.stats[sid] || { tpl: sid };
+  const pct = meta.tpl.includes("{0}%") || sid.includes("%");
+  const text = meta.tpl.replace(/[+\-]?\{0\}%?/, "").trim() || sid;
+  const d = displayValue(v, meta.ops);
+  return `${d > 0 ? "+" : ""}${d}${pct ? "%" : ""} ${text}`;
+}
+const TEMP = "BaseInternalTemperatureModification_+";
+check(Array.isArray(PROV.stats[TEMP]?.ops), "temperature stat meta carries display ops");
+check(statLabel(TEMP, 1000) === "+10 C to Temperature",
+  `hot drink renders +10 C, not +1000 C (got "${statLabel(TEMP, 1000)}")`);
+check(statLabel(TEMP, -1500) === "-15 C to Temperature",
+  `Ice Water renders -15 C (got "${statLabel(TEMP, -1500)}")`);
+check(statLabel("BaseHealthRegen_+%", 25) === "+25% Health Regeneration",
+  "stats without ops pass through unchanged");
+const hotTea = PROV.consumables.find(c => c.name === "Hot Tea");
+check(hotTea?.buff.stats[TEMP] === 1000,
+  "raw data stays game-native (Hot Tea buff value is 1000)");
 
 /* ---------- result ---------- */
 console.log(`\n${checks} checks, ${failures.length} failures`);

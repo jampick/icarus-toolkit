@@ -46,11 +46,24 @@ function fmtMin(sec) {
   return m >= 60 ? `${(m / 60).toFixed(m % 60 ? 1 : 0)} h` : `${m} min`;
 }
 
+// Raw stat values stay game-native; ops are the game's display-only
+// transforms (see provisions.js).
+function displayValue(v, ops) {
+  for (const [op, x] of ops || []) {
+    if (op === "Division") v /= x;
+    else if (op === "Multiply") v *= x;
+    else if (op === "Addition") v += x;
+    else if (op === "Subtraction") v -= x;
+  }
+  return Math.round(v * 100) / 100;
+}
+
 function statLabel(sid, v) {
   const meta = DATA.stats[sid] || { tpl: sid };
   const pct = meta.tpl.includes("{0}%") || sid.includes("%");
   const text = meta.tpl.replace(/[+\-]?\{0\}%?/, "").trim() || sid;
-  return `${v > 0 ? "+" : ""}${v}${pct ? "%" : ""} ${text}`;
+  const d = displayValue(v, meta.ops);
+  return `${d > 0 ? "+" : ""}${d}${pct ? "%" : ""} ${text}`;
 }
 
 function itemIcon(icon, cls) {

@@ -46,7 +46,7 @@ run_script("build_provisions_data.py")
 # ---------- 2. recipes.json ----------
 print("\n== recipes.json ==")
 recipes_path = ROOT / "site" / "data" / "recipes.json"
-data = json.loads(recipes_path.read_text())
+data = json.loads(recipes_path.read_text(encoding="utf-8"))
 
 check(set(data) >= {"items", "recipes", "byOutput"},
       "has items/recipes/byOutput keys")
@@ -73,7 +73,7 @@ check(not missing,
 # ---------- 3. provisions.json ----------
 print("\n== provisions.json ==")
 prov_path = ROOT / "site" / "data" / "provisions.json"
-prov = json.loads(prov_path.read_text())
+prov = json.loads(prov_path.read_text(encoding="utf-8"))
 cons, stats = prov["consumables"], prov["stats"]
 
 check(len(cons) > 200,
@@ -100,7 +100,7 @@ check(not bad_meta,
 # ---------- 3b. stables.json ----------
 run_script("build_stables_data.py")
 print("\n== stables.json ==")
-stab = json.loads((ROOT / "site" / "data" / "stables.json").read_text())
+stab = json.loads((ROOT / "site" / "data" / "stables.json").read_text(encoding="utf-8"))
 check(set(stab) >= {"creatures", "saddleItems", "feeds", "stats"},
       "has creatures/saddleItems/feeds/stats keys")
 check(len(stab["creatures"]) >= 25,
@@ -149,22 +149,22 @@ def inline_json(html, elem_id):
     except json.JSONDecodeError:
         return None
 
-bhtml = (dist / "breakdown" / "index.html").read_text()
+bhtml = (dist / "breakdown" / "index.html").read_text(encoding="utf-8")
 check('id="recipes-data"' in bhtml, 'breakdown page has id="recipes-data"')
 check(inline_json(bhtml, "recipes-data") is not None,
       "breakdown inline recipes JSON parses")
 
-phtml = (dist / "provisions" / "index.html").read_text()
+phtml = (dist / "provisions" / "index.html").read_text(encoding="utf-8")
 check('id="provisions-data"' in phtml, 'provisions page has id="provisions-data"')
 check(inline_json(phtml, "provisions-data") is not None,
       "provisions inline JSON parses")
 
-shtml = (dist / "stables" / "index.html").read_text()
+shtml = (dist / "stables" / "index.html").read_text(encoding="utf-8")
 check('id="stables-data"' in shtml, 'stables page has id="stables-data"')
 check(inline_json(shtml, "stables-data") is not None,
       "stables inline JSON parses")
 
-landing = (dist / "index.html").read_text()
+landing = (dist / "index.html").read_text(encoding="utf-8")
 check('href="breakdown/"' in landing, 'landing links to breakdown/')
 check('href="provisions/"' in landing, 'landing links to provisions/')
 check('href="stables/"' in landing, 'landing links to stables/')
