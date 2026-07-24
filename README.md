@@ -38,10 +38,12 @@ saddle options per mount with crafting-cost links; and animal feed buffs.
 
 Where things are - cave systems, possible deep ore vein spawns, oil and enzyme
 geysers, sandworm emerge points and exotic spawn squares for every open-world
-map (Olympus, Styx, Prometheus, Elysium), on the same lettered grid the
-in-game map uses. Marker positions are extracted from the terrain level files;
-deep vein markers are the game's possible spawn points (which ore each rolls
-is decided per prospect). Grid calibration is in beta.
+map (Olympus, Styx, Prometheus, Elysium), drawn over the game's own biome
+terrain on the same lettered grid the in-game map uses. Marker positions are
+extracted from the terrain level files; deep vein markers are the game's
+possible spawn points (which ore each rolls is decided per prospect). Grid
+registration is verified against known landmarks (sandworms in the Desert,
+Southern Glacier in the south).
 
 ![Atlas showing Olympus caves, deep veins and exotic squares](docs/screenshots/atlas.png)
 
@@ -143,3 +145,9 @@ missing an icon fall back to a styled monogram.
 - Exotic spawns are not placed actors; the game spawns them at runtime from
   `D_ExoticSpawn`, whose row names encode grid squares - the atlas shades
   those squares and counts spawns per square.
+- The terrain background is each map's `T_Terrain0XX_Biome` heatmap texture,
+  decoded to PNG by `atlas-export --textures` and rendered under the grid
+  (dimmed with CSS so markers stay readable). The texture and the markers
+  share the same origin-centered bounds, so they register with no extra
+  math; orientation was confirmed by checking that sandworm markers land on
+  the Desert region and the Southern Glacier sits in the south.

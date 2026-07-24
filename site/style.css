@@ -546,3 +546,4 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,.5);
 }
 #atlas-cellinfo { margin-top: 10px; font-size: 13px; color: #b9c5d2; }
+.atlas-terrain { filter: saturate(.55) brightness(.65); opacity: .8; }

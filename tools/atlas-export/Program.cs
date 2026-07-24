@@ -53,6 +53,33 @@ provider.Initialize();
 provider.Mount();
 Console.WriteLine($"mounted: {provider.Files.Count} files");
 
+if (args.Length > 1 && args[1] == "--textures")
+{
+    // Decode each terrain's biome heatmap texture to PNG (issue #15).
+    var texOut = args.Length > 2 ? args[2] : Path.Combine(AppContext.BaseDirectory, "maps");
+    Directory.CreateDirectory(texOut);
+    foreach (var (row, display, dir) in terrains)
+    {
+        var num = row.Split('_')[1];
+        var path = $"Icarus/Content/Heatmaps/{dir.Split('/')[1]}/T_Terrain{num}_Biome";
+        var pkg = provider.LoadPackage(path + ".uasset");
+        var tex = pkg.GetExports().OfType<CUE4Parse.UE4.Assets.Exports.Texture.UTexture2D>().First();
+        var ctex = CUE4Parse_Conversion.Textures.TextureDecoder.Decode(tex);
+        if (ctex == null) { Console.WriteLine($"{display}: decode failed"); continue; }
+        var info = new SkiaSharp.SKImageInfo(ctex.Width, ctex.Height,
+            SkiaSharp.SKColorType.Bgra8888, SkiaSharp.SKAlphaType.Unpremul);
+        var bmp = new SkiaSharp.SKBitmap(info);
+        System.Runtime.InteropServices.Marshal.Copy(ctex.Data, 0, bmp.GetPixels(), ctex.Data.Length);
+        var target = 1024;
+        var resized = bmp.Resize(new SkiaSharp.SKImageInfo(target, target), SkiaSharp.SKFilterQuality.High);
+        var file = Path.Combine(texOut, $"{row}.png");
+        using var fs = File.OpenWrite(file);
+        resized.Encode(SkiaSharp.SKEncodedImageFormat.Png, 90).SaveTo(fs);
+        Console.WriteLine($"{display}: {bmp.Width}x{bmp.Height} -> {file}");
+    }
+    return;
+}
+
 if (args.Length > 2 && args[1] == "--probe")
 {
     var pkg = provider.LoadPackage(args[2]);

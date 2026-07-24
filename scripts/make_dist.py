@@ -107,6 +107,7 @@ def main():
     atlas.mkdir()
     (atlas / "index.html").write_text(ahtml, encoding="utf-8")
     shutil.copy(SITE / "favicon-32.png", atlas / "favicon-32.png")
+    shutil.copytree(SITE / "maps", atlas / "maps")
     size = sum(f.stat().st_size for f in DIST.rglob("*") if f.is_file())
     print(f"dist/ ready: {size/1e6:.1f} MB total, breakdown/index.html "
           f"{(tool/'index.html').stat().st_size/1024:.0f} KB")

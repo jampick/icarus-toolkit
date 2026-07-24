@@ -3,10 +3,11 @@
 
 let DATA = null;
 let mapId = null;
-const activeLayers = new Set(["caves", "veins", "exotics"]);
+const activeLayers = new Set(["terrain", "caves", "veins", "exotics"]);
 let selectedCell = null;
 
 const LAYER_META = {
+  terrain: { label: "Terrain",     emoji: "\u{1F3DE}", color: null },
   caves:   { label: "Caves",       emoji: "\u{1F573}", color: "#e8b34b" },
   veins:   { label: "Deep veins",  emoji: "⛏",    color: "#9ab0c4" },
   oil:     { label: "Oil",         emoji: "\u{1F6E2}", color: "#b06f3c" },
@@ -58,12 +59,13 @@ function renderChips() {
   lwrap.innerHTML = "";
   const map = DATA.maps[mapId];
   for (const [key, meta] of Object.entries(LAYER_META)) {
-    const n = key === "exotics"
-      ? Object.keys(map.exotics).length
+    const n = key === "terrain" ? null
+      : key === "exotics" ? Object.keys(map.exotics).length
       : (map.layers[key] || []).length;
     const b = document.createElement("button");
     b.className = "tchip" + (activeLayers.has(key) ? " on" : "");
-    b.innerHTML = `${meta.emoji} ${meta.label} <span class="atlas-count">${n}</span>`;
+    b.innerHTML = `${meta.emoji} ${meta.label}` +
+      (n === null ? "" : ` <span class="atlas-count">${n}</span>`);
     b.onclick = () => {
       activeLayers.has(key) ? activeLayers.delete(key) : activeLayers.add(key);
       updateURL({ layers: [...activeLayers].join(",") });
@@ -81,7 +83,17 @@ function renderMap() {
   const pad = 40; // room for edge labels
   svg.setAttribute("viewBox", `${-pad} ${-pad} ${G * CELL + 2 * pad} ${G * CELL + 2 * pad}`);
 
-  // exotic cell shading under everything else
+  // biome terrain image under everything else (world-registered: the
+  // texture and the marker transform share the same origin-centered bounds)
+  if (activeLayers.has("terrain")) {
+    el("image", {
+      href: `maps/${mapId}.png`,
+      x: 0, y: 0, width: G * CELL, height: G * CELL,
+      preserveAspectRatio: "none", class: "atlas-terrain",
+    }, svg);
+  }
+
+  // exotic cell shading under the grid but over the terrain
   if (activeLayers.has("exotics")) {
     for (const [cell, count] of Object.entries(map.exotics)) {
       const col = cell.charCodeAt(0) - 65;
