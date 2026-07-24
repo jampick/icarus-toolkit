@@ -33,6 +33,12 @@ def main():
     (tool / "index.html").write_text(html)
     shutil.copytree(SITE / "icons", tool / "icons")
     shutil.copy(ROOT / "home" / "index.html", DIST / "index.html")
+    # app icons + manifest: tool page gets everything, landing shares the icons
+    for f in ["favicon-32.png", "apple-touch-icon.png", "app-icon-192.png",
+              "app-icon-512.png", "manifest.webmanifest"]:
+        shutil.copy(SITE / f, tool / f)
+        if f != "manifest.webmanifest":
+            shutil.copy(SITE / f, DIST / f)
     size = sum(f.stat().st_size for f in DIST.rglob("*") if f.is_file())
     print(f"dist/ ready — {size/1e6:.1f} MB total, breakdown/index.html "
           f"{(tool/'index.html').stat().st_size/1024:.0f} KB")
