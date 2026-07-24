@@ -19,6 +19,30 @@ async function loadData() {
   DATA = inline ? JSON.parse(inline.textContent) : await (await fetch("data/recipes.json")).json();
 }
 
+let benchIndex = null;  // normalized display name -> craftable item id
+function benchItemId(benchName) {
+  if (!benchIndex) {
+    benchIndex = {};
+    const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    for (const id of Object.keys(DATA.byOutput)) {
+      benchIndex[norm(DATA.items[id].name)] = id;
+    }
+    benchIndex._norm = norm;
+  }
+  return benchIndex[benchIndex._norm(benchName)] || null;
+}
+
+function setRoot(id) {
+  rootId = id;
+  modeOverride.clear();
+  recipeChoice.clear();
+  qty = 1; qtyEl.value = 1;
+  searchEl.value = DATA.items[id].name;
+  $("#sidebar").classList.remove("open");
+  rebuild();
+  centerTree();
+}
+
 function recipesFor(id) {
   const idxs = DATA.byOutput[id] || [];
   // real crafting recipes first, conversions last
@@ -254,6 +278,12 @@ function renderTotals() {
   [...benches].sort().forEach(b => {
     const el = document.createElement("div");
     el.className = "brow"; el.textContent = b;
+    const bid = benchItemId(b);
+    if (bid) {
+      el.classList.add("linked");
+      el.title = "Show what this bench costs to build";
+      el.onclick = () => setRoot(bid);
+    }
     bEl.appendChild(el);
   });
 }
@@ -413,12 +443,8 @@ function doSearch(q) {
 function pick(i) {
   const m = matches[i];
   if (!m) return;
-  rootId = m.id;
-  modeOverride.clear(); recipeChoice.clear();
-  searchEl.value = m.item.name;
   resultsEl.classList.add("hidden");
-  rebuild();
-  centerTree();
+  setRoot(m.id);
 }
 
 searchEl.addEventListener("input", () => doSearch(searchEl.value));

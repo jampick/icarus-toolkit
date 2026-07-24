@@ -235,8 +235,11 @@ body {
 .brow {
   display: flex; align-items: center; gap: 8px;
   font-size: 13px; padding: 4px 6px; color: var(--text);
+  border-radius: 8px;
 }
 .brow::before { content: "▸"; color: var(--accent); }
+.brow.linked { cursor: pointer; color: var(--accent2); }
+.brow.linked:hover { background: rgba(79,195,247,.1); text-decoration: underline; }
 
 .hidden { display: none !important; }
 

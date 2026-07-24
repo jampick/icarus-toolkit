@@ -14,13 +14,15 @@ GAME = ROOT / "data" / "game"
 OUT = ROOT / "site" / "data" / "recipes.json"
 
 NSLOC = re.compile(r'NSLOCTEXT\("[^"]*",\s*"[^"]*",\s*"(.*)"\)$', re.S)
+INVTEXT = re.compile(r'INVTEXT\("(.*)"\)$', re.S)
 
 
 def loc(text):
     if not text:
         return ""
-    m = NSLOC.match(text)
-    return m.group(1) if m else text
+    m = NSLOC.match(text) or INVTEXT.match(text)
+    text = m.group(1) if m else text
+    return text.replace("[DNT] ", "").strip()
 
 
 def rows(name):
