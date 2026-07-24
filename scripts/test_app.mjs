@@ -106,6 +106,17 @@ if (m) {
   check(Array.isArray(ACTIVITIES) && ACTIVITIES.length > 0,
     `ACTIVITIES has ${ACTIVITIES.length} entries`);
 
+  // Mirrors of the pure scoring helpers in site/provisions.js (which is
+  // DOM-bound and can't be imported directly).
+  function durFactor(dur) {
+    return 0.5 + 0.5 * Math.min(dur || 0, 1800) / 1800;
+  }
+  function packCount(tripMinutes, dur) {
+    return Math.ceil(tripMinutes * 60 / dur);
+  }
+  function packPenalty(n) {
+    return 1 / (1 + 0.1 * (n - 1));
+  }
   function score(item, weights) {
     let s = 0;
     for (const [sid, w] of Object.entries(weights)) {
@@ -113,7 +124,7 @@ if (m) {
       if (v === undefined) continue;
       s += w * (v / (PROV.stats[sid]?.max || 1));
     }
-    return s;
+    return s * durFactor(item.buff.dur);
   }
 
   for (const act of ACTIVITIES) {
@@ -129,10 +140,21 @@ if (m) {
       if (Number.isNaN(s)) nan++;
       if (c.slots > 0 && s > 0.05) positiveFood++;
     }
-    check(nan === 0, `${act.id}: no NaN scores`);
+    check(nan === 0, `${act.id}: no NaN damped scores`);
     check(positiveFood >= 1,
       `${act.id}: ${positiveFood} stomach-slot foods score > 0.05`);
   }
+
+  /* ---------- 4. duration damping & trip pack math ---------- */
+  console.log("== duration damping & trip pack math ==");
+  check(Math.abs(durFactor(0) - 0.5) < 1e-12, "durFactor(0) = 0.5 (instant meds hit the floor)");
+  check(Math.abs(durFactor(1800) - 1) < 1e-12, "durFactor(1800) = 1");
+  check(Math.abs(durFactor(7200) - 1) < 1e-12, "durFactor caps at 30 min");
+  check(packCount(60, 900) === 4, "60-min trip, 15-min buff -> pack 4");
+  check(packCount(60, 1200) === 3, "60-min trip, 20-min buff -> pack 3");
+  check(packCount(60, 3600) === 1, "60-min trip, 60-min buff -> pack 1");
+  check(packPenalty(1) === 1, "packPenalty(1) = 1 (no penalty for a single serving)");
+  check(packPenalty(4) < 1 && packPenalty(4) > 0, "packPenalty(4) is a mild positive discount");
 }
 
 /* ---------- result ---------- */

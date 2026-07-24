@@ -315,6 +315,24 @@ body {
 .pnone { color: var(--dim); font-size: 13px; padding: 8px 2px; }
 .prov-note { color: var(--dim); font-size: 12px; margin: -6px 0 12px; }
 
+#tripbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 2px 0 8px; }
+.trip-label { color: var(--dim); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.tchip {
+  padding: 5px 12px; font-size: 12px; font-weight: 600;
+  background: var(--bg2); color: var(--text);
+  border: 1px solid var(--line); border-radius: 20px; cursor: pointer;
+  transition: border-color .15s, color .15s, box-shadow .2s;
+}
+.tchip:hover { border-color: var(--accent); color: var(--accent); }
+.tchip.on { color: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.trip-note { margin: 0 0 14px; }
+.packbadge {
+  color: var(--accent); font-weight: 700;
+  background: rgba(242,163,60,.08);
+  border: 1px solid rgba(242,163,60,.4); border-radius: 10px;
+  padding: 1px 7px;
+}
+
 #psearchwrap { position: relative; max-width: 440px; margin-bottom: 18px; }
 #psearch {
   width: 100%; padding: 10px 14px;

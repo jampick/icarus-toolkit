@@ -74,9 +74,28 @@ const ACTIVITIES = [
          "BaseTamedCreatureExperience_+%": 1 } },
 ];
 
+const TRIPS = [
+  { label: "Off", min: null },
+  { label: "30 min", min: 30 },
+  { label: "1 h", min: 60 },
+  { label: "2 h", min: 120 },
+  { label: "3 h", min: 180 },
+];
+
 let DATA = null;
 let active = null;
+let tripMin = null; // minutes; null = trip planning off
 const $ = (s) => document.querySelector(s);
+
+function updateURL(kv) {
+  const p = new URLSearchParams(location.search);
+  for (const [k, v] of Object.entries(kv)) {
+    if (v === null || v === undefined) p.delete(k);
+    else p.set(k, v);
+  }
+  const q = p.toString();
+  history.replaceState({}, "", q ? "?" + q : location.pathname);
+}
 
 async function loadData() {
   const inline = document.getElementById("provisions-data");
@@ -90,6 +109,22 @@ function statLabel(sid, v) {
   return `${v > 0 ? "+" : ""}${v}${pct ? "%" : ""} ${text}`;
 }
 
+// Longer buffs are worth more: scale gently with duration, capped at 30 min.
+// dur=0 (instant meds) lands on the 0.5 floor with no special-casing.
+function durFactor(dur) {
+  return 0.5 + 0.5 * Math.min(dur || 0, 1800) / 1800;
+}
+
+// How many of an item you need to keep its buff up for a whole trip.
+function packCount(tripMinutes, dur) {
+  return Math.ceil(tripMinutes * 60 / dur);
+}
+
+// Mild ranking penalty for having to re-eat mid-trip; 1 when a single serving lasts.
+function packPenalty(n) {
+  return 1 / (1 + 0.1 * (n - 1));
+}
+
 function score(item, weights) {
   let s = 0;
   for (const [sid, w] of Object.entries(weights)) {
@@ -97,7 +132,7 @@ function score(item, weights) {
     if (v === undefined) continue;
     s += w * (v / (DATA.stats[sid]?.max || 1));
   }
-  return s;
+  return s * durFactor(item.buff.dur);
 }
 
 function fmtDur(sec) {
@@ -119,9 +154,14 @@ function card(item, weights, maxScore, sc) {
   img.onerror = () => img.remove();
   head.appendChild(img);
   const ttl = document.createElement("div");
+  const pack = tripMin === null ? "" :
+    item.buff.dur > 0
+      ? `<span class="packbadge">🎒 ×${packCount(tripMin, item.buff.dur)}</span>`
+      : '<span class="packbadge">as needed</span>';
   ttl.innerHTML = `<div class="pname">${item.name}</div>
     <div class="psub">${item.buff.dur ? "⏱ " + fmtDur(item.buff.dur) : ""}
       ${item.craft ? `<span class="bench">${item.craft[0]}</span>` : '<span class="gathertag">GATHER</span>'}
+      ${pack}
     </div>`;
   head.appendChild(ttl);
   el.appendChild(head);
@@ -171,7 +211,12 @@ function renderActivity(act) {
     host.innerHTML = "";
     const ranked = DATA.consumables
       .filter(match)
-      .map(c => ({ c, s: score(c, act.w) }))
+      .map(c => {
+        let s = score(c, act.w);
+        if (tripMin !== null && c.buff.dur > 0)
+          s *= packPenalty(packCount(tripMin, c.buff.dur));
+        return { c, s };
+      })
       .filter(x => x.s > 0.05)
       .sort((a, b) => b.s - a.s)
       .slice(0, n);
@@ -185,7 +230,38 @@ function renderActivity(act) {
     }
     host.closest("section").style.display = ranked.length ? "" : "none";
   }
-  history.replaceState({}, "", "?activity=" + act.id);
+  updateURL({ activity: act.id, trip: tripMin });
+}
+
+/* ---------- trip-length selector ---------- */
+
+function paintTrip() {
+  document.querySelectorAll(".tchip").forEach(el =>
+    el.classList.toggle("on", el.dataset.min === String(tripMin ?? "")));
+}
+
+function setTrip(min) {
+  tripMin = min;
+  paintTrip();
+  updateURL({ trip: tripMin });
+  if (active) renderActivity(active);
+}
+
+function initTripBar() {
+  const host = $("#tripbar");
+  const lbl = document.createElement("span");
+  lbl.className = "trip-label";
+  lbl.textContent = "Trip length:";
+  host.appendChild(lbl);
+  for (const t of TRIPS) {
+    const b = document.createElement("button");
+    b.className = "tchip";
+    b.dataset.min = t.min ?? "";
+    b.textContent = t.label;
+    b.onclick = () => setTrip(t.min);
+    host.appendChild(b);
+  }
+  paintTrip();
 }
 
 /* ---------- reverse lookup: item -> best activities ---------- */
@@ -333,8 +409,11 @@ function init() {
     el.onclick = () => renderActivity(a);
     host.appendChild(el);
   }
+  initTripBar();
   initReverseSearch();
   const params = new URLSearchParams(location.search);
+  const trip = parseInt(params.get("trip"), 10);
+  if (TRIPS.some(t => t.min === trip)) { tripMin = trip; paintTrip(); }
   const start = ACTIVITIES.find(a => a.id === params.get("activity"));
   if (start) renderActivity(start);
   const food = DATA.consumables.find(c => c.id === params.get("food"));
