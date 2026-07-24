@@ -1,6 +1,6 @@
 {
   "name": "Icarus Breakdown",
-  "short_name": "Breakdown",
+  "short_name": "Icarus Breakdown",
   "description": "Exploded crafting calculator for ICARUS",
   "start_url": ".",
   "display": "standalone",
