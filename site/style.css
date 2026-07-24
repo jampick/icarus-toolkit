@@ -94,7 +94,7 @@ body {
 .qbtn.wide { width: auto; padding: 0 10px; font-size: 12px; white-space: nowrap; }
 
 /* ---------- stage / canvas ---------- */
-#stage { grid-area: stage; position: relative; overflow: hidden; cursor: grab; }
+#stage { grid-area: stage; position: relative; overflow: hidden; cursor: grab; touch-action: none; }
 #stage.panning { cursor: grabbing; }
 
 #canvas {
@@ -255,9 +255,30 @@ body {
 ::-webkit-scrollbar-thumb { background: #24344a; border-radius: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 
+#totals-fab {
+  display: none;
+  position: fixed; right: 14px; bottom: 18px; z-index: 60;
+  padding: 12px 18px; border-radius: 30px;
+  background: var(--accent); color: #1a1206; font-weight: 700; font-size: 14px;
+  border: none; cursor: pointer;
+  box-shadow: 0 8px 30px rgba(242,163,60,.4);
+}
+
 @media (max-width: 900px) {
   body { grid-template-columns: 1fr 0; }
-  #sidebar { display: none; }
+  /* sidebar becomes a slide-up sheet, toggled by the Materials button */
+  #sidebar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    max-height: 68vh;
+    border-left: none; border-top: 1px solid var(--line);
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -18px 60px rgba(0,0,0,.6);
+    transform: translateY(105%);
+    transition: transform .3s cubic-bezier(.3,.9,.3,1);
+    padding-bottom: 84px;  /* keep the FAB clear of the last rows */
+  }
+  #sidebar.open { transform: translateY(0); }
+  #totals-fab:not(.hidden) { display: block; }
 }
 
 /* phones: wrap the top bar so search gets a full-width row (its dropdown
@@ -268,5 +289,7 @@ body {
   #treectl { order: 2; }
   #qtywrap { order: 3; }
   #searchwrap { order: 4; flex-basis: 100%; max-width: none; }
+  /* 16px stops iOS Safari from auto-zooming the page when the input focuses */
+  #search, #qty { font-size: 16px; }
   .hint-keys { flex-direction: column; gap: 8px; align-items: center; }
 }

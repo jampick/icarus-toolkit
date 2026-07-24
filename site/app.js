@@ -178,6 +178,7 @@ function renderNode(node, isRoot) {
 function render() {
   $("#hint").classList.add("hidden");
   $("#sidebar").classList.remove("hidden");
+  $("#totals-fab").classList.remove("hidden");
   treeEl.innerHTML = "";
   treeEl.appendChild(renderNode(treeRoot, true));
   requestAnimationFrame(drawWires);
@@ -303,6 +304,55 @@ stage.addEventListener("wheel", (e) => {
   applyView();
 }, { passive: false });
 
+/* touch: one-finger pan, two-finger pinch zoom */
+let touch = null;
+function pinchInit(a, b) {
+  return {
+    mode: "pinch",
+    d: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY),
+    cx: (a.clientX + b.clientX) / 2, cy: (a.clientY + b.clientY) / 2,
+    k: view.k, ox: view.x, oy: view.y,
+  };
+}
+stage.addEventListener("touchstart", (e) => {
+  hideTip();
+  $("#sidebar").classList.remove("open");
+  if (e.touches.length === 1) {
+    const t = e.touches[0];
+    touch = { mode: "pan", sx: t.clientX, sy: t.clientY, ox: view.x, oy: view.y };
+  } else if (e.touches.length === 2) {
+    touch = pinchInit(e.touches[0], e.touches[1]);
+  }
+}, { passive: true });
+stage.addEventListener("touchmove", (e) => {
+  if (!touch) return;
+  e.preventDefault();
+  if (touch.mode === "pan" && e.touches.length === 1) {
+    const t = e.touches[0];
+    view.x = touch.ox + t.clientX - touch.sx;
+    view.y = touch.oy + t.clientY - touch.sy;
+  } else if (touch.mode === "pinch" && e.touches.length === 2) {
+    const [a, b] = e.touches;
+    const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    const k2 = Math.min(2.5, Math.max(0.25, touch.k * d / touch.d));
+    const r = stage.getBoundingClientRect();
+    const px = touch.cx - r.left, py = touch.cy - r.top;
+    view.x = px - ((px - touch.ox) / touch.k) * k2;
+    view.y = py - ((py - touch.oy) / touch.k) * k2;
+    view.k = k2;
+  }
+  applyView();
+}, { passive: false });
+const touchEnd = (e) => {
+  if (e.touches.length === 2) touch = pinchInit(e.touches[0], e.touches[1]);
+  else if (e.touches.length === 1) {
+    const t = e.touches[0];
+    touch = { mode: "pan", sx: t.clientX, sy: t.clientY, ox: view.x, oy: view.y };
+  } else touch = null;
+};
+stage.addEventListener("touchend", touchEnd);
+stage.addEventListener("touchcancel", touchEnd);
+
 let pan = null;
 stage.addEventListener("mousedown", (e) => {
   if (e.target.closest(".card")) return;
@@ -416,6 +466,8 @@ $("#collapse-all").onclick = () => {
   rebuild();
   centerTree();
 };
+
+$("#totals-fab").addEventListener("click", () => $("#sidebar").classList.toggle("open"));
 
 window.addEventListener("resize", () => requestAnimationFrame(drawWires));
 
