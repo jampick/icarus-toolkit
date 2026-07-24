@@ -44,6 +44,25 @@ python3 scripts/build_data.py
 python3 scripts/make_dist.py
 ```
 
+## Tests
+
+`bash scripts/run_tests.sh` runs the full pass:
+
+- `scripts/test_pipeline.py` (Python, stdlib only) — runs `build_data.py`,
+  `build_provisions_data.py` and `make_dist.py`, then validates the generated
+  `recipes.json` / `provisions.json` (counts, key items, raw/craft flags,
+  referential integrity, known regressions) and the `dist/` output (pages
+  exist, inline JSON parses, landing links intact).
+- `scripts/test_app.mjs` (Node, no deps) — syntax-checks `site/app.js` and
+  `site/provisions.js`, smoke-tests the recursive recipe tree (Solar Panel,
+  cycle guard, positive integer totals) and the provisions activity scoring
+  (no NaN scores, every activity yields results, weight keys are real stat
+  names).
+
+CI runs the same script on every push and pull request
+(`.github/workflows/deploy.yml`); the Pages deploy job only runs after the
+test job passes, so a broken build never ships.
+
 ## Icons
 
 Item icons (96 px PNGs in `site/icons/`) are game assets © RocketWerkz, used
