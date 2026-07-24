@@ -32,16 +32,36 @@ function benchItemId(benchName) {
   return benchIndex[benchIndex._norm(benchName)] || null;
 }
 
-function setRoot(id) {
+function setRoot(id, pushHistory = true) {
   rootId = id;
   modeOverride.clear();
   recipeChoice.clear();
   qty = 1; qtyEl.value = 1;
   searchEl.value = DATA.items[id].name;
   $("#sidebar").classList.remove("open");
+  if (pushHistory) history.pushState({ item: id }, "", "?item=" + encodeURIComponent(id));
   rebuild();
   centerTree();
 }
+
+function clearRoot() {
+  rootId = null;
+  treeRoot = null;
+  treeEl.innerHTML = "";
+  wires.innerHTML = "";
+  searchEl.value = "";
+  $("#hint").classList.remove("hidden");
+  $("#sidebar").classList.add("hidden");
+  $("#sidebar").classList.remove("open");
+  $("#totals-fab").classList.add("hidden");
+}
+
+window.addEventListener("popstate", (e) => {
+  const id = (e.state && e.state.item) ||
+    new URLSearchParams(location.search).get("item");
+  if (id && DATA && DATA.items[id]) setRoot(id, false);
+  else clearRoot();
+});
 
 function recipesFor(id) {
   const idxs = DATA.byOutput[id] || [];
@@ -502,5 +522,10 @@ window.addEventListener("resize", () => requestAnimationFrame(drawWires));
 loadData().then(() => {
   searchEl.focus();
   const param = new URLSearchParams(location.search).get("item");
-  if (param && DATA.items[param]) { rootId = param; rebuild(); centerTree(); }
+  if (param && DATA.items[param]) {
+    history.replaceState({ item: param }, "", location.href);
+    setRoot(param, false);
+  } else {
+    history.replaceState({}, "", location.pathname);
+  }
 });
