@@ -1,0 +1,13 @@
+{
+  "name": "Icarus Provisions",
+  "short_name": "Icarus Provisions",
+  "description": "Food buffs by activity for ICARUS",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0f14",
+  "theme_color": "#0b0f14",
+  "icons": [
+    { "src": "prov-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "prov-icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

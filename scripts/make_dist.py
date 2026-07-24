@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Bundle the toolkit into dist/ for hosting:
   dist/index.html       — landing page (from home/)
-  dist/breakdown/       — the crafting calculator, index.html with CSS/JS/data
-                          inlined + its icons/ folder
+  dist/breakdown/       — crafting calculator (inlined) + icons/ folder
+  dist/provisions/      — food buff picker (inlined), icons shared from
+                          ../breakdown/icons/
 Host dist/ anywhere static."""
 import shutil
 from pathlib import Path
@@ -39,6 +40,28 @@ def main():
         shutil.copy(SITE / f, tool / f)
         if f != "manifest.webmanifest":
             shutil.copy(SITE / f, DIST / f)
+
+    # --- provisions ---
+    phtml = (SITE / "provisions.html").read_text()
+    pjs = (SITE / "provisions.js").read_text()
+    pdata = (SITE / "data" / "provisions.json").read_text()
+    phtml = phtml.replace(
+        '<link rel="stylesheet" href="style.css">',
+        f"<style>\n{css}\n</style>")
+    phtml = phtml.replace(
+        '<script src="provisions.js"></script>',
+        '<script>window.ICON_BASE="../breakdown/icons/";'
+        'window.BREAKDOWN_BASE="../breakdown/";</script>\n'
+        f'<script type="application/json" id="provisions-data">{pdata}</script>\n'
+        f"<script>\n{pjs}\n</script>")
+    phtml = phtml.replace('href="index.html"', 'href="../breakdown/"')
+    prov = DIST / "provisions"
+    prov.mkdir()
+    (prov / "index.html").write_text(phtml)
+    for f in ["prov-favicon-32.png", "prov-apple-touch-icon.png",
+              "prov-icon-192.png", "prov-icon-512.png",
+              "manifest-provisions.webmanifest"]:
+        shutil.copy(SITE / f, prov / f)
     size = sum(f.stat().st_size for f in DIST.rglob("*") if f.is_file())
     print(f"dist/ ready — {size/1e6:.1f} MB total, breakdown/index.html "
           f"{(tool/'index.html').stat().st_size/1024:.0f} KB")
