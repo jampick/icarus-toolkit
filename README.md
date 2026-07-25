@@ -38,9 +38,12 @@ saddle options per mount with crafting-cost links; and animal feed buffs.
 
 Where things are - cave systems, possible deep ore vein spawns, oil and enzyme
 geysers, sandworm boss points and exotic spawn squares for every open-world
-map (Olympus, Styx, Prometheus, Elysium), drawn over hillshaded relief
-rendered from the game's landscape heightmaps, on the same lettered grid the
-in-game map uses. Click a cave for its template contents: size, entrances,
+map (Olympus, Styx, Prometheus, Elysium), on the same lettered grid the
+in-game map uses. Olympus terrain is the real in-game satellite imagery,
+stitched grid-true from a full set of zoomed map captures
+(`scripts/stitch_map_screenshots.py`); the other maps use hillshaded relief
+rendered from the game's landscape heightmaps until they get the same
+treatment. Click a cave for its template contents: size, entrances,
 deep veins inside, guaranteed exotic spawns, cave lakes and creature spawns
 (caves with exotics get a highlight ring). Marker positions are extracted
 from the terrain level files; deep vein markers are the game's possible
@@ -64,6 +67,10 @@ Deploys automatically to GitHub Pages on push to `main`
 - `scripts/build_provisions_data.py` / `build_stables_data.py` /
   `build_atlas_data.py` - compile `provisions.json`, `stables.json` and
   `atlas.json` for the other tools.
+- `scripts/stitch_map_screenshots.py` - assembles zoomed in-game map
+  screenshots into one grid-registered terrain image (detects the map's own
+  grid lines, snaps agent-read cell labels to them, composites whole cells,
+  with optional exposure matching for cloud-covered captures).
 - `tools/atlas-export/` - .NET 10 + CUE4Parse exporter that sweeps the terrain
   `.umap` files for placed markers (caves, deep vein spawns, geysers, worm
   points) into `data/atlas-raw/`. Only needed when refreshing after a game

@@ -19,6 +19,10 @@ const LAYER_META = {
 const SVGNS = "http://www.w3.org/2000/svg";
 const CELL = 100; // svg units per grid cell
 
+// maps whose terrain is stitched in-game satellite imagery (lighter CSS
+// treatment than the muted hillshade renders)
+const PHOTO_MAPS = new Set(["Terrain_016"]);
+
 function updateURL(kv) {
   const p = new URLSearchParams(location.search);
   for (const [k, v] of Object.entries(kv)) {
@@ -89,7 +93,8 @@ function renderMap() {
     el("image", {
       href: `maps/${mapId}.jpg`,
       x: 0, y: 0, width: G * CELL, height: G * CELL,
-      preserveAspectRatio: "none", class: "atlas-terrain",
+      preserveAspectRatio: "none",
+      class: PHOTO_MAPS.has(mapId) ? "atlas-terrain atlas-terrain-photo" : "atlas-terrain",
     }, svg);
   }
 

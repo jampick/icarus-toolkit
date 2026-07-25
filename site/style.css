@@ -547,6 +547,7 @@ body {
 }
 #atlas-cellinfo { margin-top: 10px; font-size: 13px; color: #b9c5d2; }
 .atlas-terrain { filter: saturate(.8) brightness(.72); opacity: .95; }
+.atlas-terrain-photo { filter: saturate(.92) brightness(.9); opacity: 1; }
 .atlas-exoring { pointer-events: none; }
 .atlas-caves { transition: r .1s; }
 .atlas-caves:hover { r: 14; }
