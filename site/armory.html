@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icarus Armory - Arms and Armor</title>
+<link rel="icon" type="image/png" sizes="32x32" href="armory-favicon-32.png">
+<link rel="apple-touch-icon" href="armory-apple-touch-icon.png">
+<link rel="manifest" href="manifest-armory.webmanifest">
+<meta name="theme-color" content="#0b0f14">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="prov-body">
+<header id="topbar">
+  <a class="crumb" href="../" title="Icarus Toolkit home">⌂ Toolkit</a>
+  <div id="logo"><span class="logo-icarus">ICARUS</span><span class="logo-sep">//</span><span class="logo-sub">ARMORY</span></div>
+  <nav class="prov-nav">
+    <a href="index.html">⛏ Breakdown</a>
+    <a href="provisions.html">🥧 Provisions</a>
+    <a href="stables.html">🐾 Stables</a>
+    <a href="atlas.html">🗺 Atlas</a>
+    <a href="https://github.com/jampick/icarus-toolkit/issues/new" target="_blank" rel="noopener" title="Found a bug? Open an issue">🐞</a>
+  </nav>
+</header>
+
+<main class="prov-main">
+  <p class="prov-intro">Arms and armor, straight from the game files: every armor set with
+  its resistances and set bonus, every weapon with its damage, and the ammo each one fires.</p>
+
+  <div id="asearchwrap">
+    <input id="asearch" type="text" placeholder="Search armor, a weapon or ammo…" autocomplete="off" spellcheck="false">
+    <div id="aresults" class="hidden"></div>
+  </div>
+
+  <div id="areverse" class="hidden"></div>
+
+  <div id="tabs">
+    <button class="tab on" data-tab="armor">🛡 Armor</button>
+    <button class="tab" data-tab="weapons">⚔️ Weapons</button>
+    <button class="tab" data-tab="ammo">🏹 Ammo</button>
+  </div>
+
+  <section id="tab-armor">
+    <p class="prov-note">Sets are ordered by protection: cheap and breezy at the top, endgame plate at the bottom. Wearing the full set unlocks its bonus.</p>
+    <div id="afilters">
+      <button class="tchip on" data-f="all">All</button>
+      <button class="tchip" data-f="craft">⚒ Craftable</button>
+      <button class="tchip" data-f="ws">🛰 Workshop</button>
+      <button class="tchip" data-f="cold">🧊 Cold-ready</button>
+      <button class="tchip" data-f="heat">🔥 Heat-ready</button>
+    </div>
+    <div id="set-jump"></div>
+    <div id="set-list"></div>
+  </section>
+
+  <section id="tab-weapons" class="hidden">
+    <p class="prov-note">Melee damage is per hit; ranged damage depends on the ammo loaded - the range shown spans the weakest to strongest ammo the weapon accepts.</p>
+    <div id="wfilters"></div>
+    <div id="weapon-cards" class="prov-grid"></div>
+  </section>
+
+  <section id="tab-ammo" class="hidden">
+    <p class="prov-note">Grouped by the weapons that fire it. Damage is per projectile; shotgun shells fire several.</p>
+    <div id="ammo-jump"></div>
+    <div id="ammo-list"></div>
+  </section>
+</main>
+
+<button id="totop" class="hidden" title="Back to top">↑</button>
+<script src="armory.js"></script>
+</body>
+</html>

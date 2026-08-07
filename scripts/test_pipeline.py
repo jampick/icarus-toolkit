@@ -130,7 +130,47 @@ bad_feed_stats = sorted(sid for f in stab["feeds"] for sid in f["stats"]
 check(not bad_feed_stats,
       f"every feed stat in stats meta (bad: {bad_feed_stats[:6] or 'none'})")
 
-# ---------- 3c. atlas.json ----------
+# ---------- 3c. armory.json ----------
+run_script("build_armory_data.py")
+print("\n== armory.json ==")
+arm = json.loads((ROOT / "site" / "data" / "armory.json").read_text(encoding="utf-8"))
+check(set(arm) >= {"sets", "gear", "weapons", "ammoGroups", "stats"},
+      "has sets/gear/weapons/ammoGroups/stats keys")
+check(len(arm["sets"]) >= 25, f"armor sets count {len(arm['sets'])} >= 25")
+set_names = {g["name"] for g in arm["sets"]}
+for want in ("Cloth Armor Set", "Leather Armor Set", "Fur Armor Set",
+             "Carbonweave Armor Set"):
+    check(want in set_names, f"armor set '{want}' present")
+short_sets = [g["name"] for g in arm["sets"] if len(g["pieces"]) < 5]
+check(not short_sets, f"every armor set has 5 pieces (short: {short_sets[:4] or 'none'})")
+check(any(g["bonus"].get("stats") for g in arm["sets"] if g.get("bonus")),
+      "set bonuses carry stats")
+gear_names = {g["name"] for g in arm["gear"]}
+check(gear_names >= {"Envirosuits", "Backpacks"},
+      f"gear groups include Envirosuits and Backpacks (got {sorted(gear_names)})")
+check(len(arm["weapons"]) >= 80, f"weapons count {len(arm['weapons'])} >= 80")
+wclasses = {w["cls"] for w in arm["weapons"]}
+check("crossbow" in wclasses, "crossbow class present (tag-order regression)")
+wnames = {w["name"] for w in arm["weapons"]}
+for want in ("Wood Bow", "Longbow", "Wood Spear"):
+    check(want in wnames, f"weapon '{want}' present")
+check(len(arm["ammoGroups"]) >= 8,
+      f"ammo groups {len(arm['ammoGroups'])} >= 8")
+bad_ammo = [a["id"] for g in arm["ammoGroups"].values() for a in g["ammo"]
+            if not a.get("dmg")]
+check(not bad_ammo, f"every ammo entry has damage (bad: {bad_ammo[:6] or 'none'})")
+arm_stats = set(arm["stats"])
+used = {sid for g in list(arm["sets"]) + list(arm["gear"]) for p in g["pieces"]
+        for sid in p["stats"]}
+used |= {sid for w in arm["weapons"] for sid in w.get("stats", {})}
+used |= {sid for g in arm["ammoGroups"].values() for a in g["ammo"]
+         for sid in a.get("stats", {})}
+used |= {sid for g in arm["sets"] if g.get("bonus")
+         for sid in g["bonus"]["stats"]}
+check(used <= arm_stats,
+      f"every used stat key is in stats meta (missing: {sorted(used - arm_stats)[:6] or 'none'})")
+
+# ---------- 3d. atlas.json ----------
 run_script("build_atlas_data.py")
 print("\n== atlas.json ==")
 atlas = json.loads((ROOT / "site" / "data" / "atlas.json").read_text(encoding="utf-8"))
@@ -169,7 +209,8 @@ run_script("make_dist.py")
 print("\n== dist/ ==")
 dist = ROOT / "dist"
 for rel in ("index.html", "breakdown/index.html", "provisions/index.html",
-            "stables/index.html", "atlas/index.html", "breakdown/icons"):
+            "stables/index.html", "atlas/index.html", "armory/index.html",
+            "breakdown/icons"):
     check((dist / rel).exists(), f"dist/{rel} exists")
 atlas_imgs = sorted(p.name for p in (dist / "atlas" / "maps").glob("*.jpg"))
 check(len(atlas_imgs) == 4,
@@ -206,11 +247,17 @@ check('id="atlas-data"' in ahtml, 'atlas page has id="atlas-data"')
 check(inline_json(ahtml, "atlas-data") is not None,
       "atlas inline JSON parses")
 
+mhtml = (dist / "armory" / "index.html").read_text(encoding="utf-8")
+check('id="armory-data"' in mhtml, 'armory page has id="armory-data"')
+check(inline_json(mhtml, "armory-data") is not None,
+      "armory inline JSON parses")
+
 landing = (dist / "index.html").read_text(encoding="utf-8")
 check('href="breakdown/"' in landing, 'landing links to breakdown/')
 check('href="provisions/"' in landing, 'landing links to provisions/')
 check('href="stables/"' in landing, 'landing links to stables/')
 check('href="atlas/"' in landing, 'landing links to atlas/')
+check('href="armory/"' in landing, 'landing links to armory/')
 
 # ---------- result ----------
 print(f"\n{checks} checks, {len(failures)} failures")

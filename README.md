@@ -53,6 +53,17 @@ Southern Glacier in the south).
 
 ![Atlas showing Olympus caves, deep veins and exotic squares](docs/screenshots/atlas.png)
 
+### 🛡 Armory ([`/armory/`](https://jampick.github.io/icarus-toolkit/armory/))
+
+Arms and armor - every armor set with per-piece resistances, durability and
+the full-set bonus (crafted, orbital-workshop and Great Hunts gear alike);
+every weapon with real damage numbers (melee, thrown, and per-shot ranged
+damage spanning the ammo it accepts, plus magazine, fire rate and reload);
+and the ammo itself, grouped by the weapons that fire it, with per-projectile
+damage, pellet counts and break chances. Unified search with reverse lookup
+(search a piece, jump to its set; search an ammo, see every weapon that
+fires it) and crafting-cost links into Breakdown.
+
 Deploys automatically to GitHub Pages on push to `main`
 (`.github/workflows/deploy.yml` runs the test pass, then `scripts/make_dist.py`).
 
@@ -65,8 +76,8 @@ Deploys automatically to GitHub Pages on push to `main`
   `site/data/recipes.json` (items + recipes + output index, raw/gatherable
   flags, conversion-recipe detection, bench display names).
 - `scripts/build_provisions_data.py` / `build_stables_data.py` /
-  `build_atlas_data.py` - compile `provisions.json`, `stables.json` and
-  `atlas.json` for the other tools.
+  `build_armory_data.py` / `build_atlas_data.py` - compile `provisions.json`,
+  `stables.json`, `armory.json` and `atlas.json` for the other tools.
 - `scripts/stitch_map_screenshots.py` - assembles zoomed in-game map
   screenshots into one grid-registered terrain image (detects the map's own
   grid lines, snaps agent-read cell labels to them, composites whole cells,
@@ -90,7 +101,9 @@ Deploys automatically to GitHub Pages on push to `main`
 # 1. Get the new Data/data.pak from the game or dedicated server install
 for f in D_ProcessorRecipes D_ItemTemplate D_ItemsStatic D_Itemable D_RecipeSets \
          D_Consumable D_ModifierStates D_Stats D_FoodTypes D_Tames D_Mounts \
-         D_Saddles D_TamedCreatureModifiers D_ExoticSpawn D_Terrains; do
+         D_Saddles D_TamedCreatureModifiers D_ExoticSpawn D_Terrains \
+         D_Armour D_ArmourSets D_ArmourSetBonus D_ToolDamage D_FirearmData \
+         D_ValidAmmoTypes D_AmmoTypes D_Ballistic D_Durable D_WorkshopItems; do
   python3 scripts/extract_pak.py /path/to/data.pak --extract "$f.json" -o data/game
 done
 # 2. Re-export map markers (needs .NET 10; see tools/atlas-export/README.md)
@@ -99,6 +112,7 @@ cd tools/atlas-export && dotnet run -c Release -- /path/to/Content/Paks ../../da
 python3 scripts/build_data.py
 python3 scripts/build_provisions_data.py
 python3 scripts/build_stables_data.py
+python3 scripts/build_armory_data.py
 python3 scripts/build_atlas_data.py
 # 4. Rebundle for hosting
 python3 scripts/make_dist.py
@@ -110,15 +124,16 @@ python3 scripts/make_dist.py
 
 - `scripts/test_pipeline.py` (Python, stdlib only) - runs every build script
   plus `make_dist.py`, then validates the generated `recipes.json` /
-  `provisions.json` / `stables.json` / `atlas.json` (counts, key items,
-  raw/craft flags, referential integrity, grid-cell validity, known
-  regressions) and the `dist/` output (pages exist, inline JSON parses,
+  `provisions.json` / `stables.json` / `armory.json` / `atlas.json` (counts,
+  key items, raw/craft flags, referential integrity, grid-cell validity,
+  known regressions) and the `dist/` output (pages exist, inline JSON parses,
   landing links intact).
-- `scripts/test_app.mjs` (Node, no deps) - syntax-checks all four apps,
+- `scripts/test_app.mjs` (Node, no deps) - syntax-checks all five apps,
   smoke-tests the recursive recipe tree (Solar Panel, cycle guard, positive
   integer totals), the provisions activity scoring (no NaN scores, every
   activity yields results, weight keys are real stat names), the stat
-  display-value transforms, and the atlas grid-cell math.
+  display-value transforms, the armory damage math (weapon classes, per-shot
+  ranged damage from ammo), and the atlas grid-cell math.
 
 CI runs the same script on every push and pull request
 (`.github/workflows/deploy.yml`); the Pages deploy job only runs after the

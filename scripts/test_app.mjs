@@ -21,7 +21,7 @@ function check(cond, msg) {
 
 /* ---------- 1. syntax check both JS files ---------- */
 console.log("== node --check ==");
-for (const f of ["site/app.js", "site/provisions.js", "site/stables.js", "site/atlas.js"]) {
+for (const f of ["site/app.js", "site/provisions.js", "site/stables.js", "site/atlas.js", "site/armory.js"]) {
   try {
     execFileSync(process.execPath, ["--check", join(ROOT, f)], { stdio: "pipe" });
     check(true, `${f} parses`);
@@ -209,6 +209,38 @@ for (const map of Object.values(ATLAS.maps)) {
   }
 }
 check(disagree === 0, `marker cell strings agree with gx/gy (${disagree} disagree)`);
+
+/* ---------- 7. armory data sanity ---------- */
+console.log("== armory ==");
+const ARM = JSON.parse(readFileSync(join(ROOT, "site/data/armory.json"), "utf8"));
+// Mirror of rangedDamage in site/armory.js
+function rangedDamage(w) {
+  const grp = w.ranged && ARM.ammoGroups[w.ranged.ammo];
+  if (!grp || !grp.ammo.length) return null;
+  const mult = w.ranged.mult || 1;
+  const per = grp.ammo.map(a => Math.round(a.dmg * (a.pellets || 1) * mult));
+  return { min: Math.min(...per), max: Math.max(...per) };
+}
+const classes = new Set(ARM.weapons.map(w => w.cls));
+check(classes.has("crossbow"),
+  "crossbows classified as crossbow, not bow (tag-order regression)");
+check(!classes.has("other"), "no weapon fell through to class 'other'");
+const longbow = ARM.weapons.find(w => w.id === "Longbow");
+const lbDmg = longbow && rangedDamage(longbow);
+check(lbDmg && Number.isFinite(lbDmg.min) && lbDmg.min > 0 && lbDmg.max >= lbDmg.min,
+  `Longbow per-shot damage range is positive and ordered (got ${JSON.stringify(lbDmg)})`);
+const spear = ARM.weapons.find(w => w.id === "Wood_Spear");
+check(spear?.melee > 0, "Wood Spear has melee damage");
+const javelin = ARM.weapons.find(w => w.id === "Bone_Throwing_Spear");
+check(javelin?.thrown > 0, "Bone Throwing Spear has thrown damage");
+let badRanged = 0;
+for (const w of ARM.weapons) {
+  const r = rangedDamage(w);
+  if (r && !(Number.isFinite(r.min) && r.min > 0)) badRanged++;
+}
+check(badRanged === 0, `every computable damage range is positive finite (${badRanged} bad)`);
+check(!!ARM.stats["BasePhysicalDamageResistance_%"]?.tpl,
+  "armor stats meta has physical resistance template");
 
 /* ---------- result ---------- */
 console.log(`\n${checks} checks, ${failures.length} failures`);

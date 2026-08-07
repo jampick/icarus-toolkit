@@ -462,32 +462,32 @@ body {
 .tchip.unit { margin-left: auto; font-weight: 700; }
 
 /* ---------- Stables: unified search + reverse lookup ---------- */
-#ssearchwrap { position: relative; max-width: 440px; margin-bottom: 18px; }
-#ssearch {
+#ssearchwrap, #asearchwrap { position: relative; max-width: 440px; margin-bottom: 18px; }
+#ssearch, #asearch {
   width: 100%; padding: 10px 14px;
   background: var(--bg2); color: var(--text);
   border: 1px solid var(--line); border-radius: 8px;
   font-size: 14px; outline: none;
   transition: border-color .2s, box-shadow .2s;
 }
-#ssearch:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(242,163,60,.15); }
-#sresults {
+#ssearch:focus, #asearch:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(242,163,60,.15); }
+#sresults, #aresults {
   position: absolute; top: 44px; left: 0; right: 0; z-index: 40;
   background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
   max-height: 380px; overflow-y: auto;
   box-shadow: 0 12px 40px rgba(0,0,0,.55);
 }
-#sresults .result img { width: 30px; height: 30px; flex: none; object-fit: contain; }
-#sresults .rgroup {
+#sresults .result img, #aresults .result img { width: 30px; height: 30px; flex: none; object-fit: contain; }
+#sresults .rgroup, #aresults .rgroup {
   font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
   color: var(--dim); padding: 8px 12px 3px; border-top: 1px solid var(--line);
 }
-#sresults .rgroup:first-child { border-top: none; }
+#sresults .rgroup:first-child, #aresults .rgroup:first-child { border-top: none; }
 .result .remoji {
   width: 30px; height: 30px; flex: none; font-size: 20px;
   display: flex; align-items: center; justify-content: center;
 }
-#sreverse {
+#sreverse, #areverse {
   background: linear-gradient(180deg, #17202c, #121a24);
   border: 1px solid var(--accent); border-radius: 14px;
   box-shadow: 0 0 0 1px rgba(242,163,60,.35), 0 10px 40px rgba(242,163,60,.08);
@@ -500,11 +500,18 @@ body {
   background: var(--bg2); border-radius: 12px;
 }
 #sreverse .temp-strip { margin-top: 10px; max-width: 340px; }
-#sreverse .pstats { margin-top: 8px; }
-#sreverse .pcost { display: inline-block; margin-top: 10px; }
+#sreverse .pstats, #areverse .pstats { margin-top: 8px; }
+#sreverse .pcost, #areverse .pcost { display: inline-block; margin-top: 10px; }
+
+/* ---------- Armory page ---------- */
+.bench.slot { color: var(--accent); border-color: rgba(242,163,60,.45); }
+.bench.hunt { color: #ffd28a; border-color: rgba(255,210,138,.45); }
+.set-sum { color: var(--dim); font-size: 12px; font-weight: 400; margin-left: 10px; }
+.set-bonus { color: var(--dim); font-size: 12px; margin: -4px 0 12px; }
+.set-bonus b { color: var(--raw); font-weight: 600; }
 
 /* mounts tab quick-jump chip bar */
-#mount-jump {
+#mount-jump, #set-jump, #ammo-jump {
   display: flex; gap: 8px; flex-wrap: wrap;
   position: sticky; top: 0; z-index: 30;
   padding: 8px 0 10px; margin-bottom: 8px;
@@ -512,12 +519,12 @@ body {
 }
 
 /* feed purpose filter chips + card tags */
-#ffilters { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+#ffilters, #afilters, #wfilters { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
 .ftag { color: var(--organic); border-color: rgba(139,195,74,.45); }
 
 @media (max-width: 700px) {
   /* 16px stops iOS Safari from auto-zooming when the search focuses */
-  #ssearch { font-size: 16px; }
+  #ssearch, #asearch { font-size: 16px; }
 }
 .tchip.top { color: var(--accent); border-color: var(--accent); font-weight: 700; }
 #totop {
