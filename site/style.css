@@ -599,3 +599,7 @@ body {
 .wiz-slotlabel { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; min-width: 66px; }
 .wiz-modpick { color: #9fd0ff; font-size: 12px; }
 .wiz-alt { color: var(--dim); font-size: 12px; }
+.pcard-head .noicon { width: 52px; height: 52px; }
+.rev-head .noicon { width: 52px; height: 52px; }
+.wiz-slotline .noicon { width: 30px; height: 30px; font-size: 10px; border-radius: 6px; }
+#aresults .noicon { width: 30px; height: 30px; font-size: 10px; flex: none; }

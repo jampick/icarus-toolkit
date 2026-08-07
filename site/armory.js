@@ -96,12 +96,20 @@ function statList(stats) {
   return ul;
 }
 
-function itemIcon(icon, cls) {
+/* falls back to a styled monogram (same as Breakdown) when the png is
+   missing - the community icon set predates the newest gear */
+function itemIcon(icon, cls, name) {
   const img = document.createElement("img");
   img.className = cls || "";
   img.loading = "lazy";
   img.src = ICON_BASE + icon + ".png";
-  img.onerror = () => img.remove();
+  img.onerror = () => {
+    if (!name) return img.remove();
+    const d = document.createElement("div");
+    d.className = "noicon " + (cls || "");
+    d.textContent = name.slice(0, 2).toUpperCase();
+    img.replaceWith(d);
+  };
   return img;
 }
 
@@ -174,7 +182,7 @@ function pieceCard(p) {
   el.dataset.id = p.id;
   const head = document.createElement("div");
   head.className = "pcard-head";
-  if (p.icon) head.appendChild(itemIcon(p.icon));
+  if (p.icon) head.appendChild(itemIcon(p.icon, "", p.name));
   const meta = document.createElement("div");
   meta.innerHTML = `<div class="pname">${p.name}</div>
     <div class="psub"><span class="bench slot">${SLOT_EMOJI[p.slot] || ""} ${SLOT_LABEL[p.slot] || p.slot}</span>
@@ -333,7 +341,7 @@ function weaponCard(w) {
   el.dataset.id = w.id;
   const head = document.createElement("div");
   head.className = "pcard-head";
-  if (w.icon) head.appendChild(itemIcon(w.icon));
+  if (w.icon) head.appendChild(itemIcon(w.icon, "", w.name));
   const meta = document.createElement("div");
   meta.innerHTML = `<div class="pname">${w.name}</div>
     <div class="psub"><span class="bench slot">${clsLabel(w.cls)}</span> ${srcBadge(w)}</div>`;
@@ -406,7 +414,7 @@ function ammoCard(a) {
   el.dataset.id = a.id;
   const head = document.createElement("div");
   head.className = "pcard-head";
-  if (a.icon) head.appendChild(itemIcon(a.icon));
+  if (a.icon) head.appendChild(itemIcon(a.icon, "", a.name));
   const meta = document.createElement("div");
   meta.innerHTML = `<div class="pname">${a.name}</div>
     <div class="psub">${srcBadge(a)}</div>`;
@@ -499,7 +507,7 @@ function modCard(m) {
   el.dataset.id = m.id;
   const head = document.createElement("div");
   head.className = "pcard-head";
-  if (m.icon) head.appendChild(itemIcon(m.icon));
+  if (m.icon) head.appendChild(itemIcon(m.icon, "", m.name));
   const meta = document.createElement("div");
   const fits = Object.values(m.fits).flat().map(f => `<span class="fitchip">${fitLabel(f)}</span>`).join("");
   meta.innerHTML = `<div class="pname">${m.name}</div>
@@ -866,10 +874,12 @@ function wizH(host, text) {
 function slotLine(host, label, item, extras) {
   const row = document.createElement("div");
   row.className = "wiz-slotline";
-  const lbl = `<span class="wiz-slotlabel">${label}</span>`;
-  const icon = item && item.icon ? itemIcon(item.icon).outerHTML : "";
+  row.innerHTML = `<span class="wiz-slotlabel">${label}</span>`;
+  // append the icon as a live element so its onerror fallback (remove the
+  // img when the png doesn't exist) survives; outerHTML would strip it
+  if (item && item.icon) row.appendChild(itemIcon(item.icon, "", item.name));
   const name = item ? `<b>${item.name}</b>` : `<span class="wiz-alt">nothing worth slotting</span>`;
-  row.innerHTML = `${lbl}${icon}${name} ${extras || ""}`;
+  row.insertAdjacentHTML("beforeend", `${name} ${extras || ""}`);
   if (item && item.src === "craft") {
     const a = document.createElement("a");
     a.className = "pcost";
@@ -1210,7 +1220,7 @@ function renderReverse(m) {
 
   if (m.kind === "armor") {
     const p = m.ref, g = m.group;
-    const meta = revHead(host, itemIcon(p.icon), `<div class="pname">${p.name}</div>
+    const meta = revHead(host, itemIcon(p.icon, "", p.name), `<div class="pname">${p.name}</div>
       <div class="psub"><span class="bench slot">${SLOT_EMOJI[p.slot] || ""} ${SLOT_LABEL[p.slot] || p.slot}</span> ${srcBadge(p)}</div>
       ${p.desc ? `<div class="rev-stats">${p.desc}</div>` : ""}`);
     meta.appendChild(statList(p.stats));
@@ -1225,7 +1235,7 @@ function renderReverse(m) {
 
   if (m.kind === "weapon") {
     const w = m.ref;
-    const meta = revHead(host, itemIcon(w.icon), `<div class="pname">${w.name}</div>
+    const meta = revHead(host, itemIcon(w.icon, "", w.name), `<div class="pname">${w.name}</div>
       <div class="psub"><span class="bench slot">${clsLabel(w.cls)}</span> ${srcBadge(w)}</div>
       ${w.desc ? `<div class="rev-stats">${w.desc}</div>` : ""}`);
     const ul = document.createElement("ul");
@@ -1259,7 +1269,7 @@ function renderReverse(m) {
 
   if (m.kind === "mod") {
     const mod = m.ref;
-    const meta = revHead(host, itemIcon(mod.icon), `<div class="pname">${mod.name}</div>
+    const meta = revHead(host, itemIcon(mod.icon, "", mod.name), `<div class="pname">${mod.name}</div>
       <div class="psub">${rankBadge(mod)} ${srcBadge(mod)}</div>
       ${mod.desc ? `<div class="rev-stats">${mod.desc}</div>` : ""}`);
     meta.appendChild(statList(mod.stats));
@@ -1273,7 +1283,7 @@ function renderReverse(m) {
 
   // ammo
   const a = m.ref;
-  const meta = revHead(host, itemIcon(a.icon), `<div class="pname">${a.name}</div>
+  const meta = revHead(host, itemIcon(a.icon, "", a.name), `<div class="pname">${a.name}</div>
     <div class="psub">${srcBadge(a)}</div>
     ${a.desc ? `<div class="rev-stats">${a.desc}</div>` : ""}`);
   const ul = document.createElement("ul");
@@ -1321,7 +1331,7 @@ function initSearch() {
   const resultEl = (m, i) => {
     const el = document.createElement("div");
     el.className = "result";
-    if (m.ref.icon) el.appendChild(itemIcon(m.ref.icon));
+    if (m.ref.icon) el.appendChild(itemIcon(m.ref.icon, "", m.name));
     const nm = document.createElement("span");
     nm.className = "rname"; nm.textContent = m.name;
     const cat = document.createElement("span");
