@@ -558,3 +558,44 @@ body {
 .atlas-exoring { pointer-events: none; }
 .atlas-caves { transition: r .1s; }
 .atlas-caves:hover { r: 14; }
+
+/* ---------- armory: set totals, mods, loadout wizard ---------- */
+.set-totals {
+  background: linear-gradient(180deg, #17202c, #121a24);
+  border: 1px solid var(--line); border-radius: 14px;
+  padding: 12px 14px; margin-bottom: 10px;
+}
+.set-totals .pstats { columns: 2; column-gap: 24px; }
+.set-totals .pstats li { break-inside: avoid; }
+@media (max-width: 640px) { .set-totals .pstats { columns: 1; } }
+.set-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+.drill {
+  background: none; border: 1px dashed var(--line); border-radius: 8px;
+  color: var(--dim); font-size: 12px; padding: 5px 12px; cursor: pointer; margin-bottom: 12px;
+}
+.drill:hover { color: var(--accent); border-color: var(--accent); }
+.fitchip {
+  display: inline-block; font-size: 11px; color: var(--dim);
+  border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; margin: 2px 4px 2px 0;
+}
+.bench.mk { color: #9fd0ff; border-color: rgba(159,208,255,.4); }
+#wiz-scenarios {
+  display: grid; gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  margin-bottom: 14px;
+}
+#wiz-constraints { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 20px; }
+.wiz-h { font-size: 13px; letter-spacing: .2em; color: var(--dim); text-transform: uppercase; margin: 26px 0 12px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.wiz-verdict {
+  background: linear-gradient(180deg, #1a2432, #141d28);
+  border: 1px solid rgba(242,163,60,.4); border-radius: 14px;
+  padding: 12px 16px; margin-bottom: 14px; font-size: 13px; line-height: 1.5;
+}
+.wiz-verdict b { color: var(--accent); }
+.wiz-why { color: var(--dim); font-size: 12px; margin-top: 4px; }
+.wiz-slotline { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px dashed var(--line); font-size: 13px; flex-wrap: wrap; }
+.wiz-slotline:last-child { border-bottom: none; }
+.wiz-slotline img { width: 30px; height: 30px; }
+.wiz-slotlabel { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; min-width: 66px; }
+.wiz-modpick { color: #9fd0ff; font-size: 12px; }
+.wiz-alt { color: var(--dim); font-size: 12px; }

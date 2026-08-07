@@ -242,6 +242,80 @@ check(badRanged === 0, `every computable damage range is positive finite (${badR
 check(!!ARM.stats["BasePhysicalDamageResistance_%"]?.tpl,
   "armor stats meta has physical resistance template");
 
+/* ---------- 8. loadout wizard scoring ---------- */
+console.log("== loadout wizard ==");
+// Mirrors of setTotals / buildNorms / wscore in site/armory.js
+function setTotals(g) {
+  const tot = {};
+  for (const p of g.pieces)
+    for (const [sid, v] of Object.entries(p.stats)) tot[sid] = (tot[sid] || 0) + v;
+  return tot;
+}
+const NORMS = {};
+const eat = (stats) => {
+  for (const [sid, v] of Object.entries(stats || {}))
+    NORMS[sid] = Math.max(NORMS[sid] || 0, Math.abs(v));
+};
+for (const g of [...ARM.sets, ...ARM.gear]) {
+  for (const p of g.pieces) eat(p.stats);
+  if (g.bonus) eat(g.bonus.stats);
+}
+for (const m of ARM.mods) eat(m.stats);
+function wscore(stats, w) {
+  let s = 0;
+  for (const [sid, v] of Object.entries(stats || {})) {
+    if (w[sid]) s += w[sid] * v / (NORMS[sid] || Math.abs(v) || 1);
+  }
+  return s;
+}
+const COLD_W = { "BaseColdResistance_%": 3, "BaseExposureResistance_+%": 2,
+  "BaseArcticColdResistance_+%": 3, "BasePhysicalDamageResistance_%": .75 };
+const coldRank = ARM.sets.map(g => {
+  const tot = setTotals(g);
+  if (g.bonus) for (const [sid, v] of Object.entries(g.bonus.stats))
+    tot[sid] = (tot[sid] || 0) + v;
+  return { g, tot, s: wscore(tot, COLD_W) };
+}).sort((a, b) => b.s - a.s);
+check(coldRank[0].s > 0 && Number.isFinite(coldRank[0].s),
+  `cold-weighted set scores are finite and positive (top: ${coldRank[0].g.name})`);
+check((coldRank[0].tot["BaseColdResistance_%"] || 0) >= 40 &&
+  coldRank.slice(0, 3).every(r => (r.tot["BaseColdResistance_%"] || 0) > 0),
+  `cold-weighted ranking surfaces genuinely cold sets (top: ${coldRank[0].g.name}, ` +
+  `${coldRank[0].tot["BaseColdResistance_%"]}% total)`);
+// mix-and-match: the per-slot argmax can never score below the best set's piece
+const slotBest = {};
+for (const g of ARM.sets) for (const p of g.pieces) {
+  const s = wscore(p.stats, COLD_W);
+  if (!(p.slot in slotBest) || s > slotBest[p.slot]) slotBest[p.slot] = s;
+}
+const topSetPieceScores = Object.fromEntries(
+  coldRank[0].g.pieces.map(p => [p.slot, wscore(p.stats, COLD_W)]));
+const mixBeatsPieces = Object.entries(topSetPieceScores)
+  .every(([slot, s]) => (slotBest[slot] ?? -Infinity) >= s - 1e-9);
+check(mixBeatsPieces, "per-slot mix argmax is never worse than the winning set's own pieces");
+// armor mods exist for every slot and score sanely
+const armorSlots = ["Head", "Chest", "Hands", "Legs", "Feet"];
+const modBySlot = Object.fromEntries(armorSlots.map(sl =>
+  [sl, ARM.mods.filter(m => (m.fits.armor || []).includes(sl))]));
+check(armorSlots.every(sl => modBySlot[sl].length >= 3),
+  `every armor slot has mods to pick from (${armorSlots.map(sl => modBySlot[sl].length).join("/")})`);
+const caveHelm = ARM.mods.find(m => m.id === "Helmet_Attachment_Cave_Resistance_2");
+check(caveHelm && wscore(caveHelm.stats, { "BaseCaveHealthRegen_+%": 1.5, "BasePneumoniaResistance_%": 1.5 }) > 0,
+  "cave helmet mod scores positive under cave weights");
+// provisions + stables data agree with what the wizard expects
+const PROVD = JSON.parse(readFileSync(join(ROOT, "site/data/provisions.json"), "utf8"));
+check(PROVD.consumables.every(c => c.buff && c.buff.stats),
+  "every consumable has buff stats for wizard food picks");
+const STABD = JSON.parse(readFileSync(join(ROOT, "site/data/stables.json"), "utf8"));
+const coldMounts = STABD.creatures.filter(c =>
+  c.rideable && c.saddles?.length && c.temp && c.temp.min <= -15);
+check(coldMounts.length >= 1,
+  `at least one rideable cold-weather mount exists (got ${coldMounts.length})`);
+const hotMounts = STABD.creatures.filter(c =>
+  c.rideable && c.saddles?.length && c.temp && c.temp.max >= 35);
+check(hotMounts.length >= 1,
+  `at least one rideable hot-weather mount exists (got ${hotMounts.length})`);
+
 /* ---------- result ---------- */
 console.log(`\n${checks} checks, ${failures.length} failures`);
 if (failures.length) {

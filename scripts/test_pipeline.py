@@ -159,6 +159,20 @@ check(len(arm["ammoGroups"]) >= 8,
 bad_ammo = [a["id"] for g in arm["ammoGroups"].values() for a in g["ammo"]
             if not a.get("dmg")]
 check(not bad_ammo, f"every ammo entry has damage (bad: {bad_ammo[:6] or 'none'})")
+check(len(arm.get("mods", [])) >= 100,
+      f"gear mods count {len(arm.get('mods', []))} >= 100")
+bad_fit = [m["id"] for m in arm["mods"]
+           if not m.get("fits") or not set(m["fits"]) <= {"armor", "weapon", "tool"}]
+check(not bad_fit, f"every mod fits armor/weapon/tool (bad: {bad_fit[:4] or 'none'})")
+armor_fits = {s for m in arm["mods"] for s in m["fits"].get("armor", [])}
+check(armor_fits == {"Head", "Chest", "Hands", "Legs", "Feet"},
+      f"armor mods cover all five slots (got {sorted(armor_fits)})")
+modless = [m["id"] for m in arm["mods"] if not m.get("stats")]
+check(not modless, f"every mod carries stats (bad: {modless[:4] or 'none'})")
+sandworm = next((m for m in arm["mods"] if m["id"] == "Sandworm_Attachment_Armor"), None)
+check(sandworm and sandworm["fits"].get("armor") == ["Chest"]
+      and sandworm.get("rank") == "Sandworm",
+      "Sandworm Plating is a chest mod with a creature rank")
 arm_stats = set(arm["stats"])
 used = {sid for g in list(arm["sets"]) + list(arm["gear"]) for p in g["pieces"]
         for sid in p["stats"]}
@@ -167,6 +181,7 @@ used |= {sid for g in arm["ammoGroups"].values() for a in g["ammo"]
          for sid in a.get("stats", {})}
 used |= {sid for g in arm["sets"] if g.get("bonus")
          for sid in g["bonus"]["stats"]}
+used |= {sid for m in arm["mods"] for sid in m["stats"]}
 check(used <= arm_stats,
       f"every used stat key is in stats meta (missing: {sorted(used - arm_stats)[:6] or 'none'})")
 
@@ -251,6 +266,11 @@ mhtml = (dist / "armory" / "index.html").read_text(encoding="utf-8")
 check('id="armory-data"' in mhtml, 'armory page has id="armory-data"')
 check(inline_json(mhtml, "armory-data") is not None,
       "armory inline JSON parses")
+# the loadout wizard pulls food and mount picks from the other tools' data
+check(inline_json(mhtml, "provisions-data") is not None,
+      "armory page inlines provisions data for the loadout wizard")
+check(inline_json(mhtml, "stables-data") is not None,
+      "armory page inlines stables data for the loadout wizard")
 
 landing = (dist / "index.html").read_text(encoding="utf-8")
 check('href="breakdown/"' in landing, 'landing links to breakdown/')

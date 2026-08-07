@@ -55,14 +55,21 @@ Southern Glacier in the south).
 
 ### 🛡 Armory ([`/armory/`](https://jampick.github.io/icarus-toolkit/armory/))
 
-Arms and armor - every armor set with per-piece resistances, durability and
-the full-set bonus (crafted, orbital-workshop and Great Hunts gear alike);
-every weapon with real damage numbers (melee, thrown, and per-shot ranged
-damage spanning the ammo it accepts, plus magazine, fire rate and reload);
-and the ammo itself, grouped by the weapons that fire it, with per-projectile
-damage, pellet counts and break chances. Unified search with reverse lookup
-(search a piece, jump to its set; search an ammo, see every weapon that
-fires it) and crafting-cost links into Breakdown.
+Arms and armor - every armor set shown whole-set first (all pieces summed,
+set bonus on top, drill down for the per-piece cards), for crafted,
+orbital-workshop and Great Hunts gear alike; every weapon with real damage
+numbers (melee, thrown, and per-shot ranged damage spanning the ammo it
+accepts, plus magazine, fire rate and reload); the ammo itself, grouped by
+the weapons that fire it; and every gear mod (the game's attachments) with
+what it fits and what it grants. The **Loadout wizard** ties the whole
+toolkit together: pick a scenario (arctic, desert, volcanic, caves, hunting,
+combat, mining, expedition) and a gear constraint (crafted only / +workshop /
+everything) and it prescribes a full kit - armor set vs best mix-and-match
+compared with the set bonus priced in, a mod for every slot, envirosuit and
+backpack, primary weapon with its best ammo and mod, tool mods, food and
+tonics (scored exactly like the Provisions tool), and a mount that can take
+the weather (from the Stables data). Unified search with reverse lookup and
+crafting-cost links into Breakdown.
 
 Deploys automatically to GitHub Pages on push to `main`
 (`.github/workflows/deploy.yml` runs the test pass, then `scripts/make_dist.py`).
@@ -103,7 +110,8 @@ for f in D_ProcessorRecipes D_ItemTemplate D_ItemsStatic D_Itemable D_RecipeSets
          D_Consumable D_ModifierStates D_Stats D_FoodTypes D_Tames D_Mounts \
          D_Saddles D_TamedCreatureModifiers D_ExoticSpawn D_Terrains \
          D_Armour D_ArmourSets D_ArmourSetBonus D_ToolDamage D_FirearmData \
-         D_ValidAmmoTypes D_AmmoTypes D_Ballistic D_Durable D_WorkshopItems; do
+         D_ValidAmmoTypes D_AmmoTypes D_Ballistic D_Durable D_WorkshopItems \
+         D_IcarusAttachments D_Alterations; do
   python3 scripts/extract_pak.py /path/to/data.pak --extract "$f.json" -o data/game
 done
 # 2. Re-export map markers (needs .NET 10; see tools/atlas-export/README.md)

@@ -25,10 +25,11 @@
 
 <main class="prov-main">
   <p class="prov-intro">Arms and armor, straight from the game files: every armor set with
-  its resistances and set bonus, every weapon with its damage, and the ammo each one fires.</p>
+  its resistances and set bonus, every weapon with its damage, the ammo each one fires,
+  every gear mod — and a loadout wizard that puts it all together per scenario.</p>
 
   <div id="asearchwrap">
-    <input id="asearch" type="text" placeholder="Search armor, a weapon or ammo…" autocomplete="off" spellcheck="false">
+    <input id="asearch" type="text" placeholder="Search armor, a weapon, ammo or a mod…" autocomplete="off" spellcheck="false">
     <div id="aresults" class="hidden"></div>
   </div>
 
@@ -38,10 +39,14 @@
     <button class="tab on" data-tab="armor">🛡 Armor</button>
     <button class="tab" data-tab="weapons">⚔️ Weapons</button>
     <button class="tab" data-tab="ammo">🏹 Ammo</button>
+    <button class="tab" data-tab="mods">🔩 Mods</button>
+    <button class="tab" data-tab="loadout">🎯 Loadout</button>
   </div>
 
   <section id="tab-armor">
-    <p class="prov-note">Sets are ordered by protection: cheap and breezy at the top, endgame plate at the bottom. Wearing the full set unlocks its bonus.</p>
+    <p class="prov-note">Whole-set numbers: every stat is the total across all pieces, with the
+    full-set bonus listed on top. Sets are ordered by protection: cheap and breezy at the top,
+    endgame plate at the bottom. Open a set to drill down into its pieces.</p>
     <div id="afilters">
       <button class="tchip on" data-f="all">All</button>
       <button class="tchip" data-f="craft">⚒ Craftable</button>
@@ -63,6 +68,22 @@
     <p class="prov-note">Grouped by the weapons that fire it. Damage is per projectile; shotgun shells fire several.</p>
     <div id="ammo-jump"></div>
     <div id="ammo-list"></div>
+  </section>
+
+  <section id="tab-mods" class="hidden">
+    <p class="prov-note">Gear mods (the game calls them attachments) are crafted at the Alteration
+    Bench and slotted into armor, weapons and tools. One mod per item — pick what the trip needs.</p>
+    <div id="mfilters"></div>
+    <div id="mod-list"></div>
+  </section>
+
+  <section id="tab-loadout" class="hidden">
+    <p class="prov-note">Pick what you're heading out to do and get a full kit: armor (set or
+    mix-and-match, whichever scores better), the mods to slot, envirosuit and backpack, weapons
+    with ammo, food and tonics, and a mount that can take the weather.</p>
+    <div id="wiz-scenarios"></div>
+    <div id="wiz-constraints"></div>
+    <div id="wiz-out"></div>
   </section>
 </main>
 

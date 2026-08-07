@@ -3,7 +3,7 @@
 
 Input: data/game tables incl. D_Armour, D_ArmourSets, D_ArmourSetBonus,
 D_ToolDamage, D_FirearmData, D_ValidAmmoTypes, D_AmmoTypes, D_Ballistic,
-D_Durable, D_WorkshopItems.
+D_Durable, D_WorkshopItems, D_IcarusAttachments, D_Alterations.
 Output: site/data/armory.json
 """
 import json
@@ -54,6 +54,17 @@ AMMOGROUP_CLASS = {
     "AllSnipers": "rifle", "AllNails": "heavy", "AllLauncher": "heavy",
     "AllT2Launcher": "heavy", "BioFuel": "heavy",
 }
+
+# Gear mods (attachment items) declare what they fit via Item.Attachment.*
+# tags. The tag taxonomy uses its own armor slot names; map them onto the
+# D_Armour ArmourType slots the rest of the tool speaks.
+ATTACH_ARMOR_SLOT = {"Head": "Head", "Body": "Chest", "Arms": "Hands",
+                     "Legs": "Legs", "Feet": "Feet"}
+ATTACH_WEAPON = {"Bow": "bow", "Crossbow": "crossbow", "Pistol": "pistol",
+                 "Rifle": "rifle", "Shotgun": "shotgun", "Laser": "laser",
+                 "Melee": "melee"}
+ATTACH_TOOL = {"Axe", "Pickaxe", "Knife", "Sickle", "Sledgehammer", "Hammer",
+               "FishingRod", "Plough", "HarvestCart"}
 
 
 def loc(text):
@@ -290,6 +301,52 @@ def main():
 
     weapons.sort(key=lambda w: (w["cls"], w.get("melee") or 0, w["name"]))
 
+    # ---- gear mods (attachment items -> D_IcarusAttachments -> D_Alterations) ----
+    attachments = by_name("D_IcarusAttachments")
+    alterations = by_name("D_Alterations")
+    mods = []
+    for iid, s in items_static.items():
+        atags = sorted({t.removeprefix("Item.Attachment.") for t in tags_of(iid)
+                        if t.startswith("Item.Attachment.")})
+        if not atags:
+            continue
+        rank = None
+        fits = {"armor": set(), "weapon": set(), "tool": set()}
+        for t in atags:
+            if t.startswith("Rank."):
+                r = t.split(".", 1)[1]
+                rank = int(r) if r.isdigit() else r
+            elif t.startswith("Armor."):
+                slot = ATTACH_ARMOR_SLOT.get(t.split(".", 1)[1])
+                if slot:
+                    fits["armor"].add(slot)
+            elif t in ATTACH_WEAPON:
+                fits["weapon"].add(ATTACH_WEAPON[t])
+            elif t in ATTACH_TOOL:
+                fits["tool"].add(t)
+        if not any(fits.values()):
+            continue
+        # Great Hunts attachments carry a creature rank tag instead of a
+        # numbered one and are trophy drops, not craftable or workshop items.
+        src = source_of(iid) or ("hunt" if isinstance(rank, str) else None)
+        if not src:
+            continue
+        aref = (s.get("Attachments") or {}).get("RowName")
+        att = attachments.get(aref) or {}
+        alt = alterations.get(
+            (att.get("GrantedAlteration") or {}).get("RowName") or aref or "")
+        stats = statmap((alt or {}).get("Stats"))
+        if not stats:
+            continue
+        m = base_fields(iid, src)
+        m["stats"] = stats
+        used_stats.update(stats)
+        if rank is not None:
+            m["rank"] = rank
+        m["fits"] = {k: sorted(v) for k, v in fits.items() if v}
+        mods.append(m)
+    mods.sort(key=lambda m: (min(m["fits"]), str(m.get("rank", "")), m["name"]))
+
     # ---- stat display templates (see provisions/stables builders) ----
     stat_meta = {}
     for sid in sorted(used_stats):
@@ -300,7 +357,7 @@ def main():
             stat_meta[sid]["ops"] = [[o["Operation"], o["Value"]] for o in ops]
 
     out = {"sets": sets, "gear": gear, "weapons": weapons,
-           "ammoGroups": ammo_groups, "stats": stat_meta}
+           "ammoGroups": ammo_groups, "mods": mods, "stats": stat_meta}
     dest = REPO / "site" / "data" / "armory.json"
     with open(dest, "w") as f:
         json.dump(out, f, separators=(",", ":"), sort_keys=False)
@@ -309,7 +366,7 @@ def main():
     nammo = sum(len(g["ammo"]) for g in ammo_groups.values())
     print(f"armor sets: {len(sets)} (+{len(gear)} gear groups, {npieces} pieces)  "
           f"weapons: {len(weapons)}  ammo: {nammo} in {len(ammo_groups)} groups  "
-          f"stats: {len(stat_meta)}")
+          f"mods: {len(mods)}  stats: {len(stat_meta)}")
     print(f"wrote {dest} ({dest.stat().st_size/1024:.0f} KB)")
 
 

@@ -119,11 +119,16 @@ def main():
     mhtml = mhtml.replace(
         '<link rel="stylesheet" href="style.css">',
         f"<style>\n{css}\n</style>")
+    # the loadout wizard needs the provisions + stables data on this page too
     mhtml = mhtml.replace(
         '<script src="armory.js"></script>',
         '<script>window.ICON_BASE="../breakdown/icons/";'
-        'window.BREAKDOWN_BASE="../breakdown/";</script>\n'
+        'window.BREAKDOWN_BASE="../breakdown/";'
+        'window.PROVISIONS_BASE="../provisions/";'
+        'window.STABLES_BASE="../stables/";</script>\n'
         f'<script type="application/json" id="armory-data">{mdata}</script>\n'
+        f'<script type="application/json" id="provisions-data">{pdata}</script>\n'
+        f'<script type="application/json" id="stables-data">{sdata}</script>\n'
         f"<script>\n{mjs}\n</script>")
     mhtml = mhtml.replace('href="index.html"', 'href="../breakdown/"')
     mhtml = mhtml.replace('href="provisions.html"', 'href="../provisions/"')
