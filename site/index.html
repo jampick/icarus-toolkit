@@ -42,6 +42,7 @@
       <span><b>click ▸/▾</b> craft vs gather</span>
       <span><b>↻</b> switch recipe</span>
       <span><b>drag / scroll</b> pan &amp; zoom</span>
+      <span><b>♻</b> search a material to see what uses it up</span>
     </div>
   </div>
 </main>
@@ -55,6 +56,13 @@
   <section>
     <h2>Benches Required</h2>
     <div id="benches"></div>
+  </section>
+  <section id="uses-sec" class="hidden">
+    <h2>♻ Use It Up</h2>
+    <div class="uses-note">Got a surplus? Recipes that eat <b id="uses-name"></b> directly, hungriest first:</div>
+    <div id="uses-direct"></div>
+    <div class="uses-note">Big sinks - what soaks the most per craft when you build every part from scratch:</div>
+    <div id="uses-deep"></div>
   </section>
 </aside>
 

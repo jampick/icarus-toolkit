@@ -13,7 +13,11 @@ game's files** - no wiki scraping.
 Exploded crafting calculator - search any craftable item and see it recursively
 broken down into every raw material you need to gather, with per-node control
 over whether a component is crafted or gathered, alternate-recipe switching,
-live raw-material totals, bench list, and pan/zoom.
+live raw-material totals, bench list, and pan/zoom. Also works in reverse:
+search a material you have too much of (raw gatherables included) and the
+**Use It Up** panel shows every recipe that eats it, hungriest first, plus the
+big sinks - the items that soak the most of it per craft when every part is
+built from scratch.
 
 ![Breakdown showing a Solar Panel exploded into raw materials](docs/screenshots/breakdown.png)
 

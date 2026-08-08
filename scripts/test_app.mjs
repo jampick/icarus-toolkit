@@ -210,6 +210,52 @@ for (const map of Object.values(ATLAS.maps)) {
 }
 check(disagree === 0, `marker cell strings agree with gx/gy (${disagree} disagree)`);
 
+/* ---------- 6b. reverse lookup: use-it-up ---------- */
+console.log("== use it up (Organic_Resin) ==");
+// Mirrors of usedBy / deepUsePerUnit / bigSinks in site/app.js
+{
+  const target = "Organic_Resin";
+  const direct = new Map();
+  for (const rec of DATA.recipes) {
+    if (rec.conv) continue;
+    for (const [iid, cnt] of rec.inputs) {
+      if (iid !== target) continue;
+      const oid = rec.outputs[0][0];
+      if (!direct.has(oid) || cnt > direct.get(oid)) direct.set(oid, cnt);
+    }
+  }
+  check(direct.size >= 20, `Organic Resin has plenty of direct consumers (${direct.size})`);
+  const topDirect = Math.max(...direct.values());
+  check(topDirect >= 10, `hungriest direct recipe eats a meaningful amount (${topDirect})`);
+
+  const memo = new Map();
+  function deepUse(id, visiting) {
+    if (id === target) return 1;
+    const item = DATA.items[id];
+    const recs = recipesFor(id);
+    if (item.raw || !recs.length || visiting.has(id)) return 0;
+    if (memo.has(id)) return memo.get(id);
+    visiting.add(id);
+    const rec = recs[0];
+    let per = 0;
+    for (const [iid, cnt] of rec.inputs) per += cnt * deepUse(iid, visiting);
+    per /= outCount(rec, id);
+    visiting.delete(id);
+    memo.set(id, per);
+    return per;
+  }
+  let worst = 0, bad = 0;
+  for (const rec of DATA.recipes) {
+    if (rec.conv || rec.outputs.some(([oid]) => oid === target)) continue;
+    let per = 0;
+    for (const [iid, cnt] of rec.inputs) per += cnt * deepUse(iid, new Set());
+    if (!Number.isFinite(per) || per < 0) bad++;
+    worst = Math.max(worst, per);
+  }
+  check(bad === 0, `every deep-use total is finite and non-negative (${bad} bad)`);
+  check(worst >= 100, `a genuine big sink exists (~${Math.round(worst)} resin per craft)`);
+}
+
 /* ---------- 7. armory data sanity ---------- */
 console.log("== armory ==");
 const ARM = JSON.parse(readFileSync(join(ROOT, "site/data/armory.json"), "utf8"));

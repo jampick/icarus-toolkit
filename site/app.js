@@ -54,6 +54,7 @@ function clearRoot() {
   $("#sidebar").classList.add("hidden");
   $("#sidebar").classList.remove("open");
   $("#totals-fab").classList.add("hidden");
+  $("#uses-sec").classList.add("hidden");
 }
 
 window.addEventListener("popstate", (e) => {
@@ -72,6 +73,68 @@ function recipesFor(id) {
 function outCount(rec, id) {
   const o = rec.outputs.find(([oid]) => oid === id);
   return o ? o[1] : 1;
+}
+
+/* ---------- reverse lookup: what uses a material up ---------- */
+
+let usedByIx = null;  // item id -> [{rec, cnt}] recipes consuming it directly
+function usedBy(id) {
+  if (!usedByIx) {
+    usedByIx = {};
+    for (const rec of DATA.recipes) {
+      for (const [iid, cnt] of rec.inputs)
+        (usedByIx[iid] = usedByIx[iid] || []).push({ rec, cnt });
+    }
+  }
+  return usedByIx[id] || [];
+}
+
+/* units of `target` consumed to make ONE unit of `id`, crafting every
+   part from scratch along each item's default (first) recipe */
+const deepMemo = new Map();  // target -> Map(id -> per-unit use)
+function deepUsePerUnit(target, id, visiting) {
+  if (id === target) return 1;
+  const item = DATA.items[id];
+  const recs = recipesFor(id);
+  if (item.raw || !recs.length || visiting.has(id)) return 0;
+  let memo = deepMemo.get(target);
+  if (!memo) deepMemo.set(target, memo = new Map());
+  if (memo.has(id)) return memo.get(id);
+  visiting.add(id);
+  const rec = recs[0];
+  let per = 0;
+  for (const [iid, cnt] of rec.inputs) per += cnt * deepUsePerUnit(target, iid, visiting);
+  per /= outCount(rec, id);
+  visiting.delete(id);
+  memo.set(id, per);
+  return per;
+}
+
+/* recipes that eat the material directly, hungriest first, one row per output */
+function directUses(target) {
+  const best = new Map();
+  for (const { rec, cnt } of usedBy(target)) {
+    if (rec.conv) continue;
+    const oid = rec.outputs[0][0];
+    const cur = best.get(oid);
+    if (!cur || cnt > cur.cnt) best.set(oid, { oid, rec, cnt });
+  }
+  return [...best.values()].sort((a, b) => b.cnt - a.cnt || a.oid.localeCompare(b.oid));
+}
+
+/* the biggest whole-tree consumers: per craft, everything built from scratch */
+function bigSinks(target, n) {
+  const best = new Map();
+  for (const rec of DATA.recipes) {
+    if (rec.conv || rec.outputs.some(([oid]) => oid === target)) continue;
+    let per = 0;
+    for (const [iid, cnt] of rec.inputs) per += cnt * deepUsePerUnit(target, iid, new Set());
+    if (per < 1) continue;
+    const oid = rec.outputs[0][0];
+    const cur = best.get(oid);
+    if (!cur || per > cur.per) best.set(oid, { oid, rec, per });
+  }
+  return [...best.values()].sort((a, b) => b.per - a.per || a.oid.localeCompare(b.oid)).slice(0, n);
 }
 
 /* ---------- tree model ---------- */
@@ -306,6 +369,43 @@ function renderTotals() {
     }
     bEl.appendChild(el);
   });
+  renderUses();
+}
+
+function useRow(oid, rec, badge) {
+  const item = DATA.items[oid];
+  const el = document.createElement("div");
+  el.className = "trow urow";
+  el.appendChild(iconEl(item, "ticon"));
+  const nm = document.createElement("span");
+  nm.className = "tname"; nm.textContent = item.name;
+  const c = document.createElement("span");
+  c.className = "tcnt"; c.textContent = badge;
+  const w = document.createElement("span");
+  w.className = "tw"; w.textContent = rec.benches[0] || "";
+  el.append(nm, c, w);
+  el.title = "Break this down";
+  el.onclick = () => setRoot(oid);
+  return el;
+}
+
+function renderUses() {
+  const sec = $("#uses-sec");
+  const direct = directUses(rootId);
+  if (!direct.length) { sec.classList.add("hidden"); return; }
+  sec.classList.remove("hidden");
+  $("#uses-name").textContent = DATA.items[rootId].name;
+  const dEl = $("#uses-direct");
+  dEl.innerHTML = "";
+  for (const { oid, rec, cnt } of direct.slice(0, 10)) {
+    const makes = outCount(rec, oid) > 1 ? ` (makes ${outCount(rec, oid)})` : "";
+    dEl.appendChild(useRow(oid, rec, `eats ${fmt(cnt)}${makes}`));
+  }
+  const deepEl = $("#uses-deep");
+  deepEl.innerHTML = "";
+  for (const { oid, rec, per } of bigSinks(rootId, 10)) {
+    deepEl.appendChild(useRow(oid, rec, `soaks ~${fmt(Math.round(per))}`));
+  }
 }
 
 /* ---------- tooltip ---------- */
@@ -430,11 +530,20 @@ function centerTree() {
 const searchEl = $("#search"), resultsEl = $("#results");
 let sel = -1, matches = [];
 
+let searchIds = null;  // craftable items plus every recipe ingredient
+function searchableIds() {
+  if (!searchIds) {
+    const s = new Set(Object.keys(DATA.byOutput));
+    for (const rec of DATA.recipes) for (const [iid] of rec.inputs) s.add(iid);
+    searchIds = [...s];
+  }
+  return searchIds;
+}
+
 function doSearch(q) {
   q = q.trim().toLowerCase();
   if (!q) { resultsEl.classList.add("hidden"); return; }
-  const craftable = Object.keys(DATA.byOutput);
-  matches = craftable
+  matches = searchableIds()
     .map(id => ({ id, item: DATA.items[id], name: DATA.items[id].name.toLowerCase() }))
     .filter(m => m.name.includes(q))
     .sort((a, b) => {
@@ -452,7 +561,8 @@ function doSearch(q) {
     const nm = document.createElement("span");
     nm.className = "rname"; nm.textContent = m.item.name;
     const cat = document.createElement("span");
-    cat.className = "rcat"; cat.textContent = m.item.cat;
+    cat.className = "rcat";
+    cat.textContent = DATA.byOutput[m.id] ? m.item.cat : "gather · see uses";
     el.append(nm, cat);
     el.onclick = () => pick(i);
     resultsEl.appendChild(el);
